@@ -1,13 +1,64 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState, useCallback } from "react";
+import { quizBlocks, calculateResult, ResultProfile } from "@/data/quizData";
+import QuizIntro from "@/components/QuizIntro";
+import QuizQuestion from "@/components/QuizQuestion";
+import QuizResult from "@/components/QuizResult";
+
+const allQuestions = quizBlocks.flatMap((b) => b.questions);
+const totalQuestions = allQuestions.length;
 
 const Index = () => {
+  const [phase, setPhase] = useState<"intro" | "quiz" | "result">("intro");
+  const [currentIdx, setCurrentIdx] = useState(0);
+  const [answers, setAnswers] = useState<Record<number, number>>({});
+  const [resultProfile, setResultProfile] = useState<ResultProfile>("nao_qualificada");
+
+  const currentQuestion = allQuestions[currentIdx];
+  const currentBlock = quizBlocks.find((b) =>
+    b.questions.some((q) => q.id === currentQuestion?.id)
+  )!;
+  const questionIndexInBlock = currentBlock?.questions.findIndex(
+    (q) => q.id === currentQuestion?.id
+  ) ?? 0;
+
+  const handleAnswer = useCallback((questionId: number, optionIndex: number) => {
+    setAnswers((prev) => ({ ...prev, [questionId]: optionIndex }));
+  }, []);
+
+  const handleNext = useCallback(() => {
+    if (currentIdx < totalQuestions - 1) {
+      setCurrentIdx((i) => i + 1);
+    } else {
+      const profile = calculateResult(answers);
+      setResultProfile(profile);
+      setPhase("result");
+    }
+  }, [currentIdx, answers]);
+
+  const handlePrev = useCallback(() => {
+    if (currentIdx > 0) setCurrentIdx((i) => i - 1);
+  }, [currentIdx]);
+
+  if (phase === "intro") {
+    return <QuizIntro onStart={() => setPhase("quiz")} />;
+  }
+
+  if (phase === "result") {
+    return <QuizResult profile={resultProfile} />;
+  }
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <QuizQuestion
+      block={currentBlock}
+      questionIndex={questionIndexInBlock}
+      currentQuestionGlobal={currentIdx + 1}
+      totalQuestions={totalQuestions}
+      selectedAnswer={answers[currentQuestion.id]}
+      onAnswer={handleAnswer}
+      onNext={handleNext}
+      onPrev={handlePrev}
+      canGoBack={currentIdx > 0}
+    />
   );
 };
 
