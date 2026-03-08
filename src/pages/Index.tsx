@@ -2,13 +2,14 @@ import { useState, useCallback } from "react";
 import { quizBlocks, calculateResult, ResultProfile } from "@/data/quizData";
 import QuizIntro from "@/components/QuizIntro";
 import QuizQuestion from "@/components/QuizQuestion";
+import QuizProcessing from "@/components/QuizProcessing";
 import QuizResult from "@/components/QuizResult";
 
 const allQuestions = quizBlocks.flatMap((b) => b.questions);
 const totalQuestions = allQuestions.length;
 
 const Index = () => {
-  const [phase, setPhase] = useState<"intro" | "quiz" | "result">("intro");
+  const [phase, setPhase] = useState<"intro" | "quiz" | "processing" | "result">("intro");
   const [currentIdx, setCurrentIdx] = useState(0);
   const [answers, setAnswers] = useState<Record<number, number>>({});
   const [resultProfile, setResultProfile] = useState<ResultProfile>("nao_qualificada");
@@ -31,7 +32,7 @@ const Index = () => {
     } else {
       const profile = calculateResult(answers);
       setResultProfile(profile);
-      setPhase("result");
+      setPhase("processing");
     }
   }, [currentIdx, answers]);
 
@@ -41,6 +42,10 @@ const Index = () => {
 
   if (phase === "intro") {
     return <QuizIntro onStart={() => setPhase("quiz")} />;
+  }
+
+  if (phase === "processing") {
+    return <QuizProcessing onComplete={() => setPhase("result")} />;
   }
 
   if (phase === "result") {
