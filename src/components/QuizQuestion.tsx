@@ -42,9 +42,9 @@ const QuizQuestion = ({
   }, [isMobile, onAnswer, onNext, question.id]);
 
   return (
-    <div className="flex flex-col min-h-screen px-6 py-12 max-w-xl mx-auto animate-fade-in">
+    <div className="flex flex-col min-h-screen px-6 py-6 md:py-12 max-w-xl mx-auto animate-fade-in">
       {/* Progress */}
-      <div className="mb-12">
+      <div className="mb-6 md:mb-12">
         <div className="flex items-center justify-between mb-3">
           <p className="text-xs font-body tracking-[0.3em] uppercase text-muted-foreground">
             {block.subtitle}
@@ -69,17 +69,17 @@ const QuizQuestion = ({
       )}
 
       {/* Question */}
-      <h2 className="text-xl md:text-2xl font-display text-foreground leading-relaxed mb-10">
+      <h2 className="text-lg md:text-2xl font-display text-foreground leading-relaxed mb-6 md:mb-10">
         {question.text}
       </h2>
 
       {/* Options */}
-      <div className="flex flex-col gap-3 flex-1">
+      <div className="flex flex-col gap-2 md:gap-3 flex-1">
         {question.options.map((option, idx) => (
           <button
             key={idx}
             onClick={() => handleOptionClick(idx)}
-            className={`text-left px-5 py-4 border text-sm font-body transition-all duration-300 ${
+            className={`text-left px-4 py-3 md:px-5 md:py-4 border text-sm font-body transition-all duration-300 ${
               selectedAnswer === idx
                 ? "border-primary/60 bg-primary/5 text-foreground"
                 : "border-border hover:border-primary/30 text-muted-foreground hover:text-foreground"
@@ -91,7 +91,7 @@ const QuizQuestion = ({
       </div>
 
       {/* Navigation */}
-      <div className="flex items-center justify-between mt-12 pt-8 border-t border-border/50">
+      <div className="flex items-center justify-between mt-6 md:mt-12 pt-4 md:pt-8 border-t border-border/50">
         {canGoBack ? (
           <button
             onClick={onPrev}
