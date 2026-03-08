@@ -290,7 +290,7 @@ export function calculateResult(answers: Record<number, number>): ResultProfile 
   return "desregulacao";
 }
 
-export const resultData: Record<ResultProfile, { title: string; text: string; bullets: string[]; cta: string; link: string }> = {
+export const resultData: Record<ResultProfile, { title: string; text: string; bullets: string[]; afterBullets?: string; cta: string; link: string }> = {
   adaptativo: {
     title: "Perfil compatível com a próxima etapa do protocolo exclusivo.",
     text: "Com base na sua análise, seu padrão indica adaptação metabólica associada a histórico recorrente de restrição alimentar. Isso significa que seu metabolismo pode ter reduzido eficiência como mecanismo de defesa após múltiplas tentativas de emagrecimento. Nesses casos, estratégias genéricas tendem a gerar resultados temporários, mas não sustentáveis.\n\nVocê apresenta perfil compatível para avançar para a Consulta Estratégica de Reprogramação Metabólica. Nesta sessão individual, eu:",
