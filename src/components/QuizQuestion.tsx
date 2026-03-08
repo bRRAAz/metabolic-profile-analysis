@@ -45,6 +45,13 @@ const QuizQuestion = ({
         </div>
       </div>
 
+      {/* Transition message for strategic block */}
+      {question.id === 19 && (
+        <p className="text-xs font-body tracking-[0.2em] uppercase text-primary/60 mb-4">
+          Estamos quase finalizando sua análise metabólica.
+        </p>
+      )}
+
       {/* Question */}
       <h2 className="text-xl md:text-2xl font-display text-foreground leading-relaxed mb-10">
         {question.text}
