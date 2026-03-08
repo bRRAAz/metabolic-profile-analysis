@@ -226,6 +226,32 @@ export const quizBlocks: QuizBlock[] = [
       },
     ],
   },
+  {
+    id: 6,
+    title: "Bloco 6",
+    subtitle: "Perguntas Estratégicas",
+    questions: [
+      {
+        id: 18,
+        text: "Se sua análise metabólica mostrar um bloqueio que pode ser corrigido, qual seria seu próximo passo?",
+        options: [
+          { text: "Quero entender como resolver definitivamente", scores: {} },
+          { text: "Gostaria de analisar as possibilidades", scores: {} },
+          { text: "Ainda estou apenas explorando o tema", scores: {} },
+        ],
+      },
+      {
+        id: 19,
+        text: "Se você descobrir exatamente o que está bloqueando seu metabolismo e receber um plano personalizado para resolver isso, qual dessas opções representa melhor sua situação hoje?",
+        options: [
+          { text: "Estou pronta para investir em uma solução que realmente resolva", scores: {} },
+          { text: "Estou disposta a investir se fizer sentido para o meu caso", scores: {} },
+          { text: "Ainda preciso entender melhor antes de decidir", scores: {} },
+          { text: "No momento estou apenas buscando informação", scores: {} },
+        ],
+      },
+    ],
+  },
 ];
 
 export type ResultProfile = "adaptativo" | "inflamatorio" | "desregulacao" | "nao_qualificada";
