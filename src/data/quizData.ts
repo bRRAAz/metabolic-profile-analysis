@@ -226,6 +226,32 @@ export const quizBlocks: QuizBlock[] = [
       },
     ],
   },
+  {
+    id: 6,
+    title: "Bloco 6",
+    subtitle: "Perguntas Estratégicas",
+    questions: [
+      {
+        id: 18,
+        text: "Se sua análise metabólica mostrar um bloqueio que pode ser corrigido, qual seria seu próximo passo?",
+        options: [
+          { text: "Quero entender como resolver definitivamente", scores: {} },
+          { text: "Gostaria de analisar as possibilidades", scores: {} },
+          { text: "Ainda estou apenas explorando o tema", scores: {} },
+        ],
+      },
+      {
+        id: 19,
+        text: "Se você descobrir exatamente o que está bloqueando seu metabolismo e receber um plano personalizado para resolver isso, qual dessas opções representa melhor sua situação hoje?",
+        options: [
+          { text: "Estou pronta para investir em uma solução que realmente resolva", scores: {} },
+          { text: "Estou disposta a investir se fizer sentido para o meu caso", scores: {} },
+          { text: "Ainda preciso entender melhor antes de decidir", scores: {} },
+          { text: "No momento estou apenas buscando informação", scores: {} },
+        ],
+      },
+    ],
+  },
 ];
 
 export type ResultProfile = "adaptativo" | "inflamatorio" | "desregulacao" | "nao_qualificada";
@@ -264,7 +290,7 @@ export function calculateResult(answers: Record<number, number>): ResultProfile 
   return "desregulacao";
 }
 
-export const resultData: Record<ResultProfile, { title: string; text: string; bullets: string[]; cta: string; link: string }> = {
+export const resultData: Record<ResultProfile, { title: string; text: string; bullets: string[]; afterBullets?: string; cta: string; link: string }> = {
   adaptativo: {
     title: "Perfil compatível com a próxima etapa do protocolo exclusivo.",
     text: "Com base na sua análise, seu padrão indica adaptação metabólica associada a histórico recorrente de restrição alimentar. Isso significa que seu metabolismo pode ter reduzido eficiência como mecanismo de defesa após múltiplas tentativas de emagrecimento. Nesses casos, estratégias genéricas tendem a gerar resultados temporários, mas não sustentáveis.\n\nVocê apresenta perfil compatível para avançar para a Consulta Estratégica de Reprogramação Metabólica. Nesta sessão individual, eu:",
@@ -302,14 +328,15 @@ export const resultData: Record<ResultProfile, { title: string; text: string; bu
     link: "https://calendly.com/mentoriaidealize/sessao-estrategica-idealize",
   },
   nao_qualificada: {
-    title: "Seu momento indica necessidade de estruturação da base metabólica.",
-    text: "Sua análise demonstra que antes de uma intervenção avançada, é essencial organizar os pilares fundamentais do seu metabolismo. Para isso, desenvolvi o Método Reprograme — um protocolo estruturado para:",
+    title: "Seu perfil indica que o primeiro passo é reorganizar a base do seu metabolismo.",
+    text: "Com base nas suas respostas, sua análise mostra que antes de uma Reprogramação Metabólica Avançada, é importante estruturar alguns pilares fundamentais do metabolismo.\n\nMuitas mulheres tentam avançar diretamente para estratégias mais complexas sem antes organizar a base — e por isso acabam enfrentando ciclos de frustração.\n\nOs principais pontos que normalmente precisam ser ajustados nessa fase são:",
     bullets: [
-      "Reorganizar base metabólica",
-      "Reduzir desregulações iniciais",
-      "Melhorar energia e relação alimentar",
-      "Preparar o corpo para um próximo nível",
+      "Organização do ciclo alimentar",
+      "Estabilidade metabólica e energética",
+      "Funcionamento intestinal e digestivo",
+      "Relação mais equilibrada com a alimentação",
     ],
+    afterBullets: "Para isso, eu desenvolvi o Método Reprograme.\n\nUm protocolo estruturado que foi criado justamente para organizar esses pilares metabólicos e preparar o corpo para responder novamente ao emagrecimento.\n\nEsse é o mesmo processo inicial que muitas pacientes passam antes de avançar para etapas mais profundas do acompanhamento.\n\nVocê pode começar agora, com acesso imediato ao método.",
     cta: "Iniciar pelo Método Reprograme",
     link: "https://brunavieiranutri.com.br/metodo-reprograme/?utm_source=ig&utm_medium=social&utm_content=link_in_bio",
   },

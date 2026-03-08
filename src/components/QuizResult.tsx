@@ -21,6 +21,12 @@ const QuizResult = ({ profile }: QuizResultProps) => {
 
       <div className="w-12 h-px bg-primary/30 mb-8" />
 
+      {profile === "nao_qualificada" && (
+        <p className="text-xs font-body tracking-[0.2em] uppercase text-primary/80 mb-6 text-center border border-primary/20 px-4 py-2">
+          Com base no seu perfil metabólico, este é o primeiro passo recomendado.
+        </p>
+      )}
+
       <p className="text-xs font-body tracking-[0.35em] uppercase text-muted-foreground mb-2">
         Resultado da Análise
       </p>
@@ -37,7 +43,7 @@ const QuizResult = ({ profile }: QuizResultProps) => {
         {data.text}
       </div>
 
-      <div className="w-full border-t border-border/50 pt-6 mb-10">
+      <div className="w-full border-t border-border/50 pt-6 mb-6">
         {data.bullets.map((bullet, idx) => (
           <div key={idx} className="flex items-start gap-3 mb-3">
             <span className="text-primary/50 mt-0.5 text-xs">✦</span>
@@ -46,15 +52,21 @@ const QuizResult = ({ profile }: QuizResultProps) => {
         ))}
       </div>
 
+      {data.afterBullets && (
+        <div className="text-sm font-body text-muted-foreground leading-relaxed text-center mb-10 whitespace-pre-line">
+          {data.afterBullets}
+        </div>
+      )}
+
       {profile !== "nao_qualificada" && (
-        <p className="text-xs font-body text-muted-foreground/60 text-center mb-8 italic">
+        <p className="text-xs font-body text-muted-foreground/60 text-center mb-4 italic">
           Como acompanho número reduzido de pacientes por ciclo, a disponibilidade é limitada. Se fizer sentido avançar, escolha seu horário abaixo.
         </p>
       )}
 
-      {profile === "nao_qualificada" && (
-        <p className="text-xs font-body text-muted-foreground/60 text-center mb-8">
-          Você pode iniciar imediatamente.
+      {profile !== "nao_qualificada" && (
+        <p className="text-xs font-body text-muted-foreground/50 text-center mb-8">
+          Apenas alguns perfis são aprovados para essa etapa.
         </p>
       )}
 

@@ -31,7 +31,7 @@ const QuizIntro = ({ onStart }: QuizIntroProps) => {
       </button>
 
       <p className="text-xs font-body text-muted-foreground/60 mt-8">
-        17 perguntas · Tempo estimado: 4 minutos
+        19 perguntas · Tempo estimado: 5 minutos
       </p>
     </div>
   );
