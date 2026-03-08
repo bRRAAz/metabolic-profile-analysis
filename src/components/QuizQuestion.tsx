@@ -42,7 +42,7 @@ const QuizQuestion = ({
   }, [isMobile, onAnswer, onNext, question.id]);
 
   return (
-    <div className="flex flex-col min-h-screen px-6 py-6 md:py-12 max-w-xl mx-auto animate-fade-in">
+    <div className="flex flex-col min-h-0 md:min-h-screen px-6 py-6 md:py-12 max-w-xl mx-auto animate-fade-in">
       {/* Progress */}
       <div className="mb-6 md:mb-12">
         <div className="flex items-center justify-between mb-3">
