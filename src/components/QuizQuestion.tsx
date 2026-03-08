@@ -49,7 +49,7 @@ const QuizQuestion = ({
           <p className="text-xs font-body tracking-[0.3em] uppercase text-muted-foreground">
             {block.subtitle}
           </p>
-          <p className="text-xs font-body text-muted-foreground/60">
+          <p className="text-xs font-body text-muted-foreground/60 whitespace-nowrap ml-4">
             {currentQuestionGlobal} / {totalQuestions}
           </p>
         </div>
