@@ -1,4 +1,4 @@
-import { QuizBlock } from "@/data/quizData";
+import { QuizBlock, QuizQuestion as QuizQuestionType } from "@/data/quizData";
 
 interface QuizQuestionProps {
   block: QuizBlock;
