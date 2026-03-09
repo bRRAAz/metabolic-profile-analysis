@@ -57,12 +57,6 @@ const QuizResult = ({ profile }: QuizResultProps) => {
       )}
 
       {profile !== "nao_qualificada" && (
-        <p className="text-xs font-body text-muted-foreground/60 text-center mb-4 italic">
-          Como acompanho número reduzido de pacientes por ciclo, a disponibilidade é limitada. Se fizer sentido avançar, escolha seu horário abaixo.
-        </p>
-      )}
-
-      {profile !== "nao_qualificada" && (
         <p className="text-xs font-body text-muted-foreground/50 text-center mb-8">
           Apenas alguns perfis são aprovados para essa etapa.
         </p>
