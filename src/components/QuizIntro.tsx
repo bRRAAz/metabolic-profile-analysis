@@ -11,19 +11,19 @@ const QuizIntro = ({ onStart }: QuizIntroProps) => {
 
       <div className="w-12 h-px bg-primary/30 mb-8" />
 
-      <h1 className="text-3xl md:text-4xl font-display text-foreground text-center leading-tight mb-4">
-        Análise de Perfil Metabólico
+      <h1 className="text-2xl md:text-3xl font-display text-foreground text-center leading-tight mb-6">
+        Seu metabolismo pode estar bloqueado — e a maioria das mulheres só percebe depois de anos tentando emagrecer.
       </h1>
 
       <p className="text-base font-body text-muted-foreground text-center max-w-md mb-12 leading-relaxed">
-        Descubra o que pode estar travando o seu metabolismo
+        Esse teste identifica os principais padrões metabólicos que dificultam o emagrecimento em mulheres.
       </p>
 
       <button
         onClick={onStart}
         className="font-body text-sm tracking-[0.2em] uppercase px-10 py-4 border border-primary/40 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-500"
       >
-        Iniciar Análise
+        Descobrir meu perfil metabólico
       </button>
 
       <p className="text-xs font-body text-muted-foreground/60 mt-8">
