@@ -9,7 +9,7 @@ const profileLabel: Record<ResultProfile, string> = {
   adaptativo: "Padrão Adaptativo Restritivo",
   inflamatorio: "Padrão Inflamatório Funcional",
   desregulacao: "Padrão de Desregulação Hormonal / Comportamental",
-  nao_qualificada: "Estruturação de Base Metabólica",
+  nao_qualificada: "",
 };
 
 const QuizResult = ({ profile }: QuizResultProps) => {
@@ -21,19 +21,17 @@ const QuizResult = ({ profile }: QuizResultProps) => {
 
       <div className="w-12 h-px bg-primary/30 mb-8" />
 
-      {profile === "nao_qualificada" && (
-        <p className="text-xs font-body tracking-[0.2em] uppercase text-primary/80 mb-6 text-center border border-primary/20 px-4 py-2">
-          Com base no seu perfil metabólico, este é o primeiro passo recomendado.
+      {profile !== "nao_qualificada" && (
+        <p className="text-xs font-body tracking-[0.35em] uppercase text-muted-foreground mb-2">
+          Resultado da Análise
         </p>
       )}
 
-      <p className="text-xs font-body tracking-[0.35em] uppercase text-muted-foreground mb-2">
-        Resultado da Análise
-      </p>
-
-      <p className="text-xs font-body tracking-[0.2em] uppercase text-primary/70 mb-8">
-        {profileLabel[profile]}
-      </p>
+      {profile !== "nao_qualificada" && profileLabel[profile] && (
+        <p className="text-xs font-body tracking-[0.2em] uppercase text-primary/70 mb-8">
+          {profileLabel[profile]}
+        </p>
+      )}
 
       <h2 className="text-2xl md:text-3xl font-display text-foreground text-center leading-snug mb-8">
         {data.title}
@@ -56,12 +54,6 @@ const QuizResult = ({ profile }: QuizResultProps) => {
         <div className="text-sm font-body text-muted-foreground leading-relaxed text-center mb-10 whitespace-pre-line">
           {data.afterBullets}
         </div>
-      )}
-
-      {profile !== "nao_qualificada" && (
-        <p className="text-xs font-body text-muted-foreground/60 text-center mb-4 italic">
-          Como acompanho número reduzido de pacientes por ciclo, a disponibilidade é limitada. Se fizer sentido avançar, escolha seu horário abaixo.
-        </p>
       )}
 
       {profile !== "nao_qualificada" && (
