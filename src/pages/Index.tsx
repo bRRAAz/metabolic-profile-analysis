@@ -3,6 +3,7 @@ import { quizBlocks, calculateResult, ResultProfile } from "@/data/quizData";
 import QuizIntro from "@/components/QuizIntro";
 import QuizQuestion from "@/components/QuizQuestion";
 import QuizProcessing from "@/components/QuizProcessing";
+import QuizLeadForm from "@/components/QuizLeadForm";
 import QuizResult from "@/components/QuizResult";
 
 const allQuestions = quizBlocks.flatMap((b) => b.questions);
