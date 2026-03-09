@@ -27,13 +27,11 @@ const QuizResult = ({ profile }: QuizResultProps) => {
         </p>
       )}
 
-      <p className="text-xs font-body tracking-[0.35em] uppercase text-muted-foreground mb-2">
-        Resultado da Análise
-      </p>
-
-      <p className="text-xs font-body tracking-[0.2em] uppercase text-primary/70 mb-8">
-        {profileLabel[profile]}
-      </p>
+      {profile !== "nao_qualificada" && profileLabel[profile] && (
+        <p className="text-xs font-body tracking-[0.2em] uppercase text-primary/70 mb-8">
+          {profileLabel[profile]}
+        </p>
+      )}
 
       <h2 className="text-2xl md:text-3xl font-display text-foreground text-center leading-snug mb-8">
         {data.title}
