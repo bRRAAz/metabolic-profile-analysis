@@ -10,7 +10,7 @@ const allQuestions = quizBlocks.flatMap((b) => b.questions);
 const totalQuestions = allQuestions.length;
 
 const Index = () => {
-  const [phase, setPhase] = useState<"intro" | "quiz" | "processing" | "result">("intro");
+  const [phase, setPhase] = useState<"intro" | "quiz" | "processing" | "leadForm" | "result">("intro");
   const [currentIdx, setCurrentIdx] = useState(0);
   const [answers, setAnswers] = useState<Record<number, number>>({});
   const [resultProfile, setResultProfile] = useState<ResultProfile>("nao_qualificada");
