@@ -21,9 +21,9 @@ const QuizResult = ({ profile }: QuizResultProps) => {
 
       <div className="w-12 h-px bg-primary/30 mb-8" />
 
-      {profile === "nao_qualificada" && (
-        <p className="text-xs font-body tracking-[0.2em] uppercase text-primary/80 mb-6 text-center border border-primary/20 px-4 py-2">
-          Com base no seu perfil metabólico, este é o primeiro passo recomendado.
+      {profile !== "nao_qualificada" && (
+        <p className="text-xs font-body tracking-[0.35em] uppercase text-muted-foreground mb-2">
+          Resultado da Análise
         </p>
       )}
 
