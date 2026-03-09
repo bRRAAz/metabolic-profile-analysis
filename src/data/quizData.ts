@@ -263,6 +263,9 @@ export interface Scores {
 }
 
 export function calculateResult(answers: Record<number, number>): ResultProfile {
+  // Se respondeu "Até 6 mil" (índice 0) na pergunta 17 → não qualificada
+  if (answers[17] === 0) return "nao_qualificada";
+
   const scores: Scores = { adaptativo: 0, inflamatorio: 0, desregulacao: 0 };
 
   const allQuestions = quizBlocks.flatMap((b) => b.questions);
@@ -283,7 +286,6 @@ export function calculateResult(answers: Record<number, number>): ResultProfile 
 
   if (qualified.length === 0) return "nao_qualificada";
 
-  // Return the highest scoring pattern
   const max = Math.max(scores.adaptativo, scores.inflamatorio, scores.desregulacao);
   if (max === scores.adaptativo && scores.adaptativo >= 4) return "adaptativo";
   if (max === scores.inflamatorio && scores.inflamatorio >= 4) return "inflamatorio";
