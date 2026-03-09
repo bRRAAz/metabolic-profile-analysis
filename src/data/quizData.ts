@@ -218,7 +218,7 @@ export const quizBlocks: QuizBlock[] = [
         id: 17,
         text: "Sua renda mensal aproximada:",
         options: [
-          { text: "Até 8 mil", scores: {} },
+          { text: "Até 6 mil", scores: {} },
           { text: "8 a 15 mil", scores: {} },
           { text: "15 a 25 mil", scores: {} },
           { text: "Acima de 25 mil", scores: {} },
