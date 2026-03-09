@@ -46,7 +46,11 @@ const Index = () => {
   }
 
   if (phase === "processing") {
-    return <QuizProcessing onComplete={() => setPhase("result")} />;
+    return <QuizProcessing onComplete={() => setPhase("leadForm")} />;
+  }
+
+  if (phase === "leadForm") {
+    return <QuizLeadForm onSubmit={(data) => { console.log("Lead data:", data); setPhase("result"); }} />;
   }
 
   if (phase === "result") {
