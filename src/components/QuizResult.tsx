@@ -9,7 +9,7 @@ const profileLabel: Record<ResultProfile, string> = {
   adaptativo: "Padrão Adaptativo Restritivo",
   inflamatorio: "Padrão Inflamatório Funcional",
   desregulacao: "Padrão de Desregulação Hormonal / Comportamental",
-  nao_qualificada: "Estruturação de Base Metabólica",
+  nao_qualificada: "",
 };
 
 const QuizResult = ({ profile }: QuizResultProps) => {
