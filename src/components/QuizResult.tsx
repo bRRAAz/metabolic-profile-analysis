@@ -1,5 +1,9 @@
 import { ResultProfile, resultData } from "@/data/quizData";
 import logo from "@/assets/logo-bruna-vieira.png";
+import antesDepois from "@/assets/resultado-antes-depois.jpg";
+import depoimento from "@/assets/resultado-depoimento.jpg";
+import antes from "@/assets/resultado-antes.jpg";
+import depois from "@/assets/resultado-depois.jpg";
 
 interface QuizResultProps {
   profile: ResultProfile;
