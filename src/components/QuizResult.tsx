@@ -68,21 +68,21 @@ const QuizResult = ({ profile }: QuizResultProps) => {
 
         <div className="grid grid-cols-2 gap-3 mb-6">
           <div className="rounded-lg overflow-hidden shadow-sm border border-border/30">
-            <img src={antes} alt="Antes do tratamento" className="w-full h-48 object-cover" />
+            <img src={antes} alt="Antes do tratamento" className="w-full h-72 object-cover" />
             <p className="text-[10px] font-body text-muted-foreground/60 text-center py-1.5 uppercase tracking-widest">Antes</p>
           </div>
           <div className="rounded-lg overflow-hidden shadow-sm border border-border/30">
-            <img src={depois} alt="Depois do tratamento" className="w-full h-48 object-cover" />
+            <img src={depois} alt="Depois do tratamento" className="w-full h-72 object-cover" />
             <p className="text-[10px] font-body text-muted-foreground/60 text-center py-1.5 uppercase tracking-widest">Depois</p>
           </div>
         </div>
 
         <div className="grid grid-cols-2 gap-3">
           <div className="rounded-lg overflow-hidden shadow-sm border border-border/30">
-            <img src={antesDepois} alt="Antes e depois" className="w-full h-40 object-cover" />
+            <img src={antesDepois} alt="Antes e depois" className="w-full h-64 object-cover" />
           </div>
           <div className="rounded-lg overflow-hidden shadow-sm border border-border/30">
-            <img src={depoimento} alt="Depoimento de paciente" className="w-full h-40 object-cover" />
+            <img src={depoimento} alt="Depoimento de paciente" className="w-full h-64 object-cover" />
           </div>
         </div>
       </div>
