@@ -54,12 +54,6 @@ const QuizResult = ({ profile }: QuizResultProps) => {
         ))}
       </div>
 
-      {data.afterBullets && (
-        <div className="text-sm font-body text-muted-foreground leading-relaxed text-center mb-10 whitespace-pre-line">
-          {data.afterBullets}
-        </div>
-      )}
-
       {/* Social proof section */}
       <div className="w-full mb-10">
         <p className="text-xs font-body tracking-[0.25em] uppercase text-muted-foreground text-center mb-6">
@@ -81,6 +75,12 @@ const QuizResult = ({ profile }: QuizResultProps) => {
           <img src={depoimento} alt="Depoimento de paciente" className="w-full h-64 object-cover" />
         </div>
       </div>
+
+      {data.afterBullets && (
+        <div className="text-sm font-body text-muted-foreground leading-relaxed text-center mb-10 whitespace-pre-line">
+          {data.afterBullets}
+        </div>
+      )}
 
       {profile !== "nao_qualificada" && (
         <p className="text-xs font-body text-muted-foreground/50 text-center mb-8">
