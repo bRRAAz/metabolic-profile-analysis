@@ -31,10 +31,10 @@ export const quizBlocks: QuizBlock[] = [
         id: 1,
         text: "Há quanto tempo você tenta emagrecer sem conseguir manter o resultado?",
         options: [
-          { text: "Menos de 6 meses", scores: {} },
-          { text: "1 a 2 anos", scores: {} },
-          { text: "3 a 5 anos", scores: { adaptativo: 1 } },
-          { text: "Mais de 5 anos ou com múltiplos reganhos de peso", scores: { adaptativo: 1 } },
+          { text: "Menos de 6 meses", scores: { adaptativo: 1 } },
+          { text: "1 a 2 anos", scores: { adaptativo: 2 } },
+          { text: "3 a 5 anos", scores: { adaptativo: 3 } },
+          { text: "Mais de 5 anos ou com múltiplos reganhos de peso", scores: { adaptativo: 4 } },
         ],
       },
       {
@@ -42,19 +42,19 @@ export const quizBlocks: QuizBlock[] = [
         text: "Ao iniciar uma estratégia alimentar, o que geralmente acontece?",
         options: [
           { text: "Perco peso inicialmente, mas recupero", scores: { adaptativo: 1 } },
-          { text: "Fico muito restritiva e depois desregulo", scores: { desregulacao: 1 } },
-          { text: "Mesmo seguindo corretamente, o resultado é lento", scores: { adaptativo: 1 } },
-          { text: "Não consigo manter consistência", scores: { desregulacao: 1 } },
+          { text: "Fico muito restritiva e depois desregulo", scores: { adaptativo: 2 } },
+          { text: "Mesmo seguindo corretamente, o resultado é lento", scores: { adaptativo: 3 } },
+          { text: "Não consigo manter consistência", scores: { adaptativo: 4 } },
         ],
       },
       {
         id: 3,
         text: "Você identifica um padrão recorrente de restrição alimentar seguido de episódios de descontrole?",
         options: [
-          { text: "Nunca", scores: {} },
-          { text: "Raramente", scores: {} },
-          { text: "Frequentemente", scores: { adaptativo: 1 } },
-          { text: "Quase sempre", scores: { adaptativo: 1 } },
+          { text: "Nunca", scores: { adaptativo: 1 } },
+          { text: "Raramente", scores: { adaptativo: 2 } },
+          { text: "Frequentemente", scores: { adaptativo: 3 } },
+          { text: "Quase sempre", scores: { adaptativo: 4 } },
         ],
       },
     ],
@@ -68,50 +68,50 @@ export const quizBlocks: QuizBlock[] = [
         id: 4,
         text: "Como está a qualidade do seu sono atualmente?",
         options: [
-          { text: "Durmo bem e acordo descansada", scores: {} },
-          { text: "Durmo, mas acordo cansada", scores: { inflamatorio: 1 } },
-          { text: "Acordo várias vezes durante a noite", scores: { inflamatorio: 1 } },
-          { text: "Tenho dificuldade para iniciar ou manter o sono", scores: { inflamatorio: 1 } },
+          { text: "Durmo bem e acordo descansada", scores: { desregulacao: 1 } },
+          { text: "Durmo, mas acordo cansada", scores: { desregulacao: 2 } },
+          { text: "Acordo várias vezes durante a noite", scores: { desregulacao: 3 } },
+          { text: "Tenho dificuldade para iniciar ou manter o sono", scores: { desregulacao: 4 } },
         ],
       },
       {
         id: 5,
         text: "Como funciona seu intestino?",
         options: [
-          { text: "Regular, diariamente", scores: {} },
-          { text: "Regular na maioria dos dias", scores: {} },
-          { text: "Intervalos de 2–3 dias", scores: { inflamatorio: 1 } },
-          { text: "Constipação frequente e/ou inchaço recorrente", scores: { inflamatorio: 1 } },
+          { text: "Regular, diariamente", scores: { inflamatorio: 1 } },
+          { text: "Regular na maioria dos dias", scores: { inflamatorio: 2 } },
+          { text: "Intervalos de 2–3 dias", scores: { inflamatorio: 3 } },
+          { text: "Constipação frequente e/ou inchaço recorrente", scores: { inflamatorio: 4 } },
         ],
       },
       {
         id: 6,
         text: "Consumo médio de água por dia:",
         options: [
-          { text: "Acima de 2 litros", scores: {} },
-          { text: "Entre 1 e 2 litros", scores: {} },
-          { text: "Menos de 1 litro", scores: { inflamatorio: 1 } },
-          { text: "Não monitoro", scores: { inflamatorio: 1 } },
+          { text: "Acima de 2 litros", scores: { inflamatorio: 1 } },
+          { text: "Entre 1 e 2 litros", scores: { inflamatorio: 2 } },
+          { text: "Menos de 1 litro", scores: { inflamatorio: 3 } },
+          { text: "Não monitoro", scores: { inflamatorio: 4 } },
         ],
       },
       {
         id: 7,
         text: "Frequência de atividade física estruturada:",
         options: [
-          { text: "4 vezes ou mais por semana", scores: {} },
-          { text: "2 a 3 vezes por semana", scores: {} },
-          { text: "Esporádica", scores: {} },
-          { text: "Não pratico atualmente", scores: {} },
+          { text: "4 vezes ou mais por semana", scores: { inflamatorio: 1 } },
+          { text: "2 a 3 vezes por semana", scores: { inflamatorio: 2 } },
+          { text: "Esporádica", scores: { inflamatorio: 3 } },
+          { text: "Não pratico atualmente", scores: { inflamatorio: 4 } },
         ],
       },
       {
         id: 8,
         text: "Mesmo praticando atividade física, você percebe dificuldade em reduzir gordura corporal?",
         options: [
-          { text: "Nunca", scores: {} },
-          { text: "Ocasionalmente", scores: {} },
-          { text: "Frequentemente", scores: { adaptativo: 1 } },
-          { text: "Sempre", scores: { adaptativo: 1 } },
+          { text: "Nunca", scores: { adaptativo: 1 } },
+          { text: "Ocasionalmente", scores: { adaptativo: 2 } },
+          { text: "Frequentemente", scores: { adaptativo: 3 } },
+          { text: "Sempre", scores: { adaptativo: 4 } },
         ],
       },
     ],
@@ -125,40 +125,40 @@ export const quizBlocks: QuizBlock[] = [
         id: 9,
         text: "Com que frequência você apresenta inchaço ou retenção de líquidos?",
         options: [
-          { text: "Nunca", scores: {} },
-          { text: "Ocasionalmente", scores: {} },
-          { text: "Frequentemente", scores: { inflamatorio: 1 } },
-          { text: "Quase diariamente", scores: { inflamatorio: 1 } },
+          { text: "Nunca", scores: { inflamatorio: 1 } },
+          { text: "Ocasionalmente", scores: { inflamatorio: 2 } },
+          { text: "Frequentemente", scores: { inflamatorio: 3 } },
+          { text: "Quase diariamente", scores: { inflamatorio: 4 } },
         ],
       },
       {
         id: 10,
         text: "Como você classificaria sua energia ao longo do dia?",
         options: [
-          { text: "Estável", scores: {} },
-          { text: "Leve oscilação", scores: {} },
-          { text: "Oscilações frequentes", scores: { inflamatorio: 1, desregulacao: 1 } },
-          { text: "Quedas acentuadas de energia", scores: { inflamatorio: 1, desregulacao: 1 } },
+          { text: "Estável", scores: { desregulacao: 1 } },
+          { text: "Leve oscilação", scores: { desregulacao: 2 } },
+          { text: "Oscilações frequentes", scores: { desregulacao: 3 } },
+          { text: "Quedas acentuadas de energia", scores: { desregulacao: 4 } },
         ],
       },
       {
         id: 11,
         text: "Episódios de compulsão ou perda de controle alimentar:",
         options: [
-          { text: "Nunca", scores: {} },
-          { text: "Raramente", scores: {} },
-          { text: "Frequentemente", scores: { desregulacao: 1 } },
-          { text: "Quase sempre", scores: { desregulacao: 1 } },
+          { text: "Nunca", scores: { desregulacao: 1 } },
+          { text: "Raramente", scores: { desregulacao: 2 } },
+          { text: "Frequentemente", scores: { desregulacao: 3 } },
+          { text: "Quase sempre", scores: { desregulacao: 4 } },
         ],
       },
       {
         id: 12,
         text: "Ansiedade relacionada à alimentação:",
         options: [
-          { text: "Ausente", scores: {} },
-          { text: "Leve", scores: {} },
-          { text: "Moderada", scores: { desregulacao: 1 } },
-          { text: "Intensa", scores: { desregulacao: 1 } },
+          { text: "Ausente", scores: { desregulacao: 1 } },
+          { text: "Leve", scores: { desregulacao: 2 } },
+          { text: "Moderada", scores: { desregulacao: 3 } },
+          { text: "Intensa", scores: { desregulacao: 4 } },
         ],
       },
     ],
@@ -172,20 +172,20 @@ export const quizBlocks: QuizBlock[] = [
         id: 13,
         text: "O seu peso impacta sua autoestima ou autoconfiança?",
         options: [
-          { text: "Não impacta", scores: {} },
-          { text: "Impacto leve", scores: {} },
-          { text: "Impacto significativo", scores: { desregulacao: 1 } },
-          { text: "Impacto profundo", scores: { desregulacao: 1 } },
+          { text: "Não impacta", scores: { adaptativo: 1 } },
+          { text: "Impacto leve", scores: { adaptativo: 2 } },
+          { text: "Impacto significativo", scores: { adaptativo: 3 } },
+          { text: "Impacto profundo", scores: { adaptativo: 4 } },
         ],
       },
       {
         id: 14,
         text: "Se nada mudar nos próximos 6 meses, como você acredita que estará emocionalmente?",
         options: [
-          { text: "Estável", scores: {} },
-          { text: "Levemente frustrada", scores: {} },
-          { text: "Frustrada", scores: { desregulacao: 1 } },
-          { text: "Exausta e desmotivada", scores: { desregulacao: 1 } },
+          { text: "Estável", scores: { desregulacao: 1 } },
+          { text: "Levemente frustrada", scores: { desregulacao: 2 } },
+          { text: "Frustrada", scores: { desregulacao: 3 } },
+          { text: "Exausta e desmotivada", scores: { desregulacao: 4 } },
         ],
       },
     ],
@@ -281,16 +281,18 @@ export function calculateResult(answers: Record<number, number>): ResultProfile 
 
   const qualified: ResultProfile[] = [];
   if (scores.nao_qualificada > 0) return "nao_qualificada";
-  if (scores.adaptativo >= 4) qualified.push("adaptativo");
-  if (scores.inflamatorio >= 4) qualified.push("inflamatorio");
-  if (scores.desregulacao >= 4) qualified.push("desregulacao");
 
-
-
-  // Return the highest scoring pattern
   const max = Math.max(scores.adaptativo, scores.inflamatorio, scores.desregulacao);
-  if (max === scores.adaptativo && scores.adaptativo >= 4) return "adaptativo";
-  if (max === scores.inflamatorio && scores.inflamatorio >= 4) return "inflamatorio";
+
+  if (scores.adaptativo === max) {
+    qualified.push("adaptativo");
+    return "adaptativo";
+  }
+  if (scores.inflamatorio === max) {
+    qualified.push("inflamatorio");
+    return "inflamatorio";
+  }
+  qualified.push("desregulacao");
   return "desregulacao";
 }
 
