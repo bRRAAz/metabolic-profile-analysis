@@ -67,23 +67,18 @@ const QuizResult = ({ profile }: QuizResultProps) => {
         </p>
 
         <div className="grid grid-cols-2 gap-3 mb-6">
-          <div className="rounded-lg overflow-hidden shadow-sm border border-border/30">
+          <div className="rounded-lg overflow-hidden shadow-sm border border-border/30 animate-fade-in" style={{ animationDelay: '0.2s', animationFillMode: 'both' }}>
             <img src={antes} alt="Antes do tratamento" className="w-full h-72 object-cover" />
             <p className="text-[10px] font-body text-muted-foreground/60 text-center py-1.5 uppercase tracking-widest">Antes</p>
           </div>
-          <div className="rounded-lg overflow-hidden shadow-sm border border-border/30">
+          <div className="rounded-lg overflow-hidden shadow-sm border border-border/30 animate-fade-in" style={{ animationDelay: '0.4s', animationFillMode: 'both' }}>
             <img src={depois} alt="Depois do tratamento" className="w-full h-72 object-cover" />
             <p className="text-[10px] font-body text-muted-foreground/60 text-center py-1.5 uppercase tracking-widest">Depois</p>
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-3">
-          <div className="rounded-lg overflow-hidden shadow-sm border border-border/30">
-            <img src={antesDepois} alt="Antes e depois" className="w-full h-64 object-cover" />
-          </div>
-          <div className="rounded-lg overflow-hidden shadow-sm border border-border/30">
-            <img src={depoimento} alt="Depoimento de paciente" className="w-full h-64 object-cover" />
-          </div>
+        <div className="rounded-lg overflow-hidden shadow-sm border border-border/30 animate-fade-in" style={{ animationDelay: '0.6s', animationFillMode: 'both' }}>
+          <img src={depoimento} alt="Depoimento de paciente" className="w-full h-64 object-cover" />
         </div>
       </div>
 
