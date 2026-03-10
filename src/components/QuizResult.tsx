@@ -79,10 +79,10 @@ const QuizResult = ({ profile }: QuizResultProps) => {
 
         <div className="grid grid-cols-2 gap-3">
           <div className="rounded-lg overflow-hidden shadow-sm border border-border/30">
-            <img src={antesDepois} alt="Antes e depois" className="w-full h-40 object-cover" />
+            <img src={antesDepois} alt="Antes e depois" className="w-full h-64 object-cover" />
           </div>
           <div className="rounded-lg overflow-hidden shadow-sm border border-border/30">
-            <img src={depoimento} alt="Depoimento de paciente" className="w-full h-40 object-cover" />
+            <img src={depoimento} alt="Depoimento de paciente" className="w-full h-64 object-cover" />
           </div>
         </div>
       </div>
