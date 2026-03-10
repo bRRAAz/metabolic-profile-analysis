@@ -279,11 +279,12 @@ export function calculateResult(answers: Record<number, number>): ResultProfile 
   }
 
   const qualified: ResultProfile[] = [];
+  if (scores.nao_qualificada > 0) return "nao_qualificada";
   if (scores.adaptativo >= 4) qualified.push("adaptativo");
   if (scores.inflamatorio >= 4) qualified.push("inflamatorio");
   if (scores.desregulacao >= 4) qualified.push("desregulacao");
 
-  if (scores.nao_qualificada > 0) return "nao_qualificada";
+
 
   // Return the highest scoring pattern
   const max = Math.max(scores.adaptativo, scores.inflamatorio, scores.desregulacao);
