@@ -1,5 +1,9 @@
 import { ResultProfile, resultData } from "@/data/quizData";
 import logo from "@/assets/logo-bruna-vieira.png";
+import antesDepois from "@/assets/resultado-antes-depois.jpg";
+import depoimento from "@/assets/resultado-depoimento.jpg";
+import antes from "@/assets/resultado-antes.jpg";
+import depois from "@/assets/resultado-depois.jpg";
 
 interface QuizResultProps {
   profile: ResultProfile;
@@ -55,6 +59,33 @@ const QuizResult = ({ profile }: QuizResultProps) => {
           {data.afterBullets}
         </div>
       )}
+
+      {/* Social proof section */}
+      <div className="w-full mb-10">
+        <p className="text-xs font-body tracking-[0.25em] uppercase text-muted-foreground text-center mb-6">
+          Resultados reais de pacientes
+        </p>
+
+        <div className="grid grid-cols-2 gap-3 mb-6">
+          <div className="rounded-lg overflow-hidden shadow-sm border border-border/30">
+            <img src={antes} alt="Antes do tratamento" className="w-full h-48 object-cover" />
+            <p className="text-[10px] font-body text-muted-foreground/60 text-center py-1.5 uppercase tracking-widest">Antes</p>
+          </div>
+          <div className="rounded-lg overflow-hidden shadow-sm border border-border/30">
+            <img src={depois} alt="Depois do tratamento" className="w-full h-48 object-cover" />
+            <p className="text-[10px] font-body text-muted-foreground/60 text-center py-1.5 uppercase tracking-widest">Depois</p>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-2 gap-3">
+          <div className="rounded-lg overflow-hidden shadow-sm border border-border/30">
+            <img src={antesDepois} alt="Antes e depois" className="w-full h-40 object-cover" />
+          </div>
+          <div className="rounded-lg overflow-hidden shadow-sm border border-border/30">
+            <img src={depoimento} alt="Depoimento de paciente" className="w-full h-40 object-cover" />
+          </div>
+        </div>
+      </div>
 
       {profile !== "nao_qualificada" && (
         <p className="text-xs font-body text-muted-foreground/50 text-center mb-8">
