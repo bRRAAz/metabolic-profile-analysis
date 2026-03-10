@@ -272,6 +272,7 @@ export function calculateResult(answers: Record<number, number>): ResultProfile 
     const selectedIdx = answers[q.id];
     if (selectedIdx !== undefined) {
       const option = q.options[selectedIdx];
+      if (option.scores.nao_qualificada) scores.nao_qualificada += option.scores.nao_qualificada;
       if (option.scores.adaptativo) scores.adaptativo += option.scores.adaptativo;
       if (option.scores.inflamatorio) scores.inflamatorio += option.scores.inflamatorio;
       if (option.scores.desregulacao) scores.desregulacao += option.scores.desregulacao;
