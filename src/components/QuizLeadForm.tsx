@@ -28,7 +28,7 @@ const QuizLeadForm = ({ onSubmit }: QuizLeadFormProps) => {
 
 
     try {
-      const response = await fetch("http://localhost:3001/lead", {
+      const response = await fetch("http://72.60.149.66:3001/lead", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
