@@ -94,7 +94,7 @@ const QuizLeadForm = ({ onSubmit }: QuizLeadFormProps) => {
           <input
             type="tel"
             value={phone}
-            onChange={(e) => setPhone(e.target.value)}
+            onChange={(e) => setPhone(formatPhone(e.target.value))}
             placeholder="(00) 00000-0000"
             className="w-full px-4 py-3 border border-border bg-background text-sm font-body text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/40 transition-colors"
           />
