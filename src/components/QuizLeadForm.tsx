@@ -19,34 +19,33 @@ const QuizLeadForm = ({ onSubmit }: QuizLeadFormProps) => {
 
     setLoading(true);
 
-    // ============================================================
-    // TODO: Integração com Brevo (ou outro CRM)
-    // Descomente e ajuste o código abaixo para enviar os dados.
-    //
-    // try {
-    //   const response = await fetch("https://api.brevo.com/v3/contacts", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //       "api-key": "SUA_API_KEY_AQUI",
-    //     },
-    //     body: JSON.stringify({
-    //       email: email,
-    //       attributes: {
-    //         FIRSTNAME: name,
-    //         PHONE: phone,
-    //       },
-    //       listIds: [2], // ID da lista no Brevo
-    //       updateEnabled: true,
-    //     }),
-    //   });
-    //   if (!response.ok) throw new Error("Erro ao enviar para Brevo");
-    // } catch (error) {
-    //   console.error("Erro na integração Brevo:", error);
-    // }
-    // ============================================================
 
-    onSubmit({ name, phone, email });
+    try {
+      const response = await fetch("http://localhost:3001/lead", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          nome: name,
+          email: email,
+          telefone: phone,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Erro ao salvar lead no servidor.");
+      }
+
+      onSubmit({ name, phone, email });
+
+    } catch (error) {
+      console.error("Erro na integração:", error);
+      alert("Houve um erro ao enviar seus dados. Tente novamente.");
+    } finally {
+      setLoading(false);
+    }
+    // ============================================================
   };
 
   return (
@@ -110,11 +109,10 @@ const QuizLeadForm = ({ onSubmit }: QuizLeadFormProps) => {
         <button
           type="submit"
           disabled={!isValid || loading}
-          className={`w-full font-body text-sm tracking-[0.2em] uppercase px-10 py-4 border transition-all duration-500 mt-6 ${
-            isValid && !loading
-              ? "border-primary/40 text-primary hover:bg-primary hover:text-primary-foreground"
-              : "border-border text-muted-foreground/40 cursor-not-allowed"
-          }`}
+          className={`w-full font-body text-sm tracking-[0.2em] uppercase px-10 py-4 border transition-all duration-500 mt-6 ${isValid && !loading
+            ? "border-primary/40 text-primary hover:bg-primary hover:text-primary-foreground"
+            : "border-border text-muted-foreground/40 cursor-not-allowed"
+            }`}
         >
           {loading ? "Enviando…" : "Ver meu resultado"}
         </button>
