@@ -8,6 +8,13 @@ interface QuizLeadFormProps {
 const QuizLeadForm = ({ onSubmit }: QuizLeadFormProps) => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
+
+  const formatPhone = (value: string) => {
+    const digits = value.replace(/\D/g, "").slice(0, 11);
+    if (digits.length <= 2) return digits;
+    if (digits.length <= 7) return `(${digits.slice(0, 2)}) ${digits.slice(2)}`;
+    return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`;
+  };
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -87,7 +94,7 @@ const QuizLeadForm = ({ onSubmit }: QuizLeadFormProps) => {
           <input
             type="tel"
             value={phone}
-            onChange={(e) => setPhone(e.target.value)}
+            onChange={(e) => setPhone(formatPhone(e.target.value))}
             placeholder="(00) 00000-0000"
             className="w-full px-4 py-3 border border-border bg-background text-sm font-body text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/40 transition-colors"
           />
