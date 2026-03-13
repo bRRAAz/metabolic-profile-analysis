@@ -42,6 +42,11 @@ const QuizLeadForm = ({ answers, onSubmit }: QuizLeadFormProps) => {
           nome: name,
           email: email,
           telefone: phone,
+          renda_mensal: (() => {
+            const incomeQuestion = quizBlocks.flatMap(b => b.questions).find(q => q.id === INCOME_QUESTION_ID);
+            const selectedIdx = answers[INCOME_QUESTION_ID];
+            return incomeQuestion && selectedIdx !== undefined ? incomeQuestion.options[selectedIdx].text : null;
+          })(),
         }),
       });
 
