@@ -1,11 +1,16 @@
 import { useState } from "react";
 import logo from "@/assets/logo-bruna-vieira.png";
 
+import { quizBlocks } from "@/data/quizData";
+
 interface QuizLeadFormProps {
+  answers: Record<number, number>;
   onSubmit: (data: { name: string; phone: string; email: string }) => void;
 }
 
-const QuizLeadForm = ({ onSubmit }: QuizLeadFormProps) => {
+const INCOME_QUESTION_ID = 17;
+
+const QuizLeadForm = ({ answers, onSubmit }: QuizLeadFormProps) => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
 
