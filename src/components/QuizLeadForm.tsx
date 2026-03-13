@@ -1,11 +1,16 @@
 import { useState } from "react";
 import logo from "@/assets/logo-bruna-vieira.png";
 
+import { quizBlocks } from "@/data/quizData";
+
 interface QuizLeadFormProps {
+  answers: Record<number, number>;
   onSubmit: (data: { name: string; phone: string; email: string }) => void;
 }
 
-const QuizLeadForm = ({ onSubmit }: QuizLeadFormProps) => {
+const INCOME_QUESTION_ID = 17;
+
+const QuizLeadForm = ({ answers, onSubmit }: QuizLeadFormProps) => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
 
@@ -37,6 +42,11 @@ const QuizLeadForm = ({ onSubmit }: QuizLeadFormProps) => {
           nome: name,
           email: email,
           telefone: phone,
+          renda_mensal: (() => {
+            const incomeQuestion = quizBlocks.flatMap(b => b.questions).find(q => q.id === INCOME_QUESTION_ID);
+            const selectedIdx = answers[INCOME_QUESTION_ID];
+            return incomeQuestion && selectedIdx !== undefined ? incomeQuestion.options[selectedIdx].text : null;
+          })(),
         }),
       });
 

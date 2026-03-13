@@ -50,7 +50,7 @@ const Index = () => {
   }
 
   if (phase === "leadForm") {
-    return <QuizLeadForm onSubmit={(data) => { console.log("Lead data:", data); setPhase("result"); }} />;
+    return <QuizLeadForm answers={answers} onSubmit={(data) => { console.log("Lead data:", data); setPhase("result"); }} />;
   }
 
   if (phase === "result") {
