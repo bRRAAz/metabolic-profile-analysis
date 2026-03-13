@@ -299,7 +299,7 @@ export function calculateResult(answers: Record<number, number>): ResultProfile 
 export const resultData: Record<ResultProfile, { title: string; text: string; bullets: string[]; afterBullets?: string; cta: string; link: string }> = {
   adaptativo: {
     title: "Perfil compatível com a próxima etapa do protocolo exclusivo.",
-    text: "Com base na sua análise, seu padrão indica adaptação metabólica associada a histórico recorrente de restrição alimentar. Isso significa que seu metabolismo pode ter reduzido eficiência como mecanismo de defesa após múltiplas tentativas de emagrecimento. Nesses casos, estratégias genéricas tendem a gerar resultados temporários, mas não sustentáveis.\n\nVocê apresenta perfil compatível para avançar para a Consulta Estratégica de Reprogramação Metabólica. Nesta sessão individual, eu:",
+    text: "Com base na sua análise, seu padrão indica adaptação metabólica associada a histórico recorrente de restrição alimentar. Isso significa que seu metabolismo pode ter reduzido eficiência como mecanismo de defesa após múltiplas tentativas de emagrecimento. Nesses casos, estratégias genéricas tendem a gerar resultados temporários, mas não sustentáveis.\n\nVocê apresenta perfil compatível para avançar para a Consulta Estratégica de Reprogramação Metabólica. Nesta sessão individual sem custo, eu:",
     bullets: [
       "Analiso profundamente seu histórico metabólico",
       "Identifico o mecanismo de adaptação predominante",
@@ -311,7 +311,7 @@ export const resultData: Record<ResultProfile, { title: string; text: string; bu
   },
   inflamatorio: {
     title: "Perfil compatível com a próxima etapa do protocolo exclusivo.",
-    text: "Sua análise sugere desregulação metabólica associada a marcadores inflamatórios funcionais, como sono, intestino e retenção. Isso indica que o ambiente fisiológico atual pode estar desfavorável para resposta eficiente ao emagrecimento. Antes de intensificar restrições, é necessário reorganizar a base metabólica de forma estruturada.\n\nVocê apresenta perfil compatível para avançar para a Consulta Estratégica de Reprogramação Metabólica. Nesta sessão individual, eu:",
+    text: "Sua análise sugere desregulação metabólica associada a marcadores inflamatórios funcionais, como sono, intestino e retenção. Isso indica que o ambiente fisiológico atual pode estar desfavorável para resposta eficiente ao emagrecimento. Antes de intensificar restrições, é necessário reorganizar a base metabólica de forma estruturada.\n\nVocê apresenta perfil compatível para avançar para a Consulta Estratégica de Reprogramação Metabólica. Nesta sessão individual sem custo, eu:",
     bullets: [
       "Analiso profundamente seus marcadores metabólicos",
       "Identifico os fatores que estão sustentando a inflamação funcional",
@@ -323,7 +323,7 @@ export const resultData: Record<ResultProfile, { title: string; text: string; bu
   },
   desregulacao: {
     title: "Perfil compatível com a próxima etapa do protocolo exclusivo.",
-    text: "Sua análise indica desregulação metabólica associada a resposta hormonal e comportamental. Oscilações de energia, ansiedade alimentar e episódios de descontrole sugerem que o bloqueio vai além de estratégia alimentar. Nesses casos, a intervenção precisa integrar ajuste metabólico e reorganização do padrão alimentar.\n\nVocê apresenta perfil compatível para avançar para a Consulta Estratégica de Reprogramação Metabólica. Nesta sessão individual, eu:",
+    text: "Sua análise indica desregulação metabólica associada a resposta hormonal e comportamental. Oscilações de energia, ansiedade alimentar e episódios de descontrole sugerem que o bloqueio vai além de estratégia alimentar. Nesses casos, a intervenção precisa integrar ajuste metabólico e reorganização do padrão alimentar.\n\nVocê apresenta perfil compatível para avançar para a Consulta Estratégica de Reprogramação Metabólica. Nesta sessão individual sem custo, eu:",
     bullets: [
       "Analiso profundamente seu padrão hormonal e comportamental",
       "Identifico o bloqueio metabólico predominante",
