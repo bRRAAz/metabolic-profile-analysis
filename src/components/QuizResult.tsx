@@ -2,8 +2,8 @@ import { ResultProfile, resultData } from "@/data/quizData";
 import logo from "@/assets/logo-bruna-vieira.png";
 import antes from "@/assets/resultado-antes.jpg";
 import depois from "@/assets/resultado-depois.jpg";
-import tabelaAntes from "@/assets/tabela-antes-depois.jpg";
-import tabelaAnalise from "@/assets/tabela-analise-personalizada.jpg";
+import TabelaAntesDepois from "@/components/TabelaAntesDepois";
+import TabelaPontosCegos from "@/components/TabelaPontosCegos";
 
 interface QuizResultProps {
   profile: ResultProfile;
@@ -21,11 +21,7 @@ const DiagnosticIntro = () => (
     <h3 className="text-lg md:text-xl font-display text-foreground text-center leading-snug mb-6">
       Seu diagnóstico personalizado: este é exatamente o ponto cego que impede muitas mulheres de emagrecer…
     </h3>
-    <img
-      src={tabelaAntes}
-      alt="Comparação Antes vs Depois - metabolismo desregulado vs reprogramado"
-      className="w-full rounded-lg shadow-sm border border-border/30"
-    />
+    <TabelaAntesDepois />
     <p className="text-sm font-body text-muted-foreground leading-relaxed text-center mt-4">
       Muitas mulheres passam anos tentando resolver isso com dietas ou estratégias isoladas, sem perceber que o metabolismo precisa primeiro <span className="font-semibold text-foreground">reorganizar a base metabólica</span>.
     </p>
@@ -40,11 +36,7 @@ const AnalisePersonalizada = () => (
     <p className="text-sm font-body text-muted-foreground leading-relaxed text-center mb-6">
       Essa análise foi feita cruzando suas respostas com padrões observados em centenas de mulheres acompanhadas no processo de <span className="font-semibold text-foreground">Reprogramação Metabólica</span>. Por isso, o resultado mostra exatamente o que costuma acontecer quando a base metabólica não está organizada — e o que muda quando ela é reorganizada corretamente.
     </p>
-    <img
-      src={tabelaAnalise}
-      alt="Análise personalizada - pontos cegos vs metabolismo reorganizado"
-      className="w-full rounded-lg shadow-sm border border-border/30"
-    />
+    <TabelaPontosCegos />
   </div>
 );
 
