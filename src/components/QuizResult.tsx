@@ -36,11 +36,7 @@ const AnalisePersonalizada = () => (
     <p className="text-sm font-body text-muted-foreground leading-relaxed text-center mb-6">
       Essa análise foi feita cruzando suas respostas com padrões observados em centenas de mulheres acompanhadas no processo de <span className="font-semibold text-foreground">Reprogramação Metabólica</span>. Por isso, o resultado mostra exatamente o que costuma acontecer quando a base metabólica não está organizada — e o que muda quando ela é reorganizada corretamente.
     </p>
-    <img
-      src={tabelaAnalise}
-      alt="Análise personalizada - pontos cegos vs metabolismo reorganizado"
-      className="w-full rounded-lg shadow-sm border border-border/30"
-    />
+    <TabelaPontosCegos />
   </div>
 );
 
