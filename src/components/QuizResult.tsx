@@ -21,11 +21,7 @@ const DiagnosticIntro = () => (
     <h3 className="text-lg md:text-xl font-display text-foreground text-center leading-snug mb-6">
       Seu diagnóstico personalizado: este é exatamente o ponto cego que impede muitas mulheres de emagrecer…
     </h3>
-    <img
-      src={tabelaAntes}
-      alt="Comparação Antes vs Depois - metabolismo desregulado vs reprogramado"
-      className="w-full rounded-lg shadow-sm border border-border/30"
-    />
+    <TabelaAntesDepois />
     <p className="text-sm font-body text-muted-foreground leading-relaxed text-center mt-4">
       Muitas mulheres passam anos tentando resolver isso com dietas ou estratégias isoladas, sem perceber que o metabolismo precisa primeiro <span className="font-semibold text-foreground">reorganizar a base metabólica</span>.
     </p>
