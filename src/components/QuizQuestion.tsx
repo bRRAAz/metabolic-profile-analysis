@@ -49,9 +49,7 @@ const QuizQuestion = ({
           <p className="text-xs font-body tracking-[0.3em] uppercase text-muted-foreground">
             {block.subtitle}
           </p>
-          <p className="text-xs font-body text-muted-foreground/60 whitespace-nowrap ml-4">
-            {currentQuestionGlobal} / {totalQuestions}
-          </p>
+
         </div>
         <div className="w-full h-px bg-border">
           <div
@@ -79,11 +77,10 @@ const QuizQuestion = ({
           <button
             key={idx}
             onClick={() => handleOptionClick(idx)}
-            className={`text-left px-4 py-3 md:px-5 md:py-4 border text-sm font-body transition-all duration-300 ${
-              selectedAnswer === idx
+            className={`text-left px-4 py-3 md:px-5 md:py-4 border text-sm font-body transition-all duration-300 ${selectedAnswer === idx
                 ? "border-primary/60 bg-primary/5 text-foreground"
                 : "border-border hover:border-primary/30 text-muted-foreground hover:text-foreground"
-            }`}
+              }`}
           >
             {option.text}
           </button>
@@ -107,11 +104,10 @@ const QuizQuestion = ({
           <button
             onClick={onNext}
             disabled={selectedAnswer === undefined}
-            className={`text-xs font-body tracking-[0.2em] uppercase px-8 py-3 border transition-all duration-500 ${
-              selectedAnswer !== undefined
+            className={`text-xs font-body tracking-[0.2em] uppercase px-8 py-3 border transition-all duration-500 ${selectedAnswer !== undefined
                 ? "border-primary/40 text-primary hover:bg-primary hover:text-primary-foreground"
                 : "border-border text-muted-foreground/40 cursor-not-allowed"
-            }`}
+              }`}
           >
             {currentQuestionGlobal === totalQuestions ? "Ver Resultado" : "Próxima →"}
           </button>

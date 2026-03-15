@@ -67,21 +67,6 @@ const TabelaPontosCegos = () => (
       </div>
     </div>
 
-    {/* Bottom summary */}
-    <div className="grid grid-cols-2 border-t border-border/30">
-      <div className="bg-[hsl(0_15%_93%)] px-4 py-3">
-        <p className="text-xs font-body text-foreground font-semibold leading-relaxed">
-          O ponto mais importante é entender que isso não significa falta de esforço.
-        </p>
-      </div>
-      <div className="bg-[hsl(120_15%_93%)] px-4 py-3">
-        <p className="text-xs font-body text-foreground leading-relaxed mb-1">Quando o metabolismo é reorganizado</p>
-        <div className="flex items-start gap-2">
-          <span className="text-[hsl(140_50%_40%)] mt-0.5 text-xs">✔</span>
-          <p className="text-xs font-body text-foreground/80 leading-relaxed">O corpo volta a responder ao emagrecimento</p>
-        </div>
-      </div>
-    </div>
   </div>
 );
 

@@ -2,6 +2,8 @@ import { ResultProfile, resultData } from "@/data/quizData";
 import logo from "@/assets/logo-bruna-vieira.png";
 import antes from "@/assets/resultado-antes.jpg";
 import depois from "@/assets/resultado-depois.jpg";
+import antesDepois from "@/assets/resultado-antes-depois.jpg";
+import depoisResultado from "@/assets/resultado-emagrecer.jpeg";
 import TabelaAntesDepois from "@/components/TabelaAntesDepois";
 import TabelaPontosCegos from "@/components/TabelaPontosCegos";
 
@@ -43,7 +45,7 @@ const AnalisePersonalizada = () => (
 const MetodoRepragrameSection = () => (
   <div className="w-full mb-10 animate-fade-in">
     <div className="w-12 h-px bg-primary/30 mx-auto mb-6" />
-    
+
     <h3 className="text-lg md:text-xl font-display text-foreground text-center leading-snug mb-4">
       Método Reprograme
     </h3>
@@ -172,6 +174,17 @@ const QuizResult = ({ profile }: QuizResultProps) => {
             <p className="text-[10px] font-body text-muted-foreground/60 text-center py-1.5 uppercase tracking-widest">Depois</p>
           </div>
         </div>
+
+        <div className="grid grid-cols-2 gap-3 mb-6">
+          <div className="rounded-lg overflow-hidden shadow-sm border border-border/30 animate-fade-in" style={{ animationDelay: '0.2s', animationFillMode: 'both' }}>
+            <img src={antesDepois} alt="Antes do tratamento" className="w-full h-72 object-cover" />
+
+          </div>
+          <div className="rounded-lg overflow-hidden shadow-sm border border-border/30 animate-fade-in" style={{ animationDelay: '0.4s', animationFillMode: 'both' }}>
+            <img src={depoisResultado} alt="Depois do tratamento" className="w-full h-72 object-cover" />
+
+          </div>
+        </div>
       </div>
 
       {/* Análise Personalizada - common to all */}
@@ -181,7 +194,7 @@ const QuizResult = ({ profile }: QuizResultProps) => {
       {isQualified && (
         <div className="mx-auto mb-10 p-6 border border-primary/20 bg-primary/[0.02] rounded-lg shadow-sm animate-fade-in">
           <div className="flex flex-col items-center gap-3">
-            <span className="px-3 py-1 bg-primary/10 text-primary text-[10px] font-bold tracking-[0.2em] uppercase rounded-full">
+            <span className="px-6 py-2 bg-primary/10 text-primary text-xs md:text-sm font-bold tracking-[0.25em] uppercase rounded-full animate-pulse-cta border border-primary/20">
               Parabéns! Seu perfil foi selecionado
             </span>
             <p className="text-sm font-body text-foreground/90 text-center leading-relaxed">
@@ -206,7 +219,21 @@ const QuizResult = ({ profile }: QuizResultProps) => {
         href={data.link}
         target="_blank"
         rel="noopener noreferrer"
-        className="font-body text-sm tracking-[0.2em] uppercase px-10 py-4 border border-primary/40 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-500 text-center"
+        className="
+    /* Estrutura */
+    inline-block px-10 py-4 text-center
+    font-body text-sm font-bold tracking-[0.2em] uppercase 
+    
+    /* Cores de Alto Contraste (Ex: Verde) */
+    bg-emerald-600 text-white
+    shadow-[0_10px_20px_rgba(5,150,105,0.4)]
+    
+    /* Animação e Interação */
+    animate-pulse-cta
+    hover:bg-emerald-500 hover:shadow-lg
+    transition-all duration-500
+    rounded-sm
+  "
       >
         {data.cta}
       </a>
