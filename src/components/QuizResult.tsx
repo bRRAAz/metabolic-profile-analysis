@@ -2,8 +2,8 @@ import { ResultProfile, resultData } from "@/data/quizData";
 import logo from "@/assets/logo-bruna-vieira.png";
 import antes from "@/assets/resultado-antes.jpg";
 import depois from "@/assets/resultado-depois.jpg";
-import tabelaAntes from "@/assets/tabela-antes-depois.jpg";
-import tabelaAnalise from "@/assets/tabela-analise-personalizada.jpg";
+import TabelaAntesDepois from "@/components/TabelaAntesDepois";
+import TabelaPontosCegos from "@/components/TabelaPontosCegos";
 
 interface QuizResultProps {
   profile: ResultProfile;
