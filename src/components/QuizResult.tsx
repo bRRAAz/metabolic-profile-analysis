@@ -78,9 +78,18 @@ const QuizResult = ({ profile }: QuizResultProps) => {
       )}
 
       {profile !== "nao_qualificada" && (
-        <p className="text-xs font-body text-muted-foreground/50 text-center mb-8">
-          Apenas alguns perfis são aprovados para essa etapa.
-        </p>
+        <div className="mx-auto mb-10 p-6 border border-primary/20 bg-primary/[0.02] rounded-lg shadow-sm">
+          <div className="flex flex-col items-center gap-3">
+            <span className="px-3 py-1 bg-primary/10 text-primary text-[10px] font-bold tracking-[0.2em] uppercase rounded-full">
+              Perfil Selecionado
+            </span>
+            <p className="text-sm font-body text-foreground/90 text-center leading-relaxed">
+              Apenas alguns perfis são aprovados para essa etapa, pois acompanho um
+              <span className="font-semibold text-primary"> número reduzido de pacientes por ciclo</span>.
+              Como o seu perfil se alinha à minha metodologia, você poderá selecionar um horário abaixo.
+            </p>
+          </div>
+        </div>
       )}
 
       <a

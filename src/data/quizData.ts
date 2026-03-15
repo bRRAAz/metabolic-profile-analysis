@@ -57,6 +57,16 @@ export const quizBlocks: QuizBlock[] = [
           { text: "Quase sempre", scores: { adaptativo: 4 } },
         ],
       },
+      {
+        id: 4,
+        text: "Você já tentou acompanhamento nutricional antes?",
+        options: [
+          { text: "Sim, mas não tive resultado duradouro", scores: {} },
+          { text: "Sim, tive algum resultado", scores: {} },
+          { text: "Nunca fiz acompanhamento", scores: {} },
+          { text: "Prefiro tentar sozinha", scores: {} },
+        ],
+      },
     ],
   },
   {
@@ -65,7 +75,7 @@ export const quizBlocks: QuizBlock[] = [
     subtitle: "Marcadores Metabólicos Funcionais",
     questions: [
       {
-        id: 4,
+        id: 5,
         text: "Como está a qualidade do seu sono atualmente?",
         options: [
           { text: "Durmo bem e acordo descansada", scores: { desregulacao: 1 } },
@@ -75,7 +85,7 @@ export const quizBlocks: QuizBlock[] = [
         ],
       },
       {
-        id: 5,
+        id: 6,
         text: "Como funciona seu intestino?",
         options: [
           { text: "Regular, diariamente", scores: { inflamatorio: 1 } },
@@ -85,7 +95,7 @@ export const quizBlocks: QuizBlock[] = [
         ],
       },
       {
-        id: 6,
+        id: 7,
         text: "Consumo médio de água por dia:",
         options: [
           { text: "Acima de 2 litros", scores: { inflamatorio: 1 } },
@@ -95,7 +105,7 @@ export const quizBlocks: QuizBlock[] = [
         ],
       },
       {
-        id: 7,
+        id: 8,
         text: "Frequência de atividade física estruturada:",
         options: [
           { text: "4 vezes ou mais por semana", scores: { inflamatorio: 1 } },
@@ -105,7 +115,7 @@ export const quizBlocks: QuizBlock[] = [
         ],
       },
       {
-        id: 8,
+        id: 9,
         text: "Mesmo praticando atividade física, você percebe dificuldade em reduzir gordura corporal?",
         options: [
           { text: "Nunca", scores: { adaptativo: 1 } },
@@ -122,7 +132,7 @@ export const quizBlocks: QuizBlock[] = [
     subtitle: "Sintomas Metabólicos",
     questions: [
       {
-        id: 9,
+        id: 10,
         text: "Com que frequência você apresenta inchaço ou retenção de líquidos?",
         options: [
           { text: "Nunca", scores: { inflamatorio: 1 } },
@@ -132,7 +142,7 @@ export const quizBlocks: QuizBlock[] = [
         ],
       },
       {
-        id: 10,
+        id: 11,
         text: "Como você classificaria sua energia ao longo do dia?",
         options: [
           { text: "Estável", scores: { desregulacao: 1 } },
@@ -142,7 +152,7 @@ export const quizBlocks: QuizBlock[] = [
         ],
       },
       {
-        id: 11,
+        id: 12,
         text: "Episódios de compulsão ou perda de controle alimentar:",
         options: [
           { text: "Nunca", scores: { desregulacao: 1 } },
@@ -152,7 +162,7 @@ export const quizBlocks: QuizBlock[] = [
         ],
       },
       {
-        id: 12,
+        id: 13,
         text: "Ansiedade relacionada à alimentação:",
         options: [
           { text: "Ausente", scores: { desregulacao: 1 } },
@@ -169,7 +179,7 @@ export const quizBlocks: QuizBlock[] = [
     subtitle: "Impacto e Consciência",
     questions: [
       {
-        id: 13,
+        id: 14,
         text: "O seu peso impacta sua autoestima ou autoconfiança?",
         options: [
           { text: "Não impacta", scores: { adaptativo: 1 } },
@@ -179,7 +189,7 @@ export const quizBlocks: QuizBlock[] = [
         ],
       },
       {
-        id: 14,
+        id: 15,
         text: "Se nada mudar nos próximos 6 meses, como você acredita que estará emocionalmente?",
         options: [
           { text: "Estável", scores: { desregulacao: 1 } },
@@ -196,7 +206,7 @@ export const quizBlocks: QuizBlock[] = [
     subtitle: "Prontidão e Perfil",
     questions: [
       {
-        id: 15,
+        id: 16,
         text: "Resolver essa questão é uma prioridade real neste momento?",
         options: [
           { text: "Sim, é prioridade", scores: {} },
@@ -206,7 +216,7 @@ export const quizBlocks: QuizBlock[] = [
         ],
       },
       {
-        id: 16,
+        id: 17,
         text: "Você costuma investir em soluções que resolvem problemas de forma estruturada?",
         options: [
           { text: "Sim", scores: {} },
@@ -216,7 +226,7 @@ export const quizBlocks: QuizBlock[] = [
         ],
       },
       {
-        id: 17,
+        id: 18,
         text: "Sua renda mensal aproximada:",
         options: [
           { text: "Até 6 mil", scores: { nao_qualificada: 1 } },
@@ -233,7 +243,7 @@ export const quizBlocks: QuizBlock[] = [
     subtitle: "Perguntas Estratégicas",
     questions: [
       {
-        id: 18,
+        id: 19,
         text: "Se sua análise metabólica mostrar um bloqueio que pode ser corrigido, qual seria seu próximo passo?",
         options: [
           { text: "Quero entender como resolver definitivamente", scores: {} },
@@ -242,7 +252,7 @@ export const quizBlocks: QuizBlock[] = [
         ],
       },
       {
-        id: 19,
+        id: 20,
         text: "Se você descobrir exatamente o que está bloqueando seu metabolismo e receber um plano personalizado para resolver isso, qual dessas opções representa melhor sua situação hoje?",
         options: [
           { text: "Estou pronta para investir em uma solução que realmente resolva", scores: {} },

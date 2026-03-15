@@ -8,7 +8,7 @@ interface QuizLeadFormProps {
   onSubmit: (data: { name: string; phone: string; email: string }) => void;
 }
 
-const INCOME_QUESTION_ID = 17;
+const INCOME_QUESTION_ID = 18;
 
 const QuizLeadForm = ({ answers, onSubmit }: QuizLeadFormProps) => {
   const [name, setName] = useState("");
@@ -25,13 +25,31 @@ const QuizLeadForm = ({ answers, onSubmit }: QuizLeadFormProps) => {
 
   const isValid = name.trim() && phone.trim() && email.trim();
 
+
+  const handleSubmitDev = async (e: React.FormEvent) => {
+    onSubmit({ name, phone, email });
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!isValid) return;
 
     setLoading(true);
 
+    // 1. Calculamos o valor da renda mensal antes
+    const incomeQuestion = quizBlocks.flatMap(b => b.questions).find(q => q.id === INCOME_QUESTION_ID);
+    const selectedIdx = answers[INCOME_QUESTION_ID];
+    const rendaMensalEncontrada = incomeQuestion && selectedIdx !== undefined
+      ? incomeQuestion.options[selectedIdx].text
+      : "Não respondido/encontrado";
 
+    // 2. Agora damos o console.log para conferir
+    console.log("Dados do Lead:", {
+      nome: name,
+      email: email,
+      telefone: phone,
+      renda: rendaMensalEncontrada
+    });
     try {
       const response = await fetch("https://apiquiz.brunavieiranutri.com.br/lead", {
         method: "POST",
@@ -42,11 +60,7 @@ const QuizLeadForm = ({ answers, onSubmit }: QuizLeadFormProps) => {
           nome: name,
           email: email,
           telefone: phone,
-          renda_mensal: (() => {
-            const incomeQuestion = quizBlocks.flatMap(b => b.questions).find(q => q.id === INCOME_QUESTION_ID);
-            const selectedIdx = answers[INCOME_QUESTION_ID];
-            return incomeQuestion && selectedIdx !== undefined ? incomeQuestion.options[selectedIdx].text : null;
-          })(),
+          renda_mensal: rendaMensalEncontrada,
         }),
       });
 
