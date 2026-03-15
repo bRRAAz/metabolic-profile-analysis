@@ -306,10 +306,15 @@ export function calculateResult(answers: Record<number, number>): ResultProfile 
   return "desregulacao";
 }
 
-export const resultData: Record<ResultProfile, { title: string; text: string; bullets: string[]; afterBullets?: string; cta: string; link: string }> = {
+export const resultData: Record<ResultProfile, { title: string; textPoints: string[]; bullets: string[]; afterBullets?: string[]; cta: string; link: string }> = {
   adaptativo: {
     title: "Perfil compatível com a próxima etapa do protocolo exclusivo.",
-    text: "Com base na sua análise, seu padrão indica adaptação metabólica associada a histórico recorrente de restrição alimentar.\n\nIsso significa que seu metabolismo pode ter reduzido eficiência como mecanismo de defesa após múltiplas tentativas de emagrecimento.\n\nNesses casos, estratégias genéricas tendem a gerar resultados temporários, mas não sustentáveis.\n\nVocê apresenta perfil compatível para avançar para a Consulta Estratégica de Reprogramação Metabólica. Nesta sessão individual sem custo, eu:",
+    textPoints: [
+      "Com base na sua análise, seu padrão indica adaptação metabólica associada a histórico recorrente de restrição alimentar.",
+      "Isso significa que seu metabolismo pode ter reduzido eficiência como mecanismo de defesa após múltiplas tentativas de emagrecimento.",
+      "Nesses casos, estratégias genéricas tendem a gerar resultados temporários, mas não sustentáveis.",
+      "Você apresenta perfil compatível para avançar para a Consulta Estratégica de Reprogramação Metabólica. Nesta sessão individual sem custo, eu:",
+    ],
     bullets: [
       "Analiso profundamente seu histórico metabólico",
       "Identifico o mecanismo de adaptação predominante",
@@ -321,7 +326,12 @@ export const resultData: Record<ResultProfile, { title: string; text: string; bu
   },
   inflamatorio: {
     title: "Perfil compatível com a próxima etapa do protocolo exclusivo.",
-    text: "Sua análise sugere desregulação metabólica associada a marcadores inflamatórios funcionais, como sono, intestino e retenção.\n\nIsso indica que o ambiente fisiológico atual pode estar desfavorável para resposta eficiente ao emagrecimento.\n\nAntes de intensificar restrições, é necessário reorganizar a base metabólica de forma estruturada.\n\nVocê apresenta perfil compatível para avançar para a Consulta Estratégica de Reprogramação Metabólica. Nesta sessão individual sem custo, eu:",
+    textPoints: [
+      "Sua análise sugere desregulação metabólica associada a marcadores inflamatórios funcionais, como sono, intestino e retenção.",
+      "Isso indica que o ambiente fisiológico atual pode estar desfavorável para resposta eficiente ao emagrecimento.",
+      "Antes de intensificar restrições, é necessário reorganizar a base metabólica de forma estruturada.",
+      "Você apresenta perfil compatível para avançar para a Consulta Estratégica de Reprogramação Metabólica. Nesta sessão individual sem custo, eu:",
+    ],
     bullets: [
       "Analiso profundamente seus marcadores metabólicos",
       "Identifico os fatores que estão sustentando a inflamação funcional",
@@ -333,7 +343,12 @@ export const resultData: Record<ResultProfile, { title: string; text: string; bu
   },
   desregulacao: {
     title: "Perfil compatível com a próxima etapa do protocolo exclusivo.",
-    text: "Sua análise indica desregulação metabólica associada a resposta hormonal e comportamental.\n\nOscilações de energia, ansiedade alimentar e episódios de descontrole sugerem que o bloqueio vai além de estratégia alimentar.\n\nNesses casos, a intervenção precisa integrar ajuste metabólico e reorganização do padrão alimentar.\n\nVocê apresenta perfil compatível para avançar para a Consulta Estratégica de Reprogramação Metabólica. Nesta sessão individual sem custo, eu:",
+    textPoints: [
+      "Sua análise indica desregulação metabólica associada a resposta hormonal e comportamental.",
+      "Oscilações de energia, ansiedade alimentar e episódios de descontrole sugerem que o bloqueio vai além de estratégia alimentar.",
+      "Nesses casos, a intervenção precisa integrar ajuste metabólico e reorganização do padrão alimentar.",
+      "Você apresenta perfil compatível para avançar para a Consulta Estratégica de Reprogramação Metabólica. Nesta sessão individual sem custo, eu:",
+    ],
     bullets: [
       "Analiso profundamente seu padrão hormonal e comportamental",
       "Identifico o bloqueio metabólico predominante",
@@ -345,14 +360,21 @@ export const resultData: Record<ResultProfile, { title: string; text: string; bu
   },
   nao_qualificada: {
     title: "Seu resultado indica sinais de desorganização na base do metabolismo.",
-    text: "Com base nas suas respostas, seu padrão sugere que seu metabolismo pode estar passando por um processo de desregulação metabólica funcional.\n\nIsso é comum em mulheres que já passaram por ciclos de dietas, tentativas repetidas de emagrecimento ou oscilações na alimentação.\n\nCom o tempo, o corpo pode começar a apresentar sinais como:",
+    textPoints: [
+      "Com base nas suas respostas, seu padrão sugere que seu metabolismo pode estar passando por um processo de desregulação metabólica funcional.",
+      "Isso é comum em mulheres que já passaram por ciclos de dietas, tentativas repetidas de emagrecimento ou oscilações na alimentação.",
+      "Com o tempo, o corpo pode começar a apresentar sinais como:",
+    ],
     bullets: [
       "Dificuldade para emagrecer",
       "Sensação de que o metabolismo não responde",
       "Inchaço ou energia instável",
       "Episódios de descontrole alimentar",
     ],
-    afterBullets: "O ponto mais importante é entender que isso não significa falta de esforço.\n\nMuitas vezes o metabolismo apenas precisa que a base seja reorganizada da forma correta.",
+    afterBullets: [
+      "O ponto mais importante é entender que isso não significa falta de esforço.",
+      "Muitas vezes o metabolismo apenas precisa que a base seja reorganizada da forma correta.",
+    ],
     cta: "Quero receber agora minha reprogramação metabólica",
     link: "https://pay.hub.la/lSMNtd205dgseLuAkY45",
   },
