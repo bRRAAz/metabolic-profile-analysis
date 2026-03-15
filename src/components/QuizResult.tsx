@@ -127,8 +127,13 @@ const QuizResult = ({ profile }: QuizResultProps) => {
         {data.title}
       </h2>
 
-      <div className="text-sm font-body text-muted-foreground leading-relaxed text-center mb-8 whitespace-pre-line">
-        {data.text}
+      <div className="w-full mb-8 space-y-3">
+        {data.textPoints.map((point, idx) => (
+          <div key={idx} className="flex items-start gap-3">
+            <span className="text-primary/40 mt-1 text-[10px] shrink-0">●</span>
+            <p className="text-sm font-body text-muted-foreground leading-relaxed">{point}</p>
+          </div>
+        ))}
       </div>
 
       <div className="w-full border-t border-border/50 pt-6 mb-6">
@@ -141,8 +146,13 @@ const QuizResult = ({ profile }: QuizResultProps) => {
       </div>
 
       {data.afterBullets && (
-        <div className="text-sm font-body text-muted-foreground leading-relaxed text-center mb-10 whitespace-pre-line">
-          {data.afterBullets}
+        <div className="w-full mb-10 space-y-3">
+          {data.afterBullets.map((point, idx) => (
+            <div key={idx} className="flex items-start gap-3">
+              <span className="text-primary/40 mt-1 text-[10px] shrink-0">●</span>
+              <p className="text-sm font-body text-muted-foreground leading-relaxed">{point}</p>
+            </div>
+          ))}
         </div>
       )}
 
