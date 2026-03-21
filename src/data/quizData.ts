@@ -289,93 +289,150 @@ export function calculateResult(answers: Record<number, number>): ResultProfile 
     }
   }
 
-  const qualified: ResultProfile[] = [];
   if (scores.nao_qualificada > 0) return "nao_qualificada";
 
   const max = Math.max(scores.adaptativo, scores.inflamatorio, scores.desregulacao);
 
-  if (scores.adaptativo === max) {
-    qualified.push("adaptativo");
-    return "adaptativo";
-  }
-  if (scores.inflamatorio === max) {
-    qualified.push("inflamatorio");
-    return "inflamatorio";
-  }
-  qualified.push("desregulacao");
+  if (scores.adaptativo === max) return "adaptativo";
+  if (scores.inflamatorio === max) return "inflamatorio";
   return "desregulacao";
 }
 
-export const resultData: Record<ResultProfile, { title: string; textPoints: string[]; bullets: string[]; afterBullets?: string[]; cta: string; link: string }> = {
+interface FactorData {
+  title: string;
+  description: string;
+}
+
+export interface ResultData {
+  title: string;
+  profileLabel: string;
+  profileSubtitle: string;
+  textPoints: string[];
+  factors: FactorData[];
+  sessionPoints: string[];
+  cta: string;
+  link: string;
+}
+
+export const resultData: Record<ResultProfile, ResultData> = {
   adaptativo: {
-    title: "Perfil compatível com a próxima etapa do protocolo exclusivo.",
+    title: "Encontramos o que está travando o seu emagrecimento.",
+    profileLabel: "Padrão Adaptativo Restritivo",
+    profileSubtitle: "Metabolismo em modo de defesa",
     textPoints: [
-      "Com base na sua análise, seu padrão indica adaptação metabólica associada a histórico recorrente de restrição alimentar.",
-      "Isso significa que seu metabolismo pode ter reduzido eficiência como mecanismo de defesa após múltiplas tentativas de emagrecimento.",
-      "Nesses casos, estratégias genéricas tendem a gerar resultados temporários, mas não sustentáveis.",
-      "Você apresenta perfil compatível para avançar para a Consulta Estratégica de Reprogramação Metabólica. Nesta sessão individual sem custo, eu:",
+      "Com base na sua análise, seu padrão indica que o metabolismo reduziu sua eficiência como mecanismo de proteção — após múltiplos ciclos de dieta.",
+      "Nesse cenário, estratégias genéricas geram resultados temporários. O corpo aprende a resistir.",
     ],
-    bullets: [
-      "Analiso profundamente seu histórico metabólico",
+    factors: [
+      {
+        title: "Base metabólica desorganizada",
+        description: "Histórico de dietas repetidas pode fazer o metabolismo reduzir sua eficiência como mecanismo de sobrevivência.",
+      },
+      {
+        title: "Instabilidade de energia e fome",
+        description: "Quando sono, intestino e alimentação não estão alinhados, o corpo entra em ciclo de instabilidade — aumentando fome e dificultando o controle alimentar.",
+      },
+      {
+        title: "Inflamação metabólica silenciosa",
+        description: "Processos inflamatórios silenciosos podem aumentar inchaço, retenção e criar resistência ao emagrecimento — mesmo em quem come bem e se exercita.",
+      },
+    ],
+    sessionPoints: [
+      "Analiso profundamente seu histórico metabólico completo",
       "Identifico o mecanismo de adaptação predominante",
       "Estruturo uma estratégia progressiva personalizada",
-      "Defino o plano adequado para restaurar resposta metabólica",
+      "Defino os próximos passos com clareza",
     ],
-    cta: "Quero entender meu plano de reprogramação metabólica",
+    cta: "Quero avançar para a Consulta Estratégica",
     link: "https://calendly.com/mentoriaidealize/sessao-estrategica-idealize",
   },
   inflamatorio: {
-    title: "Perfil compatível com a próxima etapa do protocolo exclusivo.",
+    title: "Encontramos o que está travando o seu emagrecimento.",
+    profileLabel: "Padrão Inflamatório Funcional",
+    profileSubtitle: "Ambiente fisiológico desfavorável ao emagrecimento",
     textPoints: [
       "Sua análise sugere desregulação metabólica associada a marcadores inflamatórios funcionais, como sono, intestino e retenção.",
       "Isso indica que o ambiente fisiológico atual pode estar desfavorável para resposta eficiente ao emagrecimento.",
       "Antes de intensificar restrições, é necessário reorganizar a base metabólica de forma estruturada.",
-      "Você apresenta perfil compatível para avançar para a Consulta Estratégica de Reprogramação Metabólica. Nesta sessão individual sem custo, eu:",
     ],
-    bullets: [
+    factors: [
+      {
+        title: "Base metabólica desorganizada",
+        description: "Histórico de dietas e tentativas repetidas de emagrecimento podem fazer o metabolismo reduzir sua eficiência.",
+      },
+      {
+        title: "Oscilações de energia e fome",
+        description: "Quando sono, intestino e alimentação não estão alinhados, o corpo entra em um ciclo de instabilidade metabólica.",
+      },
+      {
+        title: "Inflamação metabólica",
+        description: "Processos inflamatórios silenciosos podem aumentar inchaço, retenção e dificuldade de perda de peso.",
+      },
+    ],
+    sessionPoints: [
       "Analiso profundamente seus marcadores metabólicos",
       "Identifico os fatores que estão sustentando a inflamação funcional",
       "Estruturo um protocolo individualizado de reorganização",
       "Defino o plano estratégico adequado ao seu metabolismo",
     ],
-    cta: "Quero entender meu plano de reprogramação metabólica",
+    cta: "Quero avançar para a Consulta Estratégica",
     link: "https://calendly.com/mentoriaidealize/sessao-estrategica-idealize",
   },
   desregulacao: {
-    title: "Perfil compatível com a próxima etapa do protocolo exclusivo.",
+    title: "Encontramos o que está travando o seu emagrecimento.",
+    profileLabel: "Padrão de Desregulação Hormonal / Comportamental",
+    profileSubtitle: "Bloqueio que vai além da alimentação",
     textPoints: [
-      "Sua análise indica desregulação metabólica associada a resposta hormonal e comportamental.",
-      "Oscilações de energia, ansiedade alimentar e episódios de descontrole sugerem que o bloqueio vai além de estratégia alimentar.",
-      "Nesses casos, a intervenção precisa integrar ajuste metabólico e reorganização do padrão alimentar.",
-      "Você apresenta perfil compatível para avançar para a Consulta Estratégica de Reprogramação Metabólica. Nesta sessão individual sem custo, eu:",
+      "Sua análise indica que as oscilações de energia, a ansiedade em torno da comida e os episódios de descontrole não são falhas de vontade.",
+      "São sinais de que o metabolismo e o comportamento alimentar estão desregulados ao mesmo tempo — e nenhuma estratégia isolada resolve os dois.",
     ],
-    bullets: [
+    factors: [
+      {
+        title: "Desregulação hormonal e de energia",
+        description: "Oscilações intensas de energia ao longo do dia são um sinal de que hormônios ligados ao metabolismo e ao apetite estão fora de equilíbrio — aumentando fome, reduzindo saciedade e tornando o controle alimentar muito mais difícil.",
+      },
+      {
+        title: "Ansiedade alimentar e episódios de descontrole",
+        description: "Quando o padrão hormonal está desregulado, o cérebro interpreta situações cotidianas como emergência metabólica — gerando compulsão e perda de controle que não têm relação com força de vontade.",
+      },
+      {
+        title: "Bloqueio duplo: metabólico e comportamental",
+        description: "Tratar só a alimentação não resolve — porque o bloqueio age nos dois lados ao mesmo tempo. A intervenção precisa integrar ajuste metabólico e reorganização do padrão alimentar.",
+      },
+    ],
+    sessionPoints: [
       "Analiso profundamente seu padrão hormonal e comportamental",
       "Identifico o bloqueio metabólico predominante",
       "Estruturo uma estratégia personalizada e integrada",
       "Defino o plano de ação adequado para romper esse ciclo",
     ],
-    cta: "Quero entender meu plano de reprogramação metabólica",
+    cta: "Quero avançar para a Consulta Estratégica",
     link: "https://calendly.com/mentoriaidealize/sessao-estrategica-idealize",
   },
   nao_qualificada: {
     title: "Seu resultado indica sinais de desorganização na base do metabolismo.",
+    profileLabel: "",
+    profileSubtitle: "",
     textPoints: [
       "Com base nas suas respostas, seu padrão sugere que seu metabolismo pode estar passando por um processo de desregulação metabólica funcional.",
       "Isso é comum em mulheres que já passaram por ciclos de dietas, tentativas repetidas de emagrecimento ou oscilações na alimentação.",
-      "Com o tempo, o corpo pode começar a apresentar sinais como:",
     ],
-    bullets: [
-      "Dificuldade para emagrecer",
-      "Sensação de que o metabolismo não responde",
-      "Inchaço ou energia instável",
-      "Episódios de descontrole alimentar",
+    factors: [
+      {
+        title: "Base metabólica desorganizada",
+        description: "Histórico de dietas e tentativas repetidas de emagrecimento podem fazer o metabolismo reduzir sua eficiência.",
+      },
+      {
+        title: "Oscilações de energia e fome",
+        description: "Quando sono, intestino e alimentação não estão alinhados, o corpo entra em um ciclo de instabilidade metabólica.",
+      },
+      {
+        title: "Inflamação metabólica",
+        description: "Processos inflamatórios silenciosos podem aumentar inchaço, retenção e dificuldade de perda de peso.",
+      },
     ],
-    afterBullets: [
-      "O ponto mais importante é entender que isso não significa falta de esforço.",
-      "Muitas vezes o metabolismo apenas precisa que a base seja reorganizada da forma correta.",
-    ],
-    cta: "Quero receber agora minha reprogramação metabólica",
+    sessionPoints: [],
+    cta: "Quero iniciar minha Reprogramação Agora",
     link: "https://pay.hub.la/lSMNtd205dgseLuAkY45",
   },
 };
