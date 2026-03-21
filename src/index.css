@@ -93,6 +93,6 @@
   }
 
   .gold-cta-glow {
-    box-shadow: 0 8px 32px hsl(43 80% 55% / 0.4), 0 2px 8px hsl(43 80% 55% / 0.2);
+    box-shadow: 0 8px 32px hsl(43 80% 45% / 0.35), 0 2px 8px hsl(43 80% 45% / 0.15);
   }
 }
