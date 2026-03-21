@@ -4,7 +4,6 @@ export interface QuizOption {
     adaptativo?: number;
     inflamatorio?: number;
     desregulacao?: number;
-    nao_qualificada?: number;
   };
 }
 
@@ -21,50 +20,64 @@ export interface QuizBlock {
   questions: QuizQuestion[];
 }
 
+export const AUTHORITY_AFTER_INDEX = 4;
+export const SOCIAL_PROOF_AFTER_INDEX = 6;
+export const INCOME_QUESTION_ID = 17;
+
 export const quizBlocks: QuizBlock[] = [
   {
     id: 1,
     title: "Bloco 1",
-    subtitle: "Histórico Metabólico",
+    subtitle: "Perfil Metabólico",
     questions: [
       {
         id: 1,
-        text: "Há quanto tempo você tenta emagrecer sem conseguir manter o resultado?",
+        text: "Qual dessas frases descreve melhor sua situação hoje?",
         options: [
-          { text: "Menos de 6 meses", scores: { adaptativo: 1 } },
-          { text: "1 a 2 anos", scores: { adaptativo: 2 } },
-          { text: "3 a 5 anos", scores: { adaptativo: 3 } },
-          { text: "Mais de 5 anos ou com múltiplos reganhos de peso", scores: { adaptativo: 4 } },
+          { text: "Já tentei várias dietas e sempre volto a engordar", scores: { adaptativo: 3 } },
+          { text: "Emagreço um pouco, mas não consigo manter o resultado", scores: { adaptativo: 2 } },
+          { text: "Mesmo fazendo dieta ou exercício, o peso quase não muda", scores: { adaptativo: 3 } },
+          { text: "Sinto que meu metabolismo simplesmente parou de responder", scores: { adaptativo: 4 } },
         ],
       },
       {
         id: 2,
-        text: "Ao iniciar uma estratégia alimentar, o que geralmente acontece?",
+        text: "Há quanto tempo você tenta emagrecer sem conseguir manter o resultado?",
         options: [
-          { text: "Perco peso inicialmente, mas recupero", scores: { adaptativo: 1 } },
-          { text: "Fico muito restritiva e depois desregulo", scores: { adaptativo: 2 } },
-          { text: "Mesmo seguindo corretamente, o resultado é lento", scores: { adaptativo: 3 } },
-          { text: "Não consigo manter consistência", scores: { adaptativo: 4 } },
+          { text: "Menos de 1 ano", scores: { adaptativo: 1 } },
+          { text: "Entre 1 e 3 anos", scores: { adaptativo: 2 } },
+          { text: "Entre 3 e 5 anos", scores: { adaptativo: 3 } },
+          { text: "Mais de 5 anos tentando", scores: { adaptativo: 4 } },
         ],
       },
       {
         id: 3,
-        text: "Você identifica um padrão recorrente de restrição alimentar seguido de episódios de descontrole?",
+        text: "Qual desses sintomas você percebe com mais frequência?",
         options: [
-          { text: "Nunca", scores: { adaptativo: 1 } },
-          { text: "Raramente", scores: { adaptativo: 2 } },
-          { text: "Frequentemente", scores: { adaptativo: 3 } },
-          { text: "Quase sempre", scores: { adaptativo: 4 } },
+          { text: "Inchaço ou retenção de líquido", scores: { inflamatorio: 3 } },
+          { text: "Cansaço frequente, mesmo descansada", scores: { inflamatorio: 2 } },
+          { text: "Dificuldade para controlar a alimentação", scores: { desregulacao: 3 } },
+          { text: "Oscilações de energia ao longo do dia", scores: { desregulacao: 2 } },
         ],
       },
       {
         id: 4,
-        text: "Você já tentou acompanhamento nutricional antes?",
+        text: "Como está seu sono atualmente?",
         options: [
-          { text: "Sim, mas não tive resultado duradouro", scores: {} },
-          { text: "Sim, tive algum resultado", scores: {} },
-          { text: "Nunca fiz acompanhamento", scores: {} },
-          { text: "Prefiro tentar sozinha", scores: {} },
+          { text: "Durmo bem e acordo descansada", scores: {} },
+          { text: "Durmo, mas acordo cansada", scores: { inflamatorio: 2 } },
+          { text: "Acordo várias vezes à noite", scores: { inflamatorio: 3 } },
+          { text: "Tenho dificuldade para dormir", scores: { inflamatorio: 4 } },
+        ],
+      },
+      {
+        id: 5,
+        text: "Como funciona seu intestino?",
+        options: [
+          { text: "Funciona todos os dias, sem desconforto", scores: {} },
+          { text: "Funciona na maioria dos dias", scores: { inflamatorio: 1 } },
+          { text: "Intervalos de 2 a 3 dias", scores: { inflamatorio: 3 } },
+          { text: "Constipação frequente", scores: { inflamatorio: 4 } },
         ],
       },
     ],
@@ -72,56 +85,26 @@ export const quizBlocks: QuizBlock[] = [
   {
     id: 2,
     title: "Bloco 2",
-    subtitle: "Marcadores Metabólicos Funcionais",
+    subtitle: "Atividade Física",
     questions: [
       {
-        id: 5,
-        text: "Como está a qualidade do seu sono atualmente?",
-        options: [
-          { text: "Durmo bem e acordo descansada", scores: { desregulacao: 1 } },
-          { text: "Durmo, mas acordo cansada", scores: { desregulacao: 2 } },
-          { text: "Acordo várias vezes durante a noite", scores: { desregulacao: 3 } },
-          { text: "Tenho dificuldade para iniciar ou manter o sono", scores: { desregulacao: 4 } },
-        ],
-      },
-      {
         id: 6,
-        text: "Como funciona seu intestino?",
+        text: "Você pratica atividade física atualmente?",
         options: [
-          { text: "Regular, diariamente", scores: { inflamatorio: 1 } },
-          { text: "Regular na maioria dos dias", scores: { inflamatorio: 2 } },
-          { text: "Intervalos de 2–3 dias", scores: { inflamatorio: 3 } },
-          { text: "Constipação frequente e/ou inchaço recorrente", scores: { inflamatorio: 4 } },
+          { text: "Sim, mais de 4 vezes por semana", scores: {} },
+          { text: "2 a 3 vezes por semana", scores: {} },
+          { text: "Esporadicamente", scores: {} },
+          { text: "Não pratico no momento", scores: {} },
         ],
       },
       {
         id: 7,
-        text: "Consumo médio de água por dia:",
+        text: "Mesmo fazendo atividade física, você percebe dificuldade para reduzir gordura?",
         options: [
-          { text: "Acima de 2 litros", scores: { inflamatorio: 1 } },
-          { text: "Entre 1 e 2 litros", scores: { inflamatorio: 2 } },
-          { text: "Menos de 1 litro", scores: { inflamatorio: 3 } },
-          { text: "Não monitoro", scores: { inflamatorio: 4 } },
-        ],
-      },
-      {
-        id: 8,
-        text: "Frequência de atividade física estruturada:",
-        options: [
-          { text: "4 vezes ou mais por semana", scores: { inflamatorio: 1 } },
-          { text: "2 a 3 vezes por semana", scores: { inflamatorio: 2 } },
-          { text: "Esporádica", scores: { inflamatorio: 3 } },
-          { text: "Não pratico atualmente", scores: { inflamatorio: 4 } },
-        ],
-      },
-      {
-        id: 9,
-        text: "Mesmo praticando atividade física, você percebe dificuldade em reduzir gordura corporal?",
-        options: [
-          { text: "Nunca", scores: { adaptativo: 1 } },
-          { text: "Ocasionalmente", scores: { adaptativo: 2 } },
-          { text: "Frequentemente", scores: { adaptativo: 3 } },
-          { text: "Sempre", scores: { adaptativo: 4 } },
+          { text: "Nunca — exercício funciona para mim", scores: {} },
+          { text: "Às vezes percebo essa dificuldade", scores: { adaptativo: 2 } },
+          { text: "Frequentemente, mesmo me esforçando muito", scores: { adaptativo: 3 } },
+          { text: "Sempre — parece que não adianta", scores: { adaptativo: 4 } },
         ],
       },
     ],
@@ -129,46 +112,67 @@ export const quizBlocks: QuizBlock[] = [
   {
     id: 3,
     title: "Bloco 3",
-    subtitle: "Sintomas Metabólicos",
+    subtitle: "Sinais Metabólicos",
     questions: [
       {
-        id: 10,
-        text: "Com que frequência você apresenta inchaço ou retenção de líquidos?",
+        id: 8,
+        text: "Você sente que sua energia oscila muito ao longo do dia?",
         options: [
-          { text: "Nunca", scores: { inflamatorio: 1 } },
-          { text: "Ocasionalmente", scores: { inflamatorio: 2 } },
-          { text: "Frequentemente", scores: { inflamatorio: 3 } },
-          { text: "Quase diariamente", scores: { inflamatorio: 4 } },
+          { text: "Não — minha energia é estável", scores: {} },
+          { text: "Um pouco, mas não me incomoda tanto", scores: { desregulacao: 1 } },
+          { text: "Frequentemente — especialmente à tarde", scores: { desregulacao: 3 } },
+          { text: "Muito — parece uma montanha-russa todos os dias", scores: { desregulacao: 4 } },
+        ],
+      },
+      {
+        id: 9,
+        text: "Com que frequência você apresenta episódios de compulsão ou perda de controle alimentar?",
+        options: [
+          { text: "Nunca acontece comigo", scores: {} },
+          { text: "Raramente, em momentos de estresse", scores: { desregulacao: 1 } },
+          { text: "Frequentemente — é algo recorrente", scores: { desregulacao: 3 } },
+          { text: "Quase sempre, difícil de controlar", scores: { desregulacao: 4 } },
+        ],
+      },
+      {
+        id: 10,
+        text: "O quanto o seu peso impacta sua autoestima?",
+        options: [
+          { text: "Não impacta — estou bem com meu corpo", scores: {} },
+          { text: "Impacto leve, mas já me incomoda", scores: {} },
+          { text: "Impacto significativo no dia a dia", scores: {} },
+          { text: "Impacto profundo — afeta várias áreas da minha vida", scores: {} },
         ],
       },
       {
         id: 11,
-        text: "Como você classificaria sua energia ao longo do dia?",
+        text: "Se nada mudar nos próximos 6 meses, como você acredita que estará?",
         options: [
-          { text: "Estável", scores: { desregulacao: 1 } },
-          { text: "Leve oscilação", scores: { desregulacao: 2 } },
-          { text: "Oscilações frequentes", scores: { desregulacao: 3 } },
-          { text: "Quedas acentuadas de energia", scores: { desregulacao: 4 } },
+          { text: "Igual — não me preocupa tanto", scores: {} },
+          { text: "Um pouco mais frustrada", scores: {} },
+          { text: "Bastante frustrada e sem esperança", scores: {} },
+          { text: "Completamente desmotivada a tentar de novo", scores: {} },
         ],
       },
       {
         id: 12,
-        text: "Episódios de compulsão ou perda de controle alimentar:",
+        text: "O que você já tentou para emagrecer?",
         options: [
-          { text: "Nunca", scores: { desregulacao: 1 } },
-          { text: "Raramente", scores: { desregulacao: 2 } },
-          { text: "Frequentemente", scores: { desregulacao: 3 } },
-          { text: "Quase sempre", scores: { desregulacao: 4 } },
+          { text: "Dietas restritivas (low carb, jejum, detox…)", scores: {} },
+          { text: "Academia intensa ou treinos pesados", scores: {} },
+          { text: "Reeducação alimentar", scores: {} },
+          { text: "Acompanhamento nutricional ou médico", scores: {} },
+          { text: "Várias dessas — já tentei de tudo", scores: {} },
         ],
       },
       {
         id: 13,
-        text: "Ansiedade relacionada à alimentação:",
+        text: "Hoje qual é sua maior dificuldade para emagrecer?",
         options: [
-          { text: "Ausente", scores: { desregulacao: 1 } },
-          { text: "Leve", scores: { desregulacao: 2 } },
-          { text: "Moderada", scores: { desregulacao: 3 } },
-          { text: "Intensa", scores: { desregulacao: 4 } },
+          { text: "Falta de energia para manter a rotina", scores: {} },
+          { text: "Falta de consistência na alimentação", scores: {} },
+          { text: "Metabolismo que parece ter travado", scores: {} },
+          { text: "Inchaço e retenção que não passam", scores: {} },
         ],
       },
     ],
@@ -176,89 +180,46 @@ export const quizBlocks: QuizBlock[] = [
   {
     id: 4,
     title: "Bloco 4",
-    subtitle: "Impacto e Consciência",
+    subtitle: "Prontidão e Perfil",
     questions: [
       {
         id: 14,
-        text: "O seu peso impacta sua autoestima ou autoconfiança?",
+        text: "Resolver essa questão é prioridade para você neste momento?",
         options: [
-          { text: "Não impacta", scores: { adaptativo: 1 } },
-          { text: "Impacto leve", scores: { adaptativo: 2 } },
-          { text: "Impacto significativo", scores: { adaptativo: 3 } },
-          { text: "Impacto profundo", scores: { adaptativo: 4 } },
+          { text: "Sim, é prioridade — quero resolver logo", scores: {} },
+          { text: "Quero resolver, mas ainda estou avaliando", scores: {} },
+          { text: "Estou pesquisando opções antes de decidir", scores: {} },
+          { text: "Não é prioridade no momento", scores: {} },
         ],
       },
       {
         id: 15,
-        text: "Se nada mudar nos próximos 6 meses, como você acredita que estará emocionalmente?",
+        text: "Qual dessas situações mais se aproxima da sua realidade?",
         options: [
-          { text: "Estável", scores: { desregulacao: 1 } },
-          { text: "Levemente frustrada", scores: { desregulacao: 2 } },
-          { text: "Frustrada", scores: { desregulacao: 3 } },
-          { text: "Exausta e desmotivada", scores: { desregulacao: 4 } },
+          { text: "Emagrecer com saúde e manter o resultado", scores: {} },
+          { text: "Destravar meu metabolismo de vez", scores: {} },
+          { text: "Recuperar minha confiança com meu próprio corpo", scores: {} },
+          { text: "Ter um plano claro e personalizado para seguir", scores: {} },
         ],
       },
-    ],
-  },
-  {
-    id: 5,
-    title: "Bloco 5",
-    subtitle: "Prontidão e Perfil",
-    questions: [
       {
         id: 16,
-        text: "Resolver essa questão é uma prioridade real neste momento?",
+        text: "Hoje, qual dessas situações mais te incomoda em relação ao seu corpo?",
         options: [
-          { text: "Sim, é prioridade", scores: {} },
-          { text: "Quero resolver, mas ainda estou avaliando", scores: {} },
-          { text: "Estou pesquisando opções", scores: {} },
-          { text: "Não é prioridade agora", scores: {} },
+          { text: "Evitar fotos ou me olhar no espelho", scores: {} },
+          { text: "Sentir que nenhuma dieta funciona para mim", scores: {} },
+          { text: "Me sentir inchada ou desconfortável quase todos os dias", scores: {} },
+          { text: "Sentir que perdi o controle total sobre meu peso", scores: {} },
         ],
       },
       {
         id: 17,
-        text: "Você costuma investir em soluções que resolvem problemas de forma estruturada?",
+        text: "Sua renda mensal aproximada hoje:",
         options: [
-          { text: "Sim", scores: {} },
-          { text: "Quando percebo valor estratégico", scores: {} },
-          { text: "Avalio principalmente pelo preço", scores: {} },
-          { text: "Evito investimentos", scores: {} },
-        ],
-      },
-      {
-        id: 18,
-        text: "Sua renda mensal aproximada:",
-        options: [
-          { text: "Até 6 mil", scores: { nao_qualificada: 1 } },
-          { text: "8 a 15 mil", scores: { nao_qualificada: 0 } },
-          { text: "15 a 25 mil", scores: { nao_qualificada: 0 } },
-          { text: "Acima de 25 mil", scores: { nao_qualificada: 0 } },
-        ],
-      },
-    ],
-  },
-  {
-    id: 6,
-    title: "Bloco 6",
-    subtitle: "Perguntas Estratégicas",
-    questions: [
-      {
-        id: 19,
-        text: "Se sua análise metabólica mostrar um bloqueio que pode ser corrigido, qual seria seu próximo passo?",
-        options: [
-          { text: "Quero entender como resolver definitivamente", scores: {} },
-          { text: "Gostaria de analisar as possibilidades", scores: {} },
-          { text: "Ainda estou apenas explorando o tema", scores: {} },
-        ],
-      },
-      {
-        id: 20,
-        text: "Se você descobrir exatamente o que está bloqueando seu metabolismo e receber um plano personalizado para resolver isso, qual dessas opções representa melhor sua situação hoje?",
-        options: [
-          { text: "Estou pronta para investir em uma solução que realmente resolva", scores: {} },
-          { text: "Estou disposta a investir se fizer sentido para o meu caso", scores: {} },
-          { text: "Ainda preciso entender melhor antes de decidir", scores: {} },
-          { text: "No momento estou apenas buscando informação", scores: {} },
+          { text: "Até R$3.000", scores: {} },
+          { text: "Entre R$3.000 e R$6.000", scores: {} },
+          { text: "Entre R$6.000 e R$12.000", scores: {} },
+          { text: "Acima de R$12.000", scores: {} },
         ],
       },
     ],
@@ -267,62 +228,43 @@ export const quizBlocks: QuizBlock[] = [
 
 export type ResultProfile = "adaptativo" | "inflamatorio" | "desregulacao" | "nao_qualificada";
 
-export interface Scores {
-  adaptativo: number;
-  inflamatorio: number;
-  desregulacao: number;
-  nao_qualificada: number;
-}
-
 export function calculateResult(answers: Record<number, number>): ResultProfile {
-  const scores: Scores = { adaptativo: 0, inflamatorio: 0, desregulacao: 0, nao_qualificada: 0 };
+  // Income check: first two options = low ticket
+  const incomeAnswer = answers[INCOME_QUESTION_ID];
+  if (incomeAnswer === 0 || incomeAnswer === 1) return "nao_qualificada";
 
+  const scores = { adaptativo: 0, inflamatorio: 0, desregulacao: 0 };
   const allQuestions = quizBlocks.flatMap((b) => b.questions);
+
   for (const q of allQuestions) {
     const selectedIdx = answers[q.id];
     if (selectedIdx !== undefined) {
       const option = q.options[selectedIdx];
-      if (option.scores.nao_qualificada) scores.nao_qualificada += option.scores.nao_qualificada;
       if (option.scores.adaptativo) scores.adaptativo += option.scores.adaptativo;
       if (option.scores.inflamatorio) scores.inflamatorio += option.scores.inflamatorio;
       if (option.scores.desregulacao) scores.desregulacao += option.scores.desregulacao;
     }
   }
 
-  if (scores.nao_qualificada > 0) return "nao_qualificada";
-
   const max = Math.max(scores.adaptativo, scores.inflamatorio, scores.desregulacao);
-
   if (scores.adaptativo === max) return "adaptativo";
   if (scores.inflamatorio === max) return "inflamatorio";
   return "desregulacao";
 }
 
-interface FactorData {
-  title: string;
-  description: string;
+export interface ResultProfileData {
+  analysisTitle: string;
+  analysisSubtitle: string;
+  analysisText: string;
+  factors: { title: string; description: string }[];
+  sessionPoints: { title: string; description: string }[];
 }
 
-export interface ResultData {
-  title: string;
-  profileLabel: string;
-  profileSubtitle: string;
-  textPoints: string[];
-  factors: FactorData[];
-  sessionPoints: string[];
-  cta: string;
-  link: string;
-}
-
-export const resultData: Record<ResultProfile, ResultData> = {
+export const resultProfileData: Record<Exclude<ResultProfile, "nao_qualificada">, ResultProfileData> = {
   adaptativo: {
-    title: "Encontramos o que está travando o seu emagrecimento.",
-    profileLabel: "Padrão Adaptativo Restritivo",
-    profileSubtitle: "Metabolismo em modo de defesa",
-    textPoints: [
-      "Com base na sua análise, seu padrão indica que o metabolismo reduziu sua eficiência como mecanismo de proteção — após múltiplos ciclos de dieta.",
-      "Nesse cenário, estratégias genéricas geram resultados temporários. O corpo aprende a resistir.",
-    ],
+    analysisTitle: "METABOLISMO EM MODO DE DEFESA",
+    analysisSubtitle: "Histórico de restrição acumulado ao longo do tempo.",
+    analysisText: "Com base na sua análise, seu padrão indica que o metabolismo reduziu sua eficiência como mecanismo de proteção — após múltiplos ciclos de dieta. Nesse cenário, estratégias genéricas geram resultados temporários. O corpo aprende a resistir.",
     factors: [
       {
         title: "Base metabólica desorganizada",
@@ -338,23 +280,16 @@ export const resultData: Record<ResultProfile, ResultData> = {
       },
     ],
     sessionPoints: [
-      "Analiso profundamente seu histórico metabólico completo",
-      "Identifico o mecanismo de adaptação predominante",
-      "Estruturo uma estratégia progressiva personalizada",
-      "Defino os próximos passos com clareza",
+      { title: "Analisar seu histórico metabólico completo", description: "Entender todos os ciclos de dieta, tentativas anteriores e o que foi feito até hoje." },
+      { title: "Identificar o mecanismo de adaptação predominante", description: "Mapear exatamente o que está impedindo o seu metabolismo de responder." },
+      { title: "Estruturar uma estratégia progressiva personalizada", description: "Um plano pensado especificamente para o seu caso — não um protocolo genérico." },
+      { title: "Definir os próximos passos com clareza", description: "Sair da sessão sabendo exatamente o que fazer e por onde começar." },
     ],
-    cta: "Quero avançar para a Consulta Estratégica",
-    link: "https://calendly.com/mentoriaidealize/sessao-estrategica-idealize",
   },
   inflamatorio: {
-    title: "Encontramos o que está travando o seu emagrecimento.",
-    profileLabel: "Padrão Inflamatório Funcional",
-    profileSubtitle: "Ambiente fisiológico desfavorável ao emagrecimento",
-    textPoints: [
-      "Sua análise sugere desregulação metabólica associada a marcadores inflamatórios funcionais, como sono, intestino e retenção.",
-      "Isso indica que o ambiente fisiológico atual pode estar desfavorável para resposta eficiente ao emagrecimento.",
-      "Antes de intensificar restrições, é necessário reorganizar a base metabólica de forma estruturada.",
-    ],
+    analysisTitle: "PADRÃO INFLAMATÓRIO FUNCIONAL",
+    analysisSubtitle: "Ambiente fisiológico desfavorável ao emagrecimento.",
+    analysisText: "Sua análise sugere desregulação metabólica associada a marcadores inflamatórios funcionais, como sono, intestino e retenção. Isso indica que o ambiente fisiológico atual pode estar desfavorável para resposta eficiente ao emagrecimento. Antes de intensificar restrições, é necessário reorganizar a base metabólica de forma estruturada.",
     factors: [
       {
         title: "Base metabólica desorganizada",
@@ -370,22 +305,16 @@ export const resultData: Record<ResultProfile, ResultData> = {
       },
     ],
     sessionPoints: [
-      "Analiso profundamente seus marcadores metabólicos",
-      "Identifico os fatores que estão sustentando a inflamação funcional",
-      "Estruturo um protocolo individualizado de reorganização",
-      "Defino o plano estratégico adequado ao seu metabolismo",
+      { title: "Analisar profundamente seus marcadores metabólicos", description: "Mapear sono, intestino, retenção e outros indicadores funcionais." },
+      { title: "Identificar os fatores que sustentam a inflamação funcional", description: "Descobrir o que mantém o ambiente fisiológico desfavorável." },
+      { title: "Estruturar um protocolo individualizado de reorganização", description: "Um plano específico para restaurar a base metabólica." },
+      { title: "Definir o plano estratégico adequado ao seu metabolismo", description: "Sair com clareza sobre os próximos passos." },
     ],
-    cta: "Quero avançar para a Consulta Estratégica",
-    link: "https://calendly.com/mentoriaidealize/sessao-estrategica-idealize",
   },
   desregulacao: {
-    title: "Encontramos o que está travando o seu emagrecimento.",
-    profileLabel: "Padrão de Desregulação Hormonal / Comportamental",
-    profileSubtitle: "Bloqueio que vai além da alimentação",
-    textPoints: [
-      "Sua análise indica que as oscilações de energia, a ansiedade em torno da comida e os episódios de descontrole não são falhas de vontade.",
-      "São sinais de que o metabolismo e o comportamento alimentar estão desregulados ao mesmo tempo — e nenhuma estratégia isolada resolve os dois.",
-    ],
+    analysisTitle: "PADRÃO DE DESREGULAÇÃO HORMONAL / COMPORTAMENTAL",
+    analysisSubtitle: "Bloqueio que vai além da alimentação, hormonal e comportamental.",
+    analysisText: "Com base na sua análise, seu padrão indica que as oscilações de energia, a ansiedade em torno da comida e os episódios de descontrole não são falhas de vontade. São sinais de que o metabolismo e o comportamento alimentar estão desregulados ao mesmo tempo — e nenhuma estratégia isolada resolve os dois.",
     factors: [
       {
         title: "Desregulação hormonal e de energia",
@@ -401,38 +330,25 @@ export const resultData: Record<ResultProfile, ResultData> = {
       },
     ],
     sessionPoints: [
-      "Analiso profundamente seu padrão hormonal e comportamental",
-      "Identifico o bloqueio metabólico predominante",
-      "Estruturo uma estratégia personalizada e integrada",
-      "Defino o plano de ação adequado para romper esse ciclo",
+      { title: "Analisar profundamente seu padrão hormonal e comportamental", description: "Entender os ciclos de descontrole e energia no seu dia a dia." },
+      { title: "Identificar o bloqueio metabólico predominante", description: "Mapear exatamente o que impede seu metabolismo de funcionar." },
+      { title: "Estruturar uma estratégia personalizada e integrada", description: "Um plano que resolve os dois lados — metabólico e comportamental." },
+      { title: "Definir o plano de ação adequado para romper esse ciclo", description: "Sair da sessão com clareza total sobre como avançar." },
     ],
-    cta: "Quero avançar para a Consulta Estratégica",
-    link: "https://calendly.com/mentoriaidealize/sessao-estrategica-idealize",
-  },
-  nao_qualificada: {
-    title: "Seu resultado indica sinais de desorganização na base do metabolismo.",
-    profileLabel: "",
-    profileSubtitle: "",
-    textPoints: [
-      "Com base nas suas respostas, seu padrão sugere que seu metabolismo pode estar passando por um processo de desregulação metabólica funcional.",
-      "Isso é comum em mulheres que já passaram por ciclos de dietas, tentativas repetidas de emagrecimento ou oscilações na alimentação.",
-    ],
-    factors: [
-      {
-        title: "Base metabólica desorganizada",
-        description: "Histórico de dietas e tentativas repetidas de emagrecimento podem fazer o metabolismo reduzir sua eficiência.",
-      },
-      {
-        title: "Oscilações de energia e fome",
-        description: "Quando sono, intestino e alimentação não estão alinhados, o corpo entra em um ciclo de instabilidade metabólica.",
-      },
-      {
-        title: "Inflamação metabólica",
-        description: "Processos inflamatórios silenciosos podem aumentar inchaço, retenção e dificuldade de perda de peso.",
-      },
-    ],
-    sessionPoints: [],
-    cta: "Quero iniciar minha Reprogramação Agora",
-    link: "https://pay.hub.la/lSMNtd205dgseLuAkY45",
   },
 };
+
+export const lowTicketFactors = [
+  {
+    title: "Base metabólica desorganizada",
+    description: "Histórico de dietas e tentativas repetidas de emagrecimento podem fazer o metabolismo reduzir sua eficiência.",
+  },
+  {
+    title: "Oscilações de energia e fome",
+    description: "Quando sono, intestino e alimentação não estão alinhados, o corpo entra em um ciclo de instabilidade metabólica.",
+  },
+  {
+    title: "Inflamação metabólica",
+    description: "Processos inflamatórios silenciosos podem aumentar inchaço, retenção e dificuldade de perda de peso.",
+  },
+];
