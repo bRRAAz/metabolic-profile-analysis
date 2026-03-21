@@ -65,7 +65,7 @@ const GoldCTA = ({ text, href }: { text: string; href: string }) => (
 const ResultFinalQualified = ({ profile }: ResultFinalQualifiedProps) => {
   return (
     <div className="flex flex-col items-center px-6 py-16 max-w-xl mx-auto animate-fade-in">
-      <img src={logo} alt="Bruna Vieira Nutricionista" className="w-40 mb-8 opacity-90 brightness-150" />
+      <img src={logo} alt="Bruna Vieira Nutricionista" className="w-40 mb-8 opacity-90" />
 
       {/* Confirmation */}
       <div className="w-full p-6 border border-primary/30 rounded-lg bg-primary/5 gold-glow text-center mb-6">
