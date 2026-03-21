@@ -93,9 +93,9 @@ const QuizQuestion = ({
           <button
             key={idx}
             onClick={() => handleOptionClick(idx)}
-            className={`text-left px-4 py-3 md:px-5 md:py-4 border text-sm font-body transition-all duration-300 ${selectedAnswer === idx
-                ? "border-primary/60 bg-primary/5 text-foreground"
-                : "border-border hover:border-primary/30 text-muted-foreground hover:text-foreground"
+            className={`text-left px-4 py-3 md:px-5 md:py-4 border text-sm font-body transition-all duration-300 rounded-sm ${selectedAnswer === idx
+                ? "bg-primary border-primary text-primary-foreground font-medium"
+                : "bg-foreground border-foreground/80 text-background hover:border-primary/60"
               }`}
           >
             {option.text}

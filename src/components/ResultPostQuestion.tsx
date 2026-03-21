@@ -27,10 +27,10 @@ const ResultPostQuestion = ({ question, options, onAnswer }: ResultPostQuestionP
           <button
             key={idx}
             onClick={() => handleSelect(idx)}
-            className={`w-full text-left px-5 py-4 border text-sm font-body transition-all duration-300 rounded-lg ${
+            className={`w-full text-left px-5 py-4 border text-sm font-body transition-all duration-300 rounded-sm ${
               selected === idx
-                ? "border-primary/60 bg-primary/10 text-foreground"
-                : "border-border hover:border-primary/30 text-muted-foreground hover:text-foreground"
+                ? "bg-primary border-primary text-primary-foreground font-medium"
+                : "bg-foreground border-foreground/80 text-background hover:border-primary/60"
             }`}
           >
             {option}
