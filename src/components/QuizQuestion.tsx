@@ -58,7 +58,7 @@ const QuizQuestion = ({
             o problema não é você.
           </p>
           <p className="text-sm font-body text-muted-foreground leading-relaxed mb-3">
-            Existe apenas <span className="text-primary font-semibold">UM tipo de bloqueio metabólico</span> que impede muitas mulheres de emagrecer — mesmo fazendo dieta.
+            Existe apenas <span className="text-primary font-semibold">UM TIPO DE BLOQUEIO METABÓLICO</span> que impede muitas mulheres de emagrecer — mesmo fazendo dieta.
           </p>
           <p className="text-sm font-body text-muted-foreground/80 leading-relaxed">
             Em menos de 2 minutos, você vai descobrir o que pode estar impedindo seu corpo de responder ao emagrecimento.
@@ -94,8 +94,8 @@ const QuizQuestion = ({
             key={idx}
             onClick={() => handleOptionClick(idx)}
             className={`text-left px-4 py-3 md:px-5 md:py-4 border text-sm font-body transition-all duration-300 rounded-sm ${selectedAnswer === idx
-                ? "bg-primary border-primary text-primary-foreground font-medium"
-                : "bg-foreground border-foreground/80 text-background hover:border-primary/60"
+              ? "bg-primary border-primary text-primary-foreground font-medium"
+              : "bg-foreground border-foreground/80 text-background hover:border-primary/60"
               }`}
           >
             {option.text}
@@ -120,8 +120,8 @@ const QuizQuestion = ({
             onClick={onNext}
             disabled={selectedAnswer === undefined}
             className={`text-xs font-body tracking-[0.2em] uppercase px-8 py-3 border transition-all duration-500 ${selectedAnswer !== undefined
-                ? "border-primary/40 text-primary hover:bg-primary hover:text-primary-foreground"
-                : "border-border text-muted-foreground/40 cursor-not-allowed"
+              ? "border-primary/40 text-primary hover:bg-primary hover:text-primary-foreground"
+              : "border-border text-muted-foreground/40 cursor-not-allowed"
               }`}
           >
             {currentQuestionGlobal === totalQuestions ? "Ver Resultado" : "Próxima →"}
