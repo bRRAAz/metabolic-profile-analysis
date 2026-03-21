@@ -12,6 +12,7 @@ interface QuizQuestionProps {
   onNext: () => void;
   onPrev: () => void;
   canGoBack: boolean;
+  showIntro?: boolean;
 }
 
 const QuizQuestion = ({
@@ -24,6 +25,7 @@ const QuizQuestion = ({
   onNext,
   onPrev,
   canGoBack,
+  showIntro = false,
 }: QuizQuestionProps) => {
   const question = block.questions[questionIndex];
   const isMobile = useIsMobile();
@@ -31,25 +33,49 @@ const QuizQuestion = ({
 
   const handleOptionClick = useCallback((idx: number) => {
     onAnswer(question.id, idx);
-
     if (isMobile) {
-      // Small delay so user sees their selection before advancing
       if (autoAdvanceTimer.current) clearTimeout(autoAdvanceTimer.current);
-      autoAdvanceTimer.current = setTimeout(() => {
-        onNext();
-      }, 400);
+      autoAdvanceTimer.current = setTimeout(() => onNext(), 400);
     }
   }, [isMobile, onAnswer, onNext, question.id]);
 
   return (
     <div className="flex flex-col min-h-0 md:min-h-screen px-6 py-6 md:py-12 max-w-xl mx-auto animate-fade-in">
+      {/* Intro header on first question */}
+      {showIntro && (
+        <div className="text-center mb-8">
+          <p className="text-xs font-body tracking-[0.35em] uppercase text-primary mb-2">
+            Reprogramação Metabólica
+          </p>
+          <p className="text-[10px] font-body tracking-[0.2em] uppercase text-muted-foreground mb-6">
+            Diagnóstico Metabólico Gratuito
+          </p>
+          <div className="w-12 h-px bg-primary/30 mx-auto mb-6" />
+          <p className="text-sm font-body text-muted-foreground leading-relaxed mb-3">
+            Se você já se esforçou, fez dieta, tentou de tudo e o peso ainda não saiu…
+          </p>
+          <p className="text-base md:text-lg font-display text-foreground leading-relaxed mb-4">
+            o problema não é você.
+          </p>
+          <p className="text-sm font-body text-muted-foreground leading-relaxed mb-3">
+            Existe apenas <span className="text-primary font-semibold">UM tipo de bloqueio metabólico</span> que impede muitas mulheres de emagrecer — mesmo fazendo dieta.
+          </p>
+          <p className="text-sm font-body text-muted-foreground/80 leading-relaxed">
+            Em menos de 2 minutos, você vai descobrir o que pode estar impedindo seu corpo de responder ao emagrecimento.
+          </p>
+          <div className="w-12 h-px bg-primary/30 mx-auto mt-6" />
+        </div>
+      )}
+
       {/* Progress */}
-      <div className="mb-6 md:mb-12">
+      <div className="mb-6 md:mb-10">
         <div className="flex items-center justify-between mb-3">
           <p className="text-xs font-body tracking-[0.3em] uppercase text-muted-foreground">
             {block.subtitle}
           </p>
-
+          <span className="text-xs font-body text-muted-foreground/60 whitespace-nowrap shrink-0 ml-4">
+            {currentQuestionGlobal} / {totalQuestions}
+          </span>
         </div>
         <div className="w-full h-px bg-border">
           <div
@@ -58,13 +84,6 @@ const QuizQuestion = ({
           />
         </div>
       </div>
-
-      {/* Transition message for strategic block */}
-      {question.id === 19 && (
-        <p className="text-xs font-body tracking-[0.2em] uppercase text-primary/60 mb-4">
-          Estamos quase finalizando sua análise metabólica.
-        </p>
-      )}
 
       {/* Question */}
       <h2 className="text-lg md:text-2xl font-display text-foreground leading-relaxed mb-6 md:mb-10">
@@ -77,10 +96,11 @@ const QuizQuestion = ({
           <button
             key={idx}
             onClick={() => handleOptionClick(idx)}
-            className={`text-left px-4 py-3 md:px-5 md:py-4 border text-sm font-body transition-all duration-300 ${selectedAnswer === idx
+            className={`text-left px-4 py-3 md:px-5 md:py-4 border text-sm font-body transition-all duration-300 ${
+              selectedAnswer === idx
                 ? "border-primary/60 bg-primary/5 text-foreground"
                 : "border-border hover:border-primary/30 text-muted-foreground hover:text-foreground"
-              }`}
+            }`}
           >
             {option.text}
           </button>
@@ -99,15 +119,15 @@ const QuizQuestion = ({
         ) : (
           <div />
         )}
-
         {!isMobile && (
           <button
             onClick={onNext}
             disabled={selectedAnswer === undefined}
-            className={`text-xs font-body tracking-[0.2em] uppercase px-8 py-3 border transition-all duration-500 ${selectedAnswer !== undefined
+            className={`text-xs font-body tracking-[0.2em] uppercase px-8 py-3 border transition-all duration-500 ${
+              selectedAnswer !== undefined
                 ? "border-primary/40 text-primary hover:bg-primary hover:text-primary-foreground"
                 : "border-border text-muted-foreground/40 cursor-not-allowed"
-              }`}
+            }`}
           >
             {currentQuestionGlobal === totalQuestions ? "Ver Resultado" : "Próxima →"}
           </button>

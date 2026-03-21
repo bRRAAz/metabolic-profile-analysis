@@ -1,19 +1,17 @@
 const antesItems = [
   "dificuldade para emagrecer mesmo tentando dieta",
-  "sensação de que o metabolismo não responde",
-  "oscilações de energia ao longo do dia",
-  "episódios de descontrole alimentar ou compulsão",
-  "inchaço, retenção ou intestino irregular",
-  "frustração constante com o próprio corpo",
+  "sensação de metabolismo travado",
+  "energia instável ao longo do dia",
+  "episódios de compulsão ou descontrole alimentar",
+  "inchaço e desconforto frequente",
 ];
 
 const depoisItems = [
   "metabolismo volta a responder ao emagrecimento",
-  "energia mais estável ao longo do dia",
-  "redução de inchaço e melhora digestiva",
+  "energia mais estável",
+  "redução de inchaço",
   "relação mais equilibrada com a alimentação",
-  "perda de peso mais consistente e sustentável",
-  "mais confiança no próprio corpo",
+  "perda de peso mais consistente",
 ];
 
 const TabelaAntesDepois = () => (
@@ -22,16 +20,16 @@ const TabelaAntesDepois = () => (
       <div className="bg-secondary px-4 py-3 text-center border-b border-border">
         <div className="flex items-center justify-center gap-1.5 mb-0.5">
           <span className="text-base">⚠️</span>
-          <span className="text-sm md:text-base font-display font-bold text-foreground tracking-wide uppercase">Antes</span>
+          <span className="text-sm md:text-base font-display font-bold text-foreground tracking-wide uppercase">Quando Desregulado</span>
         </div>
         <p className="text-[10px] md:text-xs font-body text-muted-foreground">(quando o metabolismo está desregulado)</p>
       </div>
       <div className="px-4 py-3 text-center border-b border-border" style={{ background: 'linear-gradient(135deg, hsl(43 80% 55% / 0.15), hsl(43 70% 70% / 0.1))' }}>
         <div className="flex items-center justify-center gap-1.5 mb-0.5">
           <span className="text-base">✅</span>
-          <span className="text-sm md:text-base font-display font-bold text-primary tracking-wide uppercase">Depois</span>
+          <span className="text-sm md:text-base font-display font-bold text-primary tracking-wide uppercase">Quando Reorganizado</span>
         </div>
-        <p className="text-[10px] md:text-xs font-body text-muted-foreground">(quando o metabolismo é reprogramado)</p>
+        <p className="text-[10px] md:text-xs font-body text-muted-foreground">(quando o metabolismo é reorganizado)</p>
       </div>
     </div>
 

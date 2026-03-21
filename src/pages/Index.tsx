@@ -1,7 +1,8 @@
 import { useState, useCallback } from "react";
-import { quizBlocks, calculateResult, ResultProfile } from "@/data/quizData";
-import QuizIntro from "@/components/QuizIntro";
+import { quizBlocks, calculateResult, ResultProfile, AUTHORITY_AFTER_INDEX, SOCIAL_PROOF_AFTER_INDEX } from "@/data/quizData";
 import QuizQuestion from "@/components/QuizQuestion";
+import AuthorityBlock from "@/components/AuthorityBlock";
+import SocialProofBlock from "@/components/SocialProofBlock";
 import QuizProcessing from "@/components/QuizProcessing";
 import QuizLeadForm from "@/components/QuizLeadForm";
 import QuizResult from "@/components/QuizResult";
@@ -9,8 +10,10 @@ import QuizResult from "@/components/QuizResult";
 const allQuestions = quizBlocks.flatMap((b) => b.questions);
 const totalQuestions = allQuestions.length;
 
+type Phase = "quiz" | "authority" | "socialProof" | "processing" | "leadForm" | "result";
+
 const Index = () => {
-  const [phase, setPhase] = useState<"intro" | "quiz" | "processing" | "leadForm" | "result">("intro");
+  const [phase, setPhase] = useState<Phase>("quiz");
   const [currentIdx, setCurrentIdx] = useState(0);
   const [answers, setAnswers] = useState<Record<number, number>>({});
   const [resultProfile, setResultProfile] = useState<ResultProfile>("nao_qualificada");
@@ -28,12 +31,24 @@ const Index = () => {
   }, []);
 
   const handleNext = useCallback(() => {
-    if (currentIdx < totalQuestions - 1) {
-      setCurrentIdx((i) => i + 1);
-    } else {
+    if (currentIdx >= totalQuestions - 1) {
       const profile = calculateResult(answers);
       setResultProfile(profile);
       setPhase("processing");
+      return;
+    }
+
+    const nextIdx = currentIdx + 1;
+    setCurrentIdx(nextIdx);
+
+    // Check for interstitials AFTER advancing
+    if (currentIdx === AUTHORITY_AFTER_INDEX) {
+      setPhase("authority");
+      return;
+    }
+    if (currentIdx === SOCIAL_PROOF_AFTER_INDEX) {
+      setPhase("socialProof");
+      return;
     }
   }, [currentIdx, answers]);
 
@@ -41,8 +56,12 @@ const Index = () => {
     if (currentIdx > 0) setCurrentIdx((i) => i - 1);
   }, [currentIdx]);
 
-  if (phase === "intro") {
-    return <QuizIntro onStart={() => setPhase("quiz")} />;
+  if (phase === "authority") {
+    return <AuthorityBlock onContinue={() => setPhase("quiz")} />;
+  }
+
+  if (phase === "socialProof") {
+    return <SocialProofBlock onContinue={() => setPhase("quiz")} />;
   }
 
   if (phase === "processing") {
@@ -50,7 +69,12 @@ const Index = () => {
   }
 
   if (phase === "leadForm") {
-    return <QuizLeadForm answers={answers} onSubmit={(data) => { console.log("Lead data:", data); setPhase("result"); }} />;
+    return (
+      <QuizLeadForm
+        answers={answers}
+        onSubmit={() => setPhase("result")}
+      />
+    );
   }
 
   if (phase === "result") {
@@ -68,6 +92,7 @@ const Index = () => {
       onNext={handleNext}
       onPrev={handlePrev}
       canGoBack={currentIdx > 0}
+      showIntro={currentIdx === 0}
     />
   );
 };
