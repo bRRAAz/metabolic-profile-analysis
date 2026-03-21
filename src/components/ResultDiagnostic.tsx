@@ -34,7 +34,7 @@ const ResultDiagnostic = ({ profile, onContinue }: ResultDiagnosticProps) => {
 
   return (
     <div className="flex flex-col items-center px-6 py-16 max-w-xl mx-auto animate-fade-in">
-      <img src={logo} alt="Bruna Vieira Nutricionista" className="w-40 mb-10 opacity-90 brightness-150" />
+      <img src={logo} alt="Bruna Vieira Nutricionista" className="w-40 mb-10 opacity-90" />
 
       <GoldDivider />
 
