@@ -22,6 +22,11 @@ const QuizLeadForm = ({ answers, onSubmit }: QuizLeadFormProps) => {
 
   const isValid = name.trim() && phone.trim() && email.trim();
 
+  const handleSubmitDev = async (e: React.FormEvent) => {
+    e.preventDefault();
+    onSubmit({ name, phone, email });
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!isValid) return;
@@ -64,7 +69,7 @@ const QuizLeadForm = ({ answers, onSubmit }: QuizLeadFormProps) => {
         Ele é específico para o seu caso. Para onde enviamos sua análise completa?
       </p>
 
-      <form onSubmit={handleSubmit} className="w-full max-w-sm space-y-4">
+      <form onSubmit={handleSubmitDev} className="w-full max-w-sm space-y-4">
         <div>
           <label className="text-xs font-body tracking-[0.15em] uppercase text-muted-foreground mb-1.5 block">Nome</label>
           <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Seu nome completo"
@@ -82,11 +87,10 @@ const QuizLeadForm = ({ answers, onSubmit }: QuizLeadFormProps) => {
         </div>
 
         <button type="submit" disabled={!isValid || loading}
-          className={`w-full font-body text-sm tracking-[0.15em] uppercase px-10 py-5 mt-6 rounded-lg transition-all duration-500 font-bold ${
-            isValid && !loading
-              ? "animate-pulse-cta gold-cta-glow hover:scale-[1.02]"
-              : "border border-border text-muted-foreground/40 cursor-not-allowed"
-          }`}
+          className={`w-full font-body text-sm tracking-[0.15em] uppercase px-10 py-5 mt-6 rounded-lg transition-all duration-500 font-bold ${isValid && !loading
+            ? "animate-pulse-cta gold-cta-glow hover:scale-[1.02]"
+            : "border border-border text-muted-foreground/40 cursor-not-allowed"
+            }`}
           style={isValid && !loading ? {
             background: 'linear-gradient(135deg, hsl(43 80% 55%), hsl(43 70% 65%), hsl(43 80% 55%))',
             color: 'hsl(0 0% 5%)',
