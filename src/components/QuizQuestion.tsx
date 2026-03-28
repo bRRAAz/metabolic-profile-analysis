@@ -51,13 +51,15 @@ const QuizQuestion = ({
             Diagnóstico Metabólico Gratuito
           </p>
           <div className="w-12 h-px bg-primary/30 mx-auto mb-6" />
-          <p className="text-sm font-body text-muted-foreground leading-relaxed mb-3">
-            Existe apenas <span className="text-primary font-semibold">UM TIPO DE BLOQUEIO METABÓLICO</span> que impede muitas mulheres de emagrecer — mesmo fazendo dieta.
-          </p>
-          <p className="text-sm font-body text-muted-foreground/80 leading-relaxed">
-            Em menos de 2 minutos, você vai descobrir o que pode estar impedindo seu corpo de responder ao emagrecimento.
-          </p>
-          <div className="w-12 h-px bg-primary/30 mx-auto mt-6" />
+          <div className="w-full p-5 border border-primary/20 rounded-lg bg-primary/5 mb-2">
+            <p className="text-sm font-body text-muted-foreground leading-relaxed mb-3">
+              Existe apenas <span className="text-primary font-semibold">UM TIPO DE BLOQUEIO METABÓLICO</span> que impede muitas mulheres de emagrecer — mesmo fazendo dieta.
+            </p>
+            <p className="text-sm font-body text-muted-foreground/80 leading-relaxed">
+              Em menos de 2 minutos, você vai descobrir o que pode estar impedindo seu corpo de responder ao emagrecimento.
+            </p>
+          </div>
+          <div className="w-12 h-px bg-primary/30 mx-auto mt-4" />
         </div>
       )}
 
