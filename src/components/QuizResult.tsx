@@ -41,7 +41,9 @@ const QuizResult = ({ profile }: QuizResultProps) => {
     case "q19":
       return <ResultPostQuestion {...q19Data} onAnswer={() => setPhase("decision")} />;
     case "decision":
-      return <ResultDecision profile={profile} onContinue={() => setPhase("processing2")} />;
+      return <ResultDecision profile={profile} onContinue={() => setPhase(isQualified ? "sessionPoints" : "processing2")} />;
+    case "sessionPoints":
+      return <ResultSessionPoints profile={profile} onContinue={() => setPhase("processing2")} />;
     case "processing2":
       return <ResultProcessing2 onComplete={() => setPhase("final")} />;
     case "final":
