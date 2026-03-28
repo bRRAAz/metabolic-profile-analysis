@@ -55,7 +55,7 @@ const QuizQuestion = ({
             <p className="text-sm font-body text-muted-foreground leading-relaxed mb-3">
               Existe apenas <span className="text-primary font-semibold">UM TIPO DE BLOQUEIO METABÓLICO</span> que impede muitas mulheres de emagrecer — mesmo fazendo dieta.
             </p>
-            <p className="text-sm font-body text-muted-foreground/80 leading-relaxed">
+            <p className="text-sm font-body text-muted-foreground leading-relaxed">
               Em menos de 2 minutos, você vai descobrir o que pode estar impedindo seu corpo de responder ao emagrecimento.
             </p>
           </div>
