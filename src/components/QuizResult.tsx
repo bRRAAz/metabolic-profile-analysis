@@ -4,10 +4,11 @@ import ResultDiagnostic from "./ResultDiagnostic";
 import ResultPostQuestion from "./ResultPostQuestion";
 import ResultDecision from "./ResultDecision";
 import ResultProcessing2 from "./ResultProcessing2";
+import ResultSessionPoints from "./ResultSessionPoints";
 import ResultFinalQualified from "./ResultFinalQualified";
 import ResultFinalLowTicket from "./ResultFinalLowTicket";
 
-type Phase = "diagnostic" | "q18" | "q19" | "decision" | "processing2" | "final";
+type Phase = "diagnostic" | "q18" | "q19" | "decision" | "sessionPoints" | "processing2" | "final";
 
 interface QuizResultProps {
   profile: ResultProfile;
