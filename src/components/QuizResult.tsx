@@ -4,10 +4,11 @@ import ResultDiagnostic from "./ResultDiagnostic";
 import ResultPostQuestion from "./ResultPostQuestion";
 import ResultDecision from "./ResultDecision";
 import ResultProcessing2 from "./ResultProcessing2";
+import ResultSessionPoints from "./ResultSessionPoints";
 import ResultFinalQualified from "./ResultFinalQualified";
 import ResultFinalLowTicket from "./ResultFinalLowTicket";
 
-type Phase = "diagnostic" | "q18" | "q19" | "decision" | "processing2" | "final";
+type Phase = "diagnostic" | "q18" | "q19" | "decision" | "sessionPoints" | "processing2" | "final";
 
 interface QuizResultProps {
   profile: ResultProfile;
@@ -40,7 +41,9 @@ const QuizResult = ({ profile }: QuizResultProps) => {
     case "q19":
       return <ResultPostQuestion {...q19Data} onAnswer={() => setPhase("decision")} />;
     case "decision":
-      return <ResultDecision profile={profile} onContinue={() => setPhase("processing2")} />;
+      return <ResultDecision profile={profile} onContinue={() => setPhase(isQualified ? "sessionPoints" : "processing2")} />;
+    case "sessionPoints":
+      return <ResultSessionPoints profile={profile} onContinue={() => setPhase("processing2")} />;
     case "processing2":
       return <ResultProcessing2 onComplete={() => setPhase("final")} />;
     case "final":
