@@ -1,4 +1,5 @@
 import blocoAutoridade from "@/assets/bloco-autoridade.png";
+import SectionTitle from "./SectionTitle";
 
 interface AuthorityBlockProps {
   onContinue: () => void;
@@ -6,9 +7,7 @@ interface AuthorityBlockProps {
 
 const AuthorityBlock = ({ onContinue }: AuthorityBlockProps) => (
   <div className="flex flex-col items-center min-h-screen px-6 py-12 max-w-xl mx-auto animate-fade-in">
-    <p className="text-xs font-body tracking-[0.35em] uppercase text-primary mb-6">
-      Por que isso acontece
-    </p>
+    <SectionTitle className="mb-4">Por que isso acontece</SectionTitle>
 
     <h2 className="text-xl md:text-2xl font-display text-foreground text-center leading-snug mb-2">
       Não é falta de força de vontade.

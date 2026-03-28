@@ -1,5 +1,6 @@
 import { ResultProfile, resultProfileData } from "@/data/quizData";
 import logo from "@/assets/logo-bruna-vieira.png";
+import SectionTitle from "./SectionTitle";
 
 interface ResultSessionPointsProps {
   profile: ResultProfile;
@@ -18,9 +19,7 @@ const ResultSessionPoints = ({ profile, onContinue }: ResultSessionPointsProps) 
     <div className="flex flex-col items-center px-6 py-16 max-w-xl mx-auto animate-fade-in">
       <img src={logo} alt="Bruna Vieira Nutricionista" className="w-40 mb-8 opacity-90" />
 
-      <p className="text-xs font-body tracking-[0.35em] uppercase text-primary mb-2">
-        Reprogramação Metabólica
-      </p>
+      <SectionTitle>Reprogramação Metabólica</SectionTitle>
 
       <GoldDivider />
 
