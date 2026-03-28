@@ -1,4 +1,5 @@
 import resultado7kg from "@/assets/resultado-7kg.jpg";
+import SectionTitle from "./SectionTitle";
 
 interface SocialProofBlockProps {
   onContinue: () => void;
@@ -6,9 +7,7 @@ interface SocialProofBlockProps {
 
 const SocialProofBlock = ({ onContinue }: SocialProofBlockProps) => (
   <div className="flex flex-col items-center justify-center min-h-screen px-6 py-12 max-w-xl mx-auto animate-fade-in">
-    <p className="text-xs font-body tracking-[0.35em] uppercase text-primary mb-2">
-      Resultado Real
-    </p>
+    <SectionTitle>Resultado Real</SectionTitle>
 
     <h2 className="text-xl md:text-2xl font-display text-foreground text-center leading-snug mb-3">
       As mudanças começam nas primeiras semanas.

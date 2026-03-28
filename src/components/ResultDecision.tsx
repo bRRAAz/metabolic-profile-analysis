@@ -1,4 +1,5 @@
 import { useState, useCallback } from "react";
+import SectionTitle from "./SectionTitle";
 import { ResultProfile } from "@/data/quizData";
 import antes from "@/assets/resultado-antes.jpg";
 import depois from "@/assets/resultado-depois.jpg";
@@ -26,9 +27,7 @@ const ResultDecision = ({ profile, onContinue }: ResultDecisionProps) => {
 
   return (
     <div className="flex flex-col items-center px-6 py-16 max-w-xl mx-auto animate-fade-in">
-      <p className="text-xs font-body tracking-[0.35em] uppercase text-primary mb-2">
-        {isQualified ? "Seu Diagnóstico" : "Próximo Passo"}
-      </p>
+      <SectionTitle>{isQualified ? "Seu Diagnóstico" : "Próximo Passo"}</SectionTitle>
 
       {isQualified ? (
         <>
