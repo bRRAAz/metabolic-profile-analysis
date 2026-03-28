@@ -128,27 +128,28 @@ const ResultFinalLowTicket = () => {
         </p>
         <div className="space-y-2 mb-4">
           {priceItems.map((item, idx) => (
-            <div key={idx} className="flex items-center justify-between p-3 border border-border/50 rounded-lg bg-secondary/30">
-              <p className="text-xs font-body text-foreground/80">{item.name}</p>
-              <p className="text-xs font-body text-muted-foreground line-through">{item.price}</p>
+            <div key={idx} className="flex items-center justify-between p-4 border border-border/50 rounded-lg bg-secondary/30">
+              <p className="text-sm font-body text-foreground/80">{item.name}</p>
+              <p className="text-base font-body font-semibold line-through" style={{ color: 'hsl(0 72% 50%)' }}>{item.price}</p>
             </div>
           ))}
-          <div className="flex items-center justify-between p-3 border border-border rounded-lg bg-secondary/50">
-            <p className="text-sm font-body text-foreground font-semibold">Total separado:</p>
-            <p className="text-sm font-body text-muted-foreground line-through font-semibold">R$ 1.430</p>
+          <div className="flex items-center justify-between p-4 border-2 border-foreground/20 rounded-lg bg-foreground/5">
+            <p className="text-base font-body text-foreground font-bold">Total separado:</p>
+            <p className="text-lg font-body font-bold line-through" style={{ color: 'hsl(0 72% 50%)' }}>R$ 1.430</p>
           </div>
         </div>
       </div>
 
       {/* Offer price */}
-      <div className="w-full p-6 border border-primary/30 rounded-lg bg-primary/5 gold-glow text-center mb-8">
-        <p className="text-xs font-body tracking-[0.2em] uppercase text-primary font-bold mb-2">
-          Método Reprograme — Tudo incluso
+      <div className="w-full p-8 border-2 border-primary/40 rounded-xl bg-foreground text-center mb-8 gold-glow">
+        <p className="text-sm font-body tracking-[0.25em] uppercase text-primary font-bold mb-3">
+          ✨ Método Reprograme — Tudo incluso
         </p>
-        <p className="text-xs font-body text-muted-foreground mb-1">Acesso imediato + vitalício</p>
-        <p className="text-xs font-body text-muted-foreground line-through mb-1">R$ 1.430</p>
-        <p className="text-3xl font-display font-bold gold-gradient mb-1">R$ 296</p>
-        <p className="text-xs font-body text-muted-foreground">ou em até 12x no cartão</p>
+        <p className="text-xs font-body text-primary-foreground/60 mb-2">Acesso imediato + vitalício</p>
+        <p className="text-lg font-body font-bold line-through mb-2" style={{ color: 'hsl(0 72% 55%)' }}>De R$ 1.430</p>
+        <p className="text-xs font-body text-primary-foreground/60 mb-1">por apenas</p>
+        <p className="text-5xl md:text-6xl font-display font-bold gold-gradient mb-2 animate-pulse-cta">R$ 296</p>
+        <p className="text-sm font-body text-primary-foreground/50">ou em até 12x no cartão</p>
       </div>
 
       <GoldDivider />
@@ -202,10 +203,11 @@ const ResultFinalLowTicket = () => {
       </div>
 
       {/* Price + CTA */}
-      <div className="w-full p-5 border border-border rounded-lg bg-secondary/50 mb-6 text-center">
-        <p className="text-xs font-body text-muted-foreground mb-1">De R$ 1.430 por apenas:</p>
-        <p className="text-3xl font-display font-bold gold-gradient mb-1">R$ 296</p>
-        <p className="text-xs font-body text-muted-foreground">ou em até 12x no cartão</p>
+      <div className="w-full p-6 border-2 border-primary/40 rounded-xl bg-foreground text-center mb-6 gold-glow">
+        <p className="text-base font-body font-bold line-through mb-1" style={{ color: 'hsl(0 72% 55%)' }}>De R$ 1.430</p>
+        <p className="text-xs font-body text-primary-foreground/60 mb-1">por apenas</p>
+        <p className="text-5xl md:text-6xl font-display font-bold gold-gradient mb-1 animate-pulse-cta">R$ 296</p>
+        <p className="text-sm font-body text-primary-foreground/50">ou em até 12x no cartão</p>
       </div>
 
       <div className="w-full mb-3">
