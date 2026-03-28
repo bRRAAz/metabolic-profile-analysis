@@ -102,40 +102,7 @@ const ResultDiagnostic = ({ profile, onContinue }: ResultDiagnosticProps) => {
         </div>
       </div>
 
-      {/* Session points - qualified only */}
-      {isQualified && profileData && (
-        <>
-          <GoldDivider />
-          <div className="w-full mb-10">
-            <p className="text-xs font-body tracking-[0.25em] uppercase text-primary text-center mb-4">
-              Próximo passo recomendado
-            </p>
-            <div className="p-6 border border-primary/30 rounded-lg bg-primary/5 gold-glow mb-6">
-              <p className="text-sm font-body text-foreground/90 text-center leading-relaxed mb-2">
-                Você apresenta perfil compatível para a <span className="font-semibold text-primary">Consulta Estratégica de Reprogramação Metabólica</span>.
-              </p>
-              <p className="text-sm font-body text-foreground/90 text-center leading-relaxed">
-                Uma sessão individual, sem custo, onde analisamos profundamente o seu caso e estruturamos um plano personalizado para restaurar sua resposta metabólica.
-              </p>
-            </div>
 
-            <p className="text-xs font-body tracking-[0.25em] uppercase text-primary text-center mb-5">
-              Nessa sessão eu vou
-            </p>
-            <div className="space-y-4">
-              {profileData.sessionPoints.map((point, idx) => (
-                <div key={idx} className="flex items-start gap-3">
-                  <span className="text-primary mt-0.5 text-xs">◆</span>
-                  <div>
-                    <p className="text-sm font-body text-foreground font-semibold">{point.title}</p>
-                    <p className="text-xs font-body text-muted-foreground leading-relaxed">{point.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </>
-      )}
 
       <GoldDivider />
 
@@ -156,7 +123,6 @@ const ResultDiagnostic = ({ profile, onContinue }: ResultDiagnosticProps) => {
         </div>
       </div>
 
-      <GoldDivider />
 
       {/* Pain section */}
       <div className="w-full mb-8">

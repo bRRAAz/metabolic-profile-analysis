@@ -52,12 +52,6 @@ const QuizQuestion = ({
           </p>
           <div className="w-12 h-px bg-primary/30 mx-auto mb-6" />
           <p className="text-sm font-body text-muted-foreground leading-relaxed mb-3">
-            Se você já se esforçou, fez dieta, tentou de tudo e o peso ainda não saiu…
-          </p>
-          <p className="text-base md:text-lg font-display text-foreground leading-relaxed mb-4">
-            o problema não é você.
-          </p>
-          <p className="text-sm font-body text-muted-foreground leading-relaxed mb-3">
             Existe apenas <span className="text-primary font-semibold">UM TIPO DE BLOQUEIO METABÓLICO</span> que impede muitas mulheres de emagrecer — mesmo fazendo dieta.
           </p>
           <p className="text-sm font-body text-muted-foreground/80 leading-relaxed">
