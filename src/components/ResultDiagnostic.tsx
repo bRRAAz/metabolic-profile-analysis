@@ -1,6 +1,7 @@
 import { ResultProfile, resultProfileData, lowTicketFactors } from "@/data/quizData";
 import logo from "@/assets/logo-bruna-vieira.png";
 import TabelaAntesDepois from "./TabelaAntesDepois";
+import SectionTitle from "./SectionTitle";
 import antes from "@/assets/resultado-antes.jpg";
 import depois from "@/assets/resultado-depois.jpg";
 
@@ -39,7 +40,7 @@ const ResultDiagnostic = ({ profile, onContinue }: ResultDiagnosticProps) => {
       <GoldDivider />
 
       {/* Title */}
-      <p className="text-xs font-body tracking-[0.35em] uppercase text-primary mb-2">Seu Diagnóstico</p>
+      <SectionTitle>Seu Diagnóstico</SectionTitle>
       <h2 className="text-2xl md:text-3xl font-display text-foreground text-center leading-snug mb-4">
         Encontramos o que está travando o seu emagrecimento.
       </h2>

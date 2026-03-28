@@ -1,6 +1,7 @@
 import { QuizBlock } from "@/data/quizData";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useRef, useCallback } from "react";
+import SectionTitle from "./SectionTitle";
 
 interface QuizQuestionProps {
   block: QuizBlock;
@@ -44,9 +45,7 @@ const QuizQuestion = ({
       {/* Intro header on first question */}
       {showIntro && (
         <div className="text-center mb-8">
-          <p className="text-xs font-body tracking-[0.35em] uppercase text-primary mb-2">
-            Reprogramação Metabólica
-          </p>
+          <SectionTitle>Reprogramação Metabólica</SectionTitle>
           <p className="text-[10px] font-body tracking-[0.2em] uppercase text-muted-foreground mb-6">
             Diagnóstico Metabólico Gratuito
           </p>
