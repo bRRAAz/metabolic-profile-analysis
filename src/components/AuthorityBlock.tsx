@@ -9,13 +9,6 @@ const AuthorityBlock = ({ onContinue }: AuthorityBlockProps) => (
   <div className="flex flex-col items-center min-h-screen px-6 py-12 max-w-xl mx-auto animate-fade-in">
     <SectionTitle className="mb-4">Por que isso acontece</SectionTitle>
 
-    <h2 className="text-xl md:text-2xl font-display text-foreground text-center leading-snug mb-2">
-      Não é falta de força de vontade.
-    </h2>
-    <p className="text-lg md:text-xl font-display text-primary text-center mb-8">
-      É biologia.
-    </p>
-
     <p className="text-sm font-body text-muted-foreground text-center leading-relaxed mb-8">
       Pesquisas em metabolismo feminino mostram que mulheres que passaram por ciclos repetidos de dieta desenvolvem um mecanismo chamado <span className="text-foreground font-semibold">adaptação metabólica</span> — onde o corpo literalmente aprende a resistir ao emagrecimento como forma de proteção.
     </p>
