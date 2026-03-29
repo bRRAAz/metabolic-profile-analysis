@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 
 interface ResultProcessing2Props {
+  isQualified?: boolean;
   onComplete: () => void;
 }
 
-const ResultProcessing2 = ({ onComplete }: ResultProcessing2Props) => {
+const ResultProcessing2 = ({ isQualified = true, onComplete }: ResultProcessing2Props) => {
   const [progress, setProgress] = useState(0);
   const [showWarning, setShowWarning] = useState(false);
 
@@ -32,7 +33,7 @@ const ResultProcessing2 = ({ onComplete }: ResultProcessing2Props) => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen px-6 animate-fade-in">
       <p className="text-xs font-body tracking-[0.35em] uppercase text-muted-foreground mb-6">
-        Separando vaga na agenda para você
+        {isQualified ? "Separando vaga na agenda para você" : "Preparando sua próxima etapa"}
       </p>
 
       <div className="w-full max-w-xs mb-4">
