@@ -31,14 +31,19 @@ const QuizQuestion = ({
   const question = block.questions[questionIndex];
   const isMobile = useIsMobile();
   const autoAdvanceTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const onNextRef = useRef(onNext);
+
+  useEffect(() => {
+    onNextRef.current = onNext;
+  }, [onNext]);
 
   const handleOptionClick = useCallback((idx: number) => {
     onAnswer(question.id, idx);
     if (isMobile) {
       if (autoAdvanceTimer.current) clearTimeout(autoAdvanceTimer.current);
-      autoAdvanceTimer.current = setTimeout(() => onNext(), 400);
+      autoAdvanceTimer.current = setTimeout(() => onNextRef.current(), 400);
     }
-  }, [isMobile, onAnswer, onNext, question.id]);
+  }, [isMobile, onAnswer, question.id]);
 
   return (
     <div className="flex flex-col min-h-0 md:min-h-screen px-6 py-6 md:py-12 max-w-xl mx-auto animate-fade-in">
