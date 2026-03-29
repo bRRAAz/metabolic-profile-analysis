@@ -1,13 +1,13 @@
 import logo from "@/assets/logo-bruna-vieira.png";
 import antes from "@/assets/resultado-antes.jpg";
 import depois from "@/assets/resultado-depois.jpg";
-import resultGraph from "@/assets/result-graph.jpeg";
-import resultScale from "@/assets/result-scale.jpeg";
-import resultBelly from "@/assets/result-belly.jpeg";
-import resultShorts from "@/assets/result-shorts.jpeg";
-import resultBeforeAfter from "@/assets/result-before-after.jpeg";
-import resultTestimonial from "@/assets/result-testimonial.jpeg";
-import resultWeightChart from "@/assets/result-weight-chart.jpeg";
+const resultGraph = "/images/result-graph.jpeg";
+const resultScale = "/images/result-scale.jpeg";
+const resultBelly = "/images/result-belly.jpeg";
+const resultShorts = "/images/result-shorts.jpeg";
+const resultBeforeAfter = "/images/result-before-after.jpeg";
+const resultTestimonial = "/images/result-testimonial.jpeg";
+const resultWeightChart = "/images/result-weight-chart.jpeg";
 import {
   Accordion,
   AccordionContent,
