@@ -1,6 +1,6 @@
 import { QuizBlock } from "@/data/quizData";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { useRef, useCallback } from "react";
+import { useRef, useCallback, useEffect } from "react";
 import SectionTitle from "./SectionTitle";
 
 interface QuizQuestionProps {
