@@ -3,7 +3,8 @@ import SectionTitle from "./SectionTitle";
 import { ResultProfile } from "@/data/quizData";
 import antes from "@/assets/resultado-antes.jpg";
 import depois from "@/assets/resultado-depois.jpg";
-import resultado7kg from "@/assets/resultado-7kg.jpg";
+import antesDepois from "@/assets/resultado-antes-depois.jpg";
+import antesDepois2 from "@/assets/antesDepois2.jpeg";
 
 interface ResultDecisionProps {
   profile: ResultProfile;
@@ -66,8 +67,17 @@ const ResultDecision = ({ profile, onContinue }: ResultDecisionProps) => {
             <img src={depois} alt="Depois" className="w-full h-64 object-cover" />
           </div>
         </div>
-        <div className="rounded-lg overflow-hidden border border-border gold-glow">
-          <img src={resultado7kg} alt="Resultado -7kg" className="w-full h-48 object-cover" />
+        <div className="grid grid-cols-2 gap-3 mb-3">
+          <div className="rounded-lg overflow-hidden border border-border gold-glow">
+            <img src={antesDepois} alt="Antes" className="w-full h-64 object-cover" />
+          </div>
+          <div className="rounded-lg overflow-hidden border border-border gold-glow bg-gray-100">
+            <img
+              src={antesDepois2}
+              alt="Depois"
+              className="w-full h-64 object-contain"
+            />
+          </div>
         </div>
       </div>
 
@@ -83,11 +93,10 @@ const ResultDecision = ({ profile, onContinue }: ResultDecisionProps) => {
           <button
             key={idx}
             onClick={() => handleSelect(idx)}
-            className={`w-full text-left px-5 py-4 border text-sm font-body transition-all duration-300 rounded-lg flex items-center gap-3 ${
-              selected === idx
-                ? "border-primary/60 bg-primary/10 text-foreground"
-                : "border-border hover:border-primary/30 text-muted-foreground hover:text-foreground"
-            }`}
+            className={`w-full text-left px-5 py-4 border text-sm font-body transition-all duration-300 rounded-lg flex items-center gap-3 ${selected === idx
+              ? "border-primary/60 bg-primary/10 text-foreground"
+              : "border-border hover:border-primary/30 text-muted-foreground hover:text-foreground"
+              }`}
           >
             <span className="text-lg">{option.emoji}</span>
             {option.text}
