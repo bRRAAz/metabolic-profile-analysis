@@ -21,7 +21,7 @@ interface ResultFinalQualifiedProps {
 }
 
 const WHATSAPP_LINK = "https://wa.me/5500000000000"; // TODO: Replace with actual WhatsApp number
-const VIDEO_LINK = ""; // TODO: Replace with actual video link
+const VIDEO_LINK = "https://www.youtube.com/watch?v=1cINewT7-_k"; // TODO: Replace with actual video link
 
 const faqItems = [
   {
