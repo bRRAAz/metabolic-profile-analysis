@@ -1,6 +1,13 @@
 import logo from "@/assets/logo-bruna-vieira.png";
 import antes from "@/assets/resultado-antes.jpg";
 import depois from "@/assets/resultado-depois.jpg";
+import resultGraph from "@/assets/result-graph.jpeg";
+import resultScale from "@/assets/result-scale.jpeg";
+import resultBelly from "@/assets/result-belly.jpeg";
+import resultShorts from "@/assets/result-shorts.jpeg";
+import resultBeforeAfter from "@/assets/result-before-after.jpeg";
+import resultTestimonial from "@/assets/result-testimonial.jpeg";
+import resultWeightChart from "@/assets/result-weight-chart.jpeg";
 import {
   Accordion,
   AccordionContent,
@@ -239,12 +246,14 @@ const ResultFinalLowTicket = () => {
       {/* Social Proof */}
       <div className="w-full mb-10">
         <p className="text-xs font-body tracking-[0.25em] uppercase text-primary text-center mb-2">
-          Depoimentos
+          Resultados Reais
         </p>
         <p className="text-base font-display text-foreground text-center mb-6">
-          Resultados reais de quem já passou pela transformação.
+          Transformações de quem já passou pelo método.
         </p>
-        <div className="grid grid-cols-2 gap-3 mb-6">
+
+        {/* Before/After grid */}
+        <div className="grid grid-cols-2 gap-3 mb-4">
           <div className="rounded-lg overflow-hidden border border-border gold-glow">
             <img src={antes} alt="Antes" className="w-full h-64 object-cover" />
             <p className="text-[10px] font-body text-primary/60 text-center py-1.5 uppercase tracking-widest bg-secondary">Antes</p>
@@ -254,6 +263,42 @@ const ResultFinalLowTicket = () => {
             <p className="text-[10px] font-body text-primary/60 text-center py-1.5 uppercase tracking-widest bg-secondary">Depois</p>
           </div>
         </div>
+
+        {/* Single wide image */}
+        <div className="rounded-lg overflow-hidden border border-border gold-glow mb-4">
+          <img src={resultBeforeAfter} alt="Antes e Depois" className="w-full object-cover" />
+        </div>
+
+        {/* More results */}
+        <div className="grid grid-cols-2 gap-3 mb-4">
+          <div className="rounded-lg overflow-hidden border border-border gold-glow">
+            <img src={resultScale} alt="Resultado na balança" className="w-full h-64 object-cover" />
+          </div>
+          <div className="rounded-lg overflow-hidden border border-border gold-glow">
+            <img src={resultShorts} alt="Resultado - roupas folgadas" className="w-full h-64 object-cover" />
+          </div>
+        </div>
+
+        {/* Belly transformation */}
+        <div className="rounded-lg overflow-hidden border border-border gold-glow mb-4">
+          <img src={resultBelly} alt="Transformação corporal" className="w-full object-cover" />
+        </div>
+
+        {/* Charts */}
+        <div className="grid grid-cols-2 gap-3 mb-4">
+          <div className="rounded-lg overflow-hidden border border-border gold-glow">
+            <img src={resultGraph} alt="Gráfico de evolução" className="w-full h-64 object-cover" />
+          </div>
+          <div className="rounded-lg overflow-hidden border border-border gold-glow">
+            <img src={resultWeightChart} alt="Evolução de peso" className="w-full h-64 object-cover" />
+          </div>
+        </div>
+
+        {/* Testimonial */}
+        <div className="rounded-lg overflow-hidden border border-primary/30 gold-glow mb-6">
+          <img src={resultTestimonial} alt="Depoimento de paciente" className="w-full object-cover" />
+        </div>
+
         <GoldCTA text="Quero iniciar minha Reprogramação agora →" />
       </div>
 
