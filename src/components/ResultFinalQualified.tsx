@@ -9,7 +9,7 @@ import resultShorts from "@/assets/result-shorts.jpg";
 import resultBeforeAfter from "@/assets/result-before-after.jpg";
 import resultTestimonial from "@/assets/result-testimonial.jpg";
 import resultWeightChart from "@/assets/result-weight-chart.jpg";
-import videoLink from "@/assets/VSL_3.mp4";
+//import videoLink from "@/assets/VSL_3.mp4";
 import {
   Accordion,
   AccordionContent,
@@ -22,7 +22,7 @@ interface ResultFinalQualifiedProps {
 }
 
 const WHATSAPP_LINK = "https://wa.me/5511992923276?text=Olá!%20Acabei%20de%20fazer%20o%20diagnóstico%20metabólico%20e%20quero%20furar%20a%20fila%20para%20iniciar%20minha%20Reprogramação%20Metabólica!";
-
+const videoLink = "https://www.youtube.com/embed/8n9j3ZsQeXo";
 const faqItems = [
   {
     q: "Essa análise metabólica é realmente gratuita?",
