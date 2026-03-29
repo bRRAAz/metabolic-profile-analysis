@@ -2,13 +2,13 @@ import { ResultProfile } from "@/data/quizData";
 import logo from "@/assets/logo-bruna-vieira.png";
 import antes from "@/assets/resultado-antes.jpg";
 import depois from "@/assets/resultado-depois.jpg";
-import resultGraph from "@/assets/result-graph.jpeg";
-import resultScale from "@/assets/result-scale.jpeg";
-import resultBelly from "@/assets/result-belly.jpeg";
-import resultShorts from "@/assets/result-shorts.jpeg";
-import resultBeforeAfter from "@/assets/result-before-after.jpeg";
-import resultTestimonial from "@/assets/result-testimonial.jpeg";
-import resultWeightChart from "@/assets/result-weight-chart.jpeg";
+const resultGraph = "/images/result-graph.jpeg";
+const resultScale = "/images/result-scale.jpeg";
+const resultBelly = "/images/result-belly.jpeg";
+const resultShorts = "/images/result-shorts.jpeg";
+const resultBeforeAfter = "/images/result-before-after.jpeg";
+const resultTestimonial = "/images/result-testimonial.jpeg";
+const resultWeightChart = "/images/result-weight-chart.jpeg";
 import {
   Accordion,
   AccordionContent,
@@ -175,49 +175,47 @@ const ResultFinalQualified = ({ profile }: ResultFinalQualifiedProps) => {
 
         <div className="grid grid-cols-2 gap-3 mb-4">
           <div className="rounded-lg overflow-hidden border border-border gold-glow">
-            <img src={antes} alt="Antes" className="w-full h-64 object-cover" />
+            <img src={antes} alt="Antes" className="w-full h-48 object-cover" />
             <p className="text-[10px] font-body text-primary/60 text-center py-1.5 uppercase tracking-widest bg-secondary">Antes</p>
           </div>
           <div className="rounded-lg overflow-hidden border border-border gold-glow">
-            <img src={depois} alt="Depois" className="w-full h-64 object-cover" />
+            <img src={depois} alt="Depois" className="w-full h-48 object-cover" />
             <p className="text-[10px] font-body text-primary/60 text-center py-1.5 uppercase tracking-widest bg-secondary">Depois</p>
           </div>
         </div>
 
         <div className="rounded-lg overflow-hidden border border-border gold-glow mb-4">
-          <img src={resultBeforeAfter} alt="Antes e Depois" className="w-full object-cover" />
+          <img src={resultBeforeAfter} alt="Antes e Depois" className="w-full max-h-72 object-cover" />
         </div>
 
         <div className="grid grid-cols-2 gap-3 mb-4">
           <div className="rounded-lg overflow-hidden border border-border gold-glow">
-            <img src={resultScale} alt="Resultado na balança" className="w-full h-64 object-cover" />
+            <img src={resultScale} alt="Resultado na balança" className="w-full h-48 object-cover" />
           </div>
           <div className="rounded-lg overflow-hidden border border-border gold-glow">
-            <img src={resultShorts} alt="Resultado - roupas folgadas" className="w-full h-64 object-cover" />
+            <img src={resultShorts} alt="Roupas folgadas" className="w-full h-48 object-cover" />
           </div>
         </div>
 
         <div className="rounded-lg overflow-hidden border border-border gold-glow mb-4">
-          <img src={resultBelly} alt="Transformação corporal" className="w-full object-cover" />
+          <img src={resultBelly} alt="Transformação corporal" className="w-full max-h-64 object-cover" />
         </div>
 
         <div className="grid grid-cols-2 gap-3 mb-4">
           <div className="rounded-lg overflow-hidden border border-border gold-glow">
-            <img src={resultGraph} alt="Gráfico de evolução" className="w-full h-64 object-cover" />
+            <img src={resultGraph} alt="Gráfico de evolução" className="w-full h-44 object-contain bg-background" />
           </div>
           <div className="rounded-lg overflow-hidden border border-border gold-glow">
-            <img src={resultWeightChart} alt="Evolução de peso" className="w-full h-64 object-cover" />
+            <img src={resultWeightChart} alt="Evolução de peso" className="w-full h-44 object-contain bg-background" />
           </div>
         </div>
 
         <div className="rounded-lg overflow-hidden border border-primary/30 gold-glow mb-6">
-          <img src={resultTestimonial} alt="Depoimento de paciente" className="w-full object-cover" />
+          <img src={resultTestimonial} alt="Depoimento de paciente" className="w-full max-h-72 object-contain bg-background" />
         </div>
 
         <GoldCTA text="Quero pular a fila →" href={WHATSAPP_LINK} />
       </div>
-
-      <GoldDivider />
 
       <GoldDivider />
 
