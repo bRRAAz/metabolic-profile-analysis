@@ -14,6 +14,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import SectionTitle from "./SectionTitle";
 
 const PURCHASE_LINK = "https://pay.hub.la/lSMNtd205dgseLuAkY45";
 
@@ -122,7 +123,7 @@ const ResultFinalLowTicket = () => {
       {/* Method intro */}
       <div className="text-center mb-8">
         <p className="text-xs font-body tracking-[0.25em] uppercase text-primary mb-2">Método</p>
-        <h2 className="text-3xl font-display text-primary font-bold mb-2">REPROGRAME</h2>
+        <SectionTitle>REPROGRAME</SectionTitle>
         <p className="text-sm font-body text-muted-foreground leading-relaxed">
           O protocolo de 30 dias para reorganizar os pilares do seu metabolismo e voltar a ter resultados reais no emagrecimento.
         </p>
@@ -157,6 +158,10 @@ const ResultFinalLowTicket = () => {
         <p className="text-xs font-body text-primary-foreground/60 mb-1">por apenas</p>
         <p className="text-5xl md:text-6xl font-display font-bold gold-gradient mb-2 animate-pulse-cta">R$ 296</p>
         <p className="text-sm font-body text-primary-foreground/50">ou em até 12x no cartão</p>
+      </div>
+
+      <div className="w-full mb-3">
+        <GoldCTA text="Quero iniciar minha Reprogramação agora →" />
       </div>
 
       <GoldDivider />
@@ -234,9 +239,7 @@ const ResultFinalLowTicket = () => {
         </p>
       </div>
 
-      <div className="w-full mb-3">
-        <GoldCTA text="Quero iniciar minha Reprogramação agora →" />
-      </div>
+
       <p className="text-xs font-body text-muted-foreground/60 text-center mb-8">
         Acesso imediato após confirmação · Garantia de 7 dias
       </p>

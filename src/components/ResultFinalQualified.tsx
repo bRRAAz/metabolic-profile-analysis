@@ -9,6 +9,7 @@ import resultShorts from "@/assets/result-shorts.jpg";
 import resultBeforeAfter from "@/assets/result-before-after.jpg";
 import resultTestimonial from "@/assets/result-testimonial.jpg";
 import resultWeightChart from "@/assets/result-weight-chart.jpg";
+import videoLink from "@/assets/VSL_3.mp4";
 import {
   Accordion,
   AccordionContent,
@@ -20,8 +21,7 @@ interface ResultFinalQualifiedProps {
   profile: ResultProfile;
 }
 
-const WHATSAPP_LINK = "https://wa.me/5500000000000"; // TODO: Replace with actual WhatsApp number
-const VIDEO_LINK = "https://www.youtube.com/watch?v=1cINewT7-_k"; // TODO: Replace with actual video link
+const WHATSAPP_LINK = "https://wa.me/5511992923276?text=Olá!%20Acabei%20de%20fazer%20o%20diagnóstico%20metabólico%20e%20quero%20furar%20a%20fila%20para%20iniciar%20minha%20Reprogramação%20Metabólica!";
 
 const faqItems = [
   {
@@ -138,9 +138,9 @@ const ResultFinalQualified = ({ profile }: ResultFinalQualifiedProps) => {
           <p className="text-xs font-body text-muted-foreground leading-relaxed mb-3">
             Separei um conteúdo explicando por que muitas mulheres não conseguem emagrecer mesmo fazendo dieta, como o metabolismo entra em modo de adaptação e quais são os pilares fundamentais da Reprogramação Metabólica.
           </p>
-          {VIDEO_LINK ? (
+          {videoLink ? (
             <div className="aspect-video w-full rounded-lg overflow-hidden border border-border">
-              <iframe src={VIDEO_LINK} className="w-full h-full" allowFullScreen />
+              <iframe src={videoLink} className="w-full h-full" allowFullScreen />
             </div>
           ) : (
             <div className="aspect-video w-full rounded-lg border border-border/50 bg-secondary flex items-center justify-center">
