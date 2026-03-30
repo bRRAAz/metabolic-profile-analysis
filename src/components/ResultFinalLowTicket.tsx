@@ -81,15 +81,26 @@ const GoldDivider = () => (
   <div className="w-16 h-px mx-auto my-8" style={{ background: 'linear-gradient(90deg, transparent, hsl(43 80% 55%), transparent)' }} />
 );
 
+const GoldDotsDecor = () => (
+  <div className="flex items-center justify-center gap-2 my-4">
+    <div className="w-12 h-px" style={{ background: 'linear-gradient(90deg, transparent, hsl(43 80% 55%))' }} />
+    <div className="w-1.5 h-1.5 rounded-full" style={{ background: 'hsl(43 80% 55%)' }} />
+    <div className="w-1.5 h-1.5 rounded-full" style={{ background: 'hsl(43 80% 55%)' }} />
+    <div className="w-1.5 h-1.5 rounded-full" style={{ background: 'hsl(43 80% 55%)' }} />
+    <div className="w-12 h-px" style={{ background: 'linear-gradient(270deg, transparent, hsl(43 80% 55%))' }} />
+  </div>
+);
+
 const GoldCTA = ({ text }: { text: string }) => (
   <a
     href={PURCHASE_LINK}
     target="_blank"
     rel="noopener noreferrer"
-    className="inline-block w-full text-center px-10 py-5 font-body text-sm md:text-base font-bold tracking-[0.15em] uppercase rounded-lg animate-pulse-cta transition-all duration-500 gold-cta-glow hover:scale-[1.02]"
+    className="inline-block w-full text-center px-10 py-5 font-body text-sm md:text-base font-bold tracking-[0.15em] uppercase rounded-lg animate-pulse-cta transition-all duration-500 hover:scale-[1.02]"
     style={{
-      background: 'linear-gradient(135deg, hsl(43 80% 55%), hsl(43 70% 65%), hsl(43 80% 55%))',
+      background: 'linear-gradient(135deg, hsl(43 80% 50%), hsl(43 70% 60%), hsl(43 80% 50%))',
       color: 'hsl(0 0% 5%)',
+      boxShadow: '0 8px 32px hsl(43 80% 45% / 0.4), 0 2px 8px hsl(43 80% 45% / 0.2)',
     }}
   >
     {text}
