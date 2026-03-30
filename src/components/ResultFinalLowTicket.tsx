@@ -240,21 +240,24 @@ const ResultFinalLowTicket = () => {
         </p>
       </div>
 
-      {/* Price + CTA */}
-      <div className="w-full p-6 border-2 border-primary/40 rounded-xl bg-foreground text-center mb-6 gold-glow">
-        <p className="text-base font-body font-bold line-through mb-1" style={{ color: 'hsl(0 72% 55%)' }}>De R$ 1.430</p>
-        <p className="text-xs font-body text-primary-foreground/60 mb-1">por apenas</p>
-        <p className="text-5xl md:text-6xl font-display font-bold gold-gradient mb-1 animate-pulse-cta">R$ 296</p>
-        <p className="text-sm font-body text-primary-foreground/50">ou em até 12x no cartão</p>
-      </div>
-
-      <div className="w-full mb-3">
-        <GoldCTA text="Quero iniciar minha Reprogramação agora →" />
-      </div>
-      <div className="flex items-center justify-center gap-4 text-xs font-body text-muted-foreground mb-2">
-        <span>✅ Acesso imediato</span>
-        <span>♾ Acesso vitalício</span>
-        <span>🛡 Garantia 7 dias</span>
+      {/* Price + CTA - Dark block */}
+      <div className="w-full -mx-6 px-6 py-10" style={{ background: 'hsl(0 0% 6%)' }}>
+        <div className="max-w-xl mx-auto">
+          <div className="p-8 rounded-xl text-center mb-6" style={{ background: 'hsl(0 0% 10%)', border: '2px solid hsl(43 80% 45% / 0.4)', boxShadow: '0 0 40px hsl(43 80% 45% / 0.1)' }}>
+            <p className="text-sm font-body line-through mb-1" style={{ color: 'hsl(0 65% 55%)' }}>De R$ 1.430</p>
+            <p className="text-xs font-body mb-1" style={{ color: 'hsl(0 0% 50%)' }}>por apenas</p>
+            <p className="text-5xl md:text-6xl font-display font-bold mb-1 animate-pulse-cta" style={{ background: 'linear-gradient(135deg, hsl(43 80% 50%), hsl(43 65% 65%), hsl(43 80% 50%))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+              R$ 296
+            </p>
+            <p className="text-sm font-body" style={{ color: 'hsl(0 0% 45%)' }}>ou em até 12x no cartão</p>
+          </div>
+          <GoldCTA text="Quero iniciar minha Reprogramação agora →" />
+          <div className="flex items-center justify-center gap-4 text-xs font-body mt-4" style={{ color: 'hsl(0 0% 50%)' }}>
+            <span>✅ Acesso imediato</span>
+            <span>♾ Acesso vitalício</span>
+            <span>🛡 Garantia 7 dias</span>
+          </div>
+        </div>
       </div>
 
       {/* Guarantee */}
