@@ -109,102 +109,99 @@ const GoldCTA = ({ text }: { text: string }) => (
 
 const ResultFinalLowTicket = () => {
   return (
-    <div className="flex flex-col items-center px-6 py-16 max-w-xl mx-auto animate-fade-in">
+    <div className="flex flex-col items-center px-6 py-16 max-w-xl mx-auto animate-fade-in min-h-screen" style={{ background: 'hsl(0 0% 6%)', color: 'hsl(0 0% 90%)' }}>
       <img src={logo} alt="Bruna Vieira Nutricionista" className="w-40 mb-8 opacity-90" />
 
       {/* Approval */}
-      <div className="w-full p-6 border border-primary/30 rounded-lg bg-primary/5 gold-glow text-center mb-6">
-        <p className="text-xs font-body tracking-[0.25em] uppercase text-muted-foreground mb-2">
+      <div className="w-full p-6 rounded-lg text-center mb-6" style={{ border: '1px solid hsl(43 80% 45% / 0.3)', background: 'hsl(0 0% 10%)', boxShadow: '0 0 30px hsl(43 80% 45% / 0.08)' }}>
+        <p className="text-xs font-body tracking-[0.25em] uppercase mb-2" style={{ color: 'hsl(0 0% 55%)' }}>
           Seu perfil foi aprovado
         </p>
-        <span className="inline-block px-6 py-2 bg-primary/10 text-primary text-lg md:text-xl font-display font-bold rounded-full border border-primary/30 mb-4 animate-pulse-cta">
+        <span className="inline-block px-6 py-2 text-lg md:text-xl font-display font-bold rounded-full mb-4 animate-pulse-cta" style={{ background: 'hsl(43 80% 45% / 0.1)', color: 'hsl(43 80% 55%)', border: '1px solid hsl(43 80% 45% / 0.3)' }}>
           🎉 Parabéns!
         </span>
-        <p className="text-sm font-body text-foreground/90 text-center leading-relaxed">
+        <p className="text-sm font-body text-center leading-relaxed" style={{ color: 'hsl(0 0% 75%)' }}>
           Com base no seu diagnóstico, este é o seu primeiro passo. A reorganização da base metabólica é o que vai fazer a diferença — e você pode iniciar agora.
         </p>
       </div>
 
-      <p className="text-sm font-body text-muted-foreground text-center leading-relaxed mb-6">
-        Você poderia continuar tentando sozinha. Mais uma dieta, mais uma frustração, mais meses sem resultado. Ou pode <span className="text-primary font-semibold">reorganizar a base agora</span> — com um método criado para mulheres com o seu perfil.
+      <p className="text-sm font-body text-center leading-relaxed mb-6" style={{ color: 'hsl(0 0% 55%)' }}>
+        Você poderia continuar tentando sozinha. Mais uma dieta, mais uma frustração, mais meses sem resultado. Ou pode <span className="font-semibold" style={{ color: 'hsl(43 80% 55%)' }}>reorganizar a base agora</span> — com um método criado para mulheres com o seu perfil.
       </p>
 
       <GoldDivider />
 
-      {/* Dark premium section - Method intro + Pricing */}
-      <div className="w-full -mx-6 px-6 py-12" style={{ background: 'hsl(0 0% 6%)' }}>
-        <div className="max-w-xl mx-auto">
-          {/* Method intro */}
-          <div className="text-center mb-10">
-            <p className="text-xs font-body tracking-[0.35em] uppercase mb-3" style={{ color: 'hsl(43 80% 55%)' }}>
-              Método
-            </p>
-            <h2 className="text-4xl md:text-5xl font-display font-bold mb-1" style={{ color: 'hsl(43 80% 55%)' }}>
-              Reprograme
-            </h2>
-            <GoldDotsDecor />
-            <p className="text-sm font-body leading-relaxed mt-4" style={{ color: 'hsl(0 0% 65%)' }}>
-              O protocolo de 30 dias para reorganizar os pilares do seu metabolismo e voltar a ter resultados reais no emagrecimento.
-            </p>
-          </div>
+      {/* Method intro */}
+      <div className="text-center mb-10">
+        <p className="text-xs font-body tracking-[0.35em] uppercase mb-3" style={{ color: 'hsl(43 80% 55%)' }}>
+          Método
+        </p>
+        <h2 className="text-4xl md:text-5xl font-display font-bold mb-1" style={{ color: 'hsl(43 80% 55%)' }}>
+          Reprograme
+        </h2>
+        <GoldDotsDecor />
+        <p className="text-sm font-body leading-relaxed mt-4" style={{ color: 'hsl(0 0% 60%)' }}>
+          O protocolo de 30 dias para reorganizar os pilares do seu metabolismo e voltar a ter resultados reais no emagrecimento.
+        </p>
+      </div>
 
-          {/* Price comparison */}
-          <div className="mb-6">
-            <p className="text-xs font-body tracking-[0.25em] uppercase text-center mb-5" style={{ color: 'hsl(43 80% 55%)' }}>
-              O que você pagaria contratando separado:
-            </p>
-            <div className="space-y-2 mb-3">
-              {priceItems.map((item, idx) => (
-                <div key={idx} className="flex items-center justify-between p-4 rounded-lg" style={{ background: 'hsl(0 0% 10%)', border: '1px solid hsl(0 0% 18%)' }}>
-                  <p className="text-sm font-body" style={{ color: 'hsl(0 0% 75%)' }}>{item.name}</p>
-                  <p className="text-base font-body font-semibold line-through" style={{ color: 'hsl(0 0% 50%)' }}>{item.price}</p>
-                </div>
-              ))}
-              <div className="flex items-center justify-between p-4 rounded-lg" style={{ background: 'hsl(0 0% 8%)', border: '2px solid hsl(0 60% 45%)' }}>
-                <p className="text-base font-body font-bold" style={{ color: 'hsl(0 0% 90%)' }}>Total separado:</p>
-                <p className="text-xl font-display font-bold line-through" style={{ color: 'hsl(0 65% 55%)' }}>R$ 1.430</p>
-              </div>
+      {/* Price comparison */}
+      <div className="w-full mb-6">
+        <p className="text-xs font-body tracking-[0.25em] uppercase text-center mb-5" style={{ color: 'hsl(43 80% 55%)' }}>
+          O que você pagaria contratando separado:
+        </p>
+        <div className="space-y-2 mb-3">
+          {priceItems.map((item, idx) => (
+            <div key={idx} className="flex items-center justify-between p-4 rounded-lg" style={{ background: 'hsl(0 0% 10%)', border: '1px solid hsl(0 0% 18%)' }}>
+              <p className="text-sm font-body" style={{ color: 'hsl(0 0% 75%)' }}>{item.name}</p>
+              <p className="text-base font-body font-semibold line-through" style={{ color: 'hsl(0 0% 50%)' }}>{item.price}</p>
             </div>
+          ))}
+          <div className="flex items-center justify-between p-4 rounded-lg" style={{ background: 'hsl(0 0% 8%)', border: '2px solid hsl(0 60% 45%)' }}>
+            <p className="text-base font-body font-bold" style={{ color: 'hsl(0 0% 90%)' }}>Total separado:</p>
+            <p className="text-xl font-display font-bold line-through" style={{ color: 'hsl(0 65% 55%)' }}>R$ 1.430</p>
           </div>
-
-          {/* Offer price block */}
-          <div className="p-8 rounded-xl text-center mb-8" style={{ background: 'hsl(0 0% 10%)', border: '2px solid hsl(43 80% 45% / 0.4)', boxShadow: '0 0 40px hsl(43 80% 45% / 0.1)' }}>
-            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-              <div className="text-left">
-                <p className="text-xs font-body tracking-[0.25em] uppercase font-bold mb-1" style={{ color: 'hsl(43 80% 55%)' }}>
-                  Método Reprograme
-                </p>
-                <p className="text-xs font-body" style={{ color: 'hsl(0 0% 50%)' }}>Acesso imediato + vitalício</p>
-              </div>
-              <div className="text-right">
-                <p className="text-sm font-body line-through" style={{ color: 'hsl(0 0% 45%)' }}>R$ 1.430</p>
-                <p className="text-5xl md:text-6xl font-display font-bold animate-pulse-cta" style={{ background: 'linear-gradient(135deg, hsl(43 80% 50%), hsl(43 65% 65%), hsl(43 80% 50%))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-                  R$ 296
-                </p>
-                <p className="text-xs font-body" style={{ color: 'hsl(0 0% 45%)' }}>ou em até 12x no cartão</p>
-              </div>
-            </div>
-          </div>
-
-          <GoldCTA text="Quero iniciar minha Reprogramação agora →" />
         </div>
+      </div>
+
+      {/* Offer price block */}
+      <div className="w-full p-8 rounded-xl text-center mb-8" style={{ background: 'hsl(0 0% 10%)', border: '2px solid hsl(43 80% 45% / 0.4)', boxShadow: '0 0 40px hsl(43 80% 45% / 0.1)' }}>
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="text-left">
+            <p className="text-xs font-body tracking-[0.25em] uppercase font-bold mb-1" style={{ color: 'hsl(43 80% 55%)' }}>
+              Método Reprograme
+            </p>
+            <p className="text-xs font-body" style={{ color: 'hsl(0 0% 50%)' }}>Acesso imediato + vitalício</p>
+          </div>
+          <div className="text-right">
+            <p className="text-sm font-body line-through" style={{ color: 'hsl(0 0% 45%)' }}>R$ 1.430</p>
+            <p className="text-5xl md:text-6xl font-display font-bold animate-pulse-cta" style={{ background: 'linear-gradient(135deg, hsl(43 80% 50%), hsl(43 65% 65%), hsl(43 80% 50%))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+              R$ 296
+            </p>
+            <p className="text-xs font-body" style={{ color: 'hsl(0 0% 45%)' }}>ou em até 12x no cartão</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="w-full mb-3">
+        <GoldCTA text="Quero iniciar minha Reprogramação agora →" />
       </div>
 
       <GoldDivider />
 
       {/* Highlight features */}
       <div className="w-full mb-10">
-        <p className="text-xs font-body tracking-[0.25em] uppercase text-primary text-center mb-6">
+        <p className="text-xs font-body tracking-[0.25em] uppercase text-center mb-6" style={{ color: 'hsl(43 80% 55%)' }}>
           O que faz a diferença
         </p>
         <div className="space-y-4">
           {highlightFeatures.map((feat, idx) => (
-            <div key={idx} className="p-5 border border-border rounded-lg bg-secondary/50">
+            <div key={idx} className="p-5 rounded-lg" style={{ background: 'hsl(0 0% 10%)', border: '1px solid hsl(0 0% 18%)' }}>
               <div className="flex items-start gap-3">
                 <span className="text-2xl">{feat.emoji}</span>
                 <div>
-                  <h4 className="text-sm font-body font-semibold text-foreground mb-1">{feat.title}</h4>
-                  <p className="text-xs font-body text-muted-foreground leading-relaxed">{feat.desc}</p>
+                  <h4 className="text-sm font-body font-semibold mb-1" style={{ color: 'hsl(0 0% 92%)' }}>{feat.title}</h4>
+                  <p className="text-xs font-body leading-relaxed" style={{ color: 'hsl(0 0% 55%)' }}>{feat.desc}</p>
                 </div>
               </div>
             </div>
@@ -214,62 +211,60 @@ const ResultFinalLowTicket = () => {
 
       {/* Also included */}
       <div className="w-full mb-8">
-        <p className="text-xs font-body tracking-[0.25em] uppercase text-primary text-center mb-5">
+        <p className="text-xs font-body tracking-[0.25em] uppercase text-center mb-5" style={{ color: 'hsl(43 80% 55%)' }}>
           Também incluso
         </p>
         <div className="space-y-3">
           {includesItems.map((item, idx) => (
             <div key={idx} className="flex items-start gap-3">
-              <span className="text-primary mt-0.5 text-xs">◆</span>
-              <p className="text-sm font-body text-foreground/80 leading-relaxed">{item}</p>
+              <span className="mt-0.5 text-xs" style={{ color: 'hsl(43 80% 55%)' }}>◆</span>
+              <p className="text-sm font-body leading-relaxed" style={{ color: 'hsl(0 0% 75%)' }}>{item}</p>
             </div>
           ))}
         </div>
       </div>
 
       {/* Bonus */}
-      <div className="w-full p-5 border border-primary/30 bg-primary/5 rounded-lg mb-8 gold-glow">
-        <p className="text-xs font-body tracking-[0.2em] uppercase text-primary text-center font-bold mb-2">
+      <div className="w-full p-5 rounded-lg mb-8" style={{ border: '1px solid hsl(43 80% 45% / 0.3)', background: 'hsl(0 0% 10%)', boxShadow: '0 0 30px hsl(43 80% 45% / 0.08)' }}>
+        <p className="text-xs font-body tracking-[0.2em] uppercase text-center font-bold mb-2" style={{ color: 'hsl(43 80% 55%)' }}>
           🎁 Bônus Exclusivo
         </p>
-        <p className="text-sm font-body text-foreground text-center font-semibold mb-1">
+        <p className="text-sm font-body text-center font-semibold mb-1" style={{ color: 'hsl(0 0% 92%)' }}>
           Guia de Organização Metabólica
         </p>
-        <p className="text-xs font-body text-muted-foreground text-center">
+        <p className="text-xs font-body text-center" style={{ color: 'hsl(0 0% 55%)' }}>
           Material complementar com estratégias práticas para aplicar o método com mais facilidade no dia a dia. Disponível apenas para quem iniciar agora.
         </p>
       </div>
 
-      {/* Price + CTA - Dark block */}
-      <div className="w-full -mx-6 px-6 py-10" style={{ background: 'hsl(0 0% 6%)' }}>
-        <div className="max-w-xl mx-auto">
-          <div className="p-8 rounded-xl text-center mb-6" style={{ background: 'hsl(0 0% 10%)', border: '2px solid hsl(43 80% 45% / 0.4)', boxShadow: '0 0 40px hsl(43 80% 45% / 0.1)' }}>
-            <p className="text-sm font-body line-through mb-1" style={{ color: 'hsl(0 65% 55%)' }}>De R$ 1.430</p>
-            <p className="text-xs font-body mb-1" style={{ color: 'hsl(0 0% 50%)' }}>por apenas</p>
-            <p className="text-5xl md:text-6xl font-display font-bold mb-1 animate-pulse-cta" style={{ background: 'linear-gradient(135deg, hsl(43 80% 50%), hsl(43 65% 65%), hsl(43 80% 50%))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-              R$ 296
-            </p>
-            <p className="text-sm font-body" style={{ color: 'hsl(0 0% 45%)' }}>ou em até 12x no cartão</p>
-          </div>
-          <GoldCTA text="Quero iniciar minha Reprogramação agora →" />
-          <div className="flex items-center justify-center gap-4 text-xs font-body mt-4" style={{ color: 'hsl(0 0% 50%)' }}>
-            <span>✅ Acesso imediato</span>
-            <span>♾ Acesso vitalício</span>
-            <span>🛡 Garantia 7 dias</span>
-          </div>
-        </div>
+      {/* Price + CTA */}
+      <div className="w-full p-8 rounded-xl text-center mb-6" style={{ background: 'hsl(0 0% 10%)', border: '2px solid hsl(43 80% 45% / 0.4)', boxShadow: '0 0 40px hsl(43 80% 45% / 0.1)' }}>
+        <p className="text-sm font-body line-through mb-1" style={{ color: 'hsl(0 65% 55%)' }}>De R$ 1.430</p>
+        <p className="text-xs font-body mb-1" style={{ color: 'hsl(0 0% 50%)' }}>por apenas</p>
+        <p className="text-5xl md:text-6xl font-display font-bold mb-1 animate-pulse-cta" style={{ background: 'linear-gradient(135deg, hsl(43 80% 50%), hsl(43 65% 65%), hsl(43 80% 50%))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+          R$ 296
+        </p>
+        <p className="text-sm font-body" style={{ color: 'hsl(0 0% 45%)' }}>ou em até 12x no cartão</p>
+      </div>
+
+      <div className="w-full mb-3">
+        <GoldCTA text="Quero iniciar minha Reprogramação agora →" />
+      </div>
+      <div className="flex items-center justify-center gap-4 text-xs font-body mb-2" style={{ color: 'hsl(0 0% 50%)' }}>
+        <span>✅ Acesso imediato</span>
+        <span>♾ Acesso vitalício</span>
+        <span>🛡 Garantia 7 dias</span>
       </div>
 
       {/* Guarantee */}
-      <div className="w-full p-5 border border-primary/20 rounded-lg bg-primary/5 text-center mb-8">
-        <p className="text-sm font-body text-primary font-bold mb-2">🛡 Garantia de 7 dias, sem perguntas.</p>
-        <p className="text-xs font-body text-muted-foreground leading-relaxed">
+      <div className="w-full p-5 rounded-lg text-center mb-8" style={{ border: '1px solid hsl(43 80% 45% / 0.2)', background: 'hsl(0 0% 10%)' }}>
+        <p className="text-sm font-body font-bold mb-2" style={{ color: 'hsl(43 80% 55%)' }}>🛡 Garantia de 7 dias, sem perguntas.</p>
+        <p className="text-xs font-body leading-relaxed" style={{ color: 'hsl(0 0% 55%)' }}>
           Se perceber que o método não faz sentido para o seu caso nos primeiros 7 dias, basta solicitar o reembolso. Sem burocracia, sem questionamentos. O risco é todo nosso.
         </p>
       </div>
 
-
-      <p className="text-xs font-body text-muted-foreground/60 text-center mb-8">
+      <p className="text-xs font-body text-center mb-8" style={{ color: 'hsl(0 0% 40%)' }}>
         Acesso imediato após confirmação · Garantia de 7 dias
       </p>
 
@@ -277,75 +272,72 @@ const ResultFinalLowTicket = () => {
 
       {/* Social Proof */}
       <div className="w-full mb-10">
-        <p className="text-xs font-body tracking-[0.25em] uppercase text-primary text-center mb-2">
+        <p className="text-xs font-body tracking-[0.25em] uppercase text-center mb-2" style={{ color: 'hsl(43 80% 55%)' }}>
           Resultados Reais
         </p>
-        <p className="text-base font-display text-foreground text-center mb-6">
+        <p className="text-base font-display text-center mb-6" style={{ color: 'hsl(0 0% 90%)' }}>
           Transformações de quem já passou pelo método.
         </p>
 
         <div className="grid grid-cols-2 gap-3 mb-4">
-          <div className="rounded-lg overflow-hidden border border-border gold-glow">
+          <div className="rounded-lg overflow-hidden gold-glow" style={{ border: '1px solid hsl(0 0% 18%)' }}>
             <img src={antes} alt="Antes" className="w-full h-80 object-cover" />
-            <p className="text-[10px] font-body text-primary/60 text-center py-1.5 uppercase tracking-widest bg-secondary">Antes</p>
+            <p className="text-[10px] font-body text-center py-1.5 uppercase tracking-widest" style={{ color: 'hsl(43 80% 55% / 0.6)', background: 'hsl(0 0% 10%)' }}>Antes</p>
           </div>
-          <div className="rounded-lg overflow-hidden border border-border gold-glow">
+          <div className="rounded-lg overflow-hidden gold-glow" style={{ border: '1px solid hsl(0 0% 18%)' }}>
             <img src={depois} alt="Depois" className="w-full h-80 object-cover" />
-            <p className="text-[10px] font-body text-primary/60 text-center py-1.5 uppercase tracking-widest bg-secondary">Depois</p>
+            <p className="text-[10px] font-body text-center py-1.5 uppercase tracking-widest" style={{ color: 'hsl(43 80% 55% / 0.6)', background: 'hsl(0 0% 10%)' }}>Depois</p>
           </div>
         </div>
 
         <div className="grid grid-cols-2 gap-3 mb-4">
-          <div className="rounded-lg overflow-hidden border border-border gold-glow">
-            <img src={resultTestimonial} alt="Antes" className="w-full h-48 object-cover" />
+          <div className="rounded-lg overflow-hidden gold-glow" style={{ border: '1px solid hsl(0 0% 18%)' }}>
+            <img src={resultTestimonial} alt="Depoimento" className="w-full h-48 object-cover" />
           </div>
-          <div className="rounded-lg overflow-hidden border border-border gold-glow">
-            <img src={resultBeforeAfter} alt="Depois" className="w-full h-48 object-cover" />
+          <div className="rounded-lg overflow-hidden gold-glow" style={{ border: '1px solid hsl(0 0% 18%)' }}>
+            <img src={resultBeforeAfter} alt="Antes e Depois" className="w-full h-48 object-cover" />
           </div>
         </div>
 
         <div className="grid grid-cols-2 gap-3 mb-4">
-          <div className="rounded-lg overflow-hidden border border-border gold-glow">
-            <img src={resultScale} alt="Antes" className="w-full h-90 object-cover" />
+          <div className="rounded-lg overflow-hidden gold-glow" style={{ border: '1px solid hsl(0 0% 18%)' }}>
+            <img src={resultScale} alt="Resultado balança" className="w-full h-90 object-cover" />
           </div>
-          <div className="rounded-lg overflow-hidden border border-border gold-glow">
-            <img src={resultBelly} alt="Depois" className="w-full h-90 object-cover" />
+          <div className="rounded-lg overflow-hidden gold-glow" style={{ border: '1px solid hsl(0 0% 18%)' }}>
+            <img src={resultBelly} alt="Resultado barriga" className="w-full h-90 object-cover" />
           </div>
         </div>
 
-
         <div className="grid grid-cols-2 gap-3 mb-4">
-          <div className="rounded-lg overflow-hidden border border-border gold-glow">
+          <div className="rounded-lg overflow-hidden gold-glow" style={{ border: '1px solid hsl(0 0% 18%)' }}>
             <img src={resultGraph} alt="Resultado na balança" className="w-full h-80 object-cover" />
           </div>
-          <div className="rounded-lg overflow-hidden border border-border gold-glow">
+          <div className="rounded-lg overflow-hidden gold-glow" style={{ border: '1px solid hsl(0 0% 18%)' }}>
             <img src={resultShorts} alt="Roupas folgadas" className="w-full h-80 object-cover" />
           </div>
         </div>
 
-        <div className="rounded-lg overflow-hidden border border-border gold-glow mb-4">
+        <div className="rounded-lg overflow-hidden gold-glow mb-4" style={{ border: '1px solid hsl(0 0% 18%)' }}>
           <img src={resultWeightChart} alt="Transformação corporal" className="w-full max-h-80 object-cover" />
         </div>
 
         <GoldCTA text="Quero iniciar minha Reprogramação agora →" />
       </div>
 
-
-
       <GoldDivider />
 
       {/* FAQ */}
       <div className="w-full mb-10">
-        <p className="text-xs font-body tracking-[0.25em] uppercase text-primary text-center mb-6">
+        <p className="text-xs font-body tracking-[0.25em] uppercase text-center mb-6" style={{ color: 'hsl(43 80% 55%)' }}>
           Perguntas Frequentes
         </p>
         <Accordion type="single" collapsible className="w-full">
           {faqItems.map((item, idx) => (
-            <AccordionItem key={idx} value={`faq-${idx}`} className="border-border/50">
-              <AccordionTrigger className="text-sm font-body text-foreground text-left py-4 hover:no-underline">
+            <AccordionItem key={idx} value={`faq-${idx}`} style={{ borderColor: 'hsl(0 0% 18%)' }}>
+              <AccordionTrigger className="text-sm font-body text-left py-4 hover:no-underline" style={{ color: 'hsl(0 0% 90%)' }}>
                 {item.q}
               </AccordionTrigger>
-              <AccordionContent className="text-sm font-body text-muted-foreground leading-relaxed pb-4">
+              <AccordionContent className="text-sm font-body leading-relaxed pb-4" style={{ color: 'hsl(0 0% 55%)' }}>
                 {item.a}
               </AccordionContent>
             </AccordionItem>
@@ -356,20 +348,20 @@ const ResultFinalLowTicket = () => {
       <div className="w-full mb-3">
         <GoldCTA text="Quero iniciar minha Reprogramação agora →" />
       </div>
-      <p className="text-xs font-body text-muted-foreground/60 text-center mb-8">
+      <p className="text-xs font-body text-center mb-8" style={{ color: 'hsl(0 0% 40%)' }}>
         Acesso imediato após confirmação · Garantia de 7 dias
       </p>
 
       {/* Footer */}
       <div className="text-center mt-8">
         <GoldDivider />
-        <p className="text-xs font-body tracking-[0.2em] uppercase text-primary/60 mb-2">
+        <p className="text-xs font-body tracking-[0.2em] uppercase mb-2" style={{ color: 'hsl(43 80% 55% / 0.6)' }}>
           Método Reprograme
         </p>
-        <p className="text-[10px] font-body text-muted-foreground/40">
+        <p className="text-[10px] font-body" style={{ color: 'hsl(0 0% 35%)' }}>
           © Todos os direitos reservados.
         </p>
-        <p className="text-[9px] font-body text-muted-foreground/30 mt-1">
+        <p className="text-[9px] font-body mt-1" style={{ color: 'hsl(0 0% 28%)' }}>
           *Os resultados apresentados são individuais e podem variar conforme o caso de cada paciente.
         </p>
       </div>
