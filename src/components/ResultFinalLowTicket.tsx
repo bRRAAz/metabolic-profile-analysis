@@ -131,48 +131,63 @@ const ResultFinalLowTicket = () => {
 
       <GoldDivider />
 
-      {/* Method intro */}
-      <div className="text-center mb-8">
-        <p className="text-xs font-body tracking-[0.25em] uppercase text-primary mb-2">Método</p>
-        <SectionTitle>REPROGRAME</SectionTitle>
-        <p className="text-sm font-body text-muted-foreground leading-relaxed">
-          O protocolo de 30 dias para reorganizar os pilares do seu metabolismo e voltar a ter resultados reais no emagrecimento.
-        </p>
-      </div>
-
-      {/* Price comparison */}
-      <div className="w-full mb-8">
-        <p className="text-xs font-body tracking-[0.25em] uppercase text-primary text-center mb-4">
-          O que você pagaria contratando separado
-        </p>
-        <div className="space-y-2 mb-4">
-          {priceItems.map((item, idx) => (
-            <div key={idx} className="flex items-center justify-between p-4 border border-border/50 rounded-lg bg-secondary/30">
-              <p className="text-sm font-body text-foreground/80">{item.name}</p>
-              <p className="text-base font-body font-semibold line-through" style={{ color: 'hsl(0 72% 50%)' }}>{item.price}</p>
-            </div>
-          ))}
-          <div className="flex items-center justify-between p-4 border-2 border-foreground/20 rounded-lg bg-foreground/5">
-            <p className="text-base font-body text-foreground font-bold">Total separado:</p>
-            <p className="text-lg font-body font-bold line-through" style={{ color: 'hsl(0 72% 50%)' }}>R$ 1.430</p>
+      {/* Dark premium section - Method intro + Pricing */}
+      <div className="w-full -mx-6 px-6 py-12" style={{ background: 'hsl(0 0% 6%)' }}>
+        <div className="max-w-xl mx-auto">
+          {/* Method intro */}
+          <div className="text-center mb-10">
+            <p className="text-xs font-body tracking-[0.35em] uppercase mb-3" style={{ color: 'hsl(43 80% 55%)' }}>
+              Método
+            </p>
+            <h2 className="text-4xl md:text-5xl font-display font-bold mb-1" style={{ color: 'hsl(43 80% 55%)' }}>
+              Reprograme
+            </h2>
+            <GoldDotsDecor />
+            <p className="text-sm font-body leading-relaxed mt-4" style={{ color: 'hsl(0 0% 65%)' }}>
+              O protocolo de 30 dias para reorganizar os pilares do seu metabolismo e voltar a ter resultados reais no emagrecimento.
+            </p>
           </div>
+
+          {/* Price comparison */}
+          <div className="mb-6">
+            <p className="text-xs font-body tracking-[0.25em] uppercase text-center mb-5" style={{ color: 'hsl(43 80% 55%)' }}>
+              O que você pagaria contratando separado:
+            </p>
+            <div className="space-y-2 mb-3">
+              {priceItems.map((item, idx) => (
+                <div key={idx} className="flex items-center justify-between p-4 rounded-lg" style={{ background: 'hsl(0 0% 10%)', border: '1px solid hsl(0 0% 18%)' }}>
+                  <p className="text-sm font-body" style={{ color: 'hsl(0 0% 75%)' }}>{item.name}</p>
+                  <p className="text-base font-body font-semibold line-through" style={{ color: 'hsl(0 0% 50%)' }}>{item.price}</p>
+                </div>
+              ))}
+              <div className="flex items-center justify-between p-4 rounded-lg" style={{ background: 'hsl(0 0% 8%)', border: '2px solid hsl(0 60% 45%)' }}>
+                <p className="text-base font-body font-bold" style={{ color: 'hsl(0 0% 90%)' }}>Total separado:</p>
+                <p className="text-xl font-display font-bold line-through" style={{ color: 'hsl(0 65% 55%)' }}>R$ 1.430</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Offer price block */}
+          <div className="p-8 rounded-xl text-center mb-8" style={{ background: 'hsl(0 0% 10%)', border: '2px solid hsl(43 80% 45% / 0.4)', boxShadow: '0 0 40px hsl(43 80% 45% / 0.1)' }}>
+            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+              <div className="text-left">
+                <p className="text-xs font-body tracking-[0.25em] uppercase font-bold mb-1" style={{ color: 'hsl(43 80% 55%)' }}>
+                  Método Reprograme
+                </p>
+                <p className="text-xs font-body" style={{ color: 'hsl(0 0% 50%)' }}>Acesso imediato + vitalício</p>
+              </div>
+              <div className="text-right">
+                <p className="text-sm font-body line-through" style={{ color: 'hsl(0 0% 45%)' }}>R$ 1.430</p>
+                <p className="text-5xl md:text-6xl font-display font-bold animate-pulse-cta" style={{ background: 'linear-gradient(135deg, hsl(43 80% 50%), hsl(43 65% 65%), hsl(43 80% 50%))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                  R$ 296
+                </p>
+                <p className="text-xs font-body" style={{ color: 'hsl(0 0% 45%)' }}>ou em até 12x no cartão</p>
+              </div>
+            </div>
+          </div>
+
+          <GoldCTA text="Quero iniciar minha Reprogramação agora →" />
         </div>
-      </div>
-
-      {/* Offer price */}
-      <div className="w-full p-8 border-2 border-primary/40 rounded-xl bg-foreground text-center mb-8 gold-glow">
-        <p className="text-sm font-body tracking-[0.25em] uppercase text-primary font-bold mb-3">
-          ✨ Método Reprograme — Tudo incluso
-        </p>
-        <p className="text-xs font-body text-primary-foreground/60 mb-2">Acesso imediato + vitalício</p>
-        <p className="text-lg font-body font-bold line-through mb-2" style={{ color: 'hsl(0 72% 55%)' }}>De R$ 1.430</p>
-        <p className="text-xs font-body text-primary-foreground/60 mb-1">por apenas</p>
-        <p className="text-5xl md:text-6xl font-display font-bold gold-gradient mb-2 animate-pulse-cta">R$ 296</p>
-        <p className="text-sm font-body text-primary-foreground/50">ou em até 12x no cartão</p>
-      </div>
-
-      <div className="w-full mb-3">
-        <GoldCTA text="Quero iniciar minha Reprogramação agora →" />
       </div>
 
       <GoldDivider />
