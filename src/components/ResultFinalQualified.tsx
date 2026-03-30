@@ -160,16 +160,19 @@ const ResultFinalQualified = ({ profile }: ResultFinalQualifiedProps) => {
           )}
         </div>
 
-        {/* Step 3 */}
-        <div className="p-5 border border-primary/20 rounded-lg bg-primary/5 mb-4">
+        {/* Step 3 - Dark premium CTA block */}
+        <div className="p-6 rounded-xl mb-4" style={{ background: 'hsl(0 0% 6%)', border: '2px solid hsl(43 80% 45% / 0.3)', boxShadow: '0 0 40px hsl(43 80% 45% / 0.08)' }}>
           <div className="flex items-center gap-3 mb-2">
-            <span className="text-primary font-display text-xl font-bold">03</span>
-            <h4 className="text-sm font-body font-semibold text-foreground">Quer pular a fila?</h4>
+            <span className="font-display text-xl font-bold" style={{ color: 'hsl(43 80% 55%)' }}>03</span>
+            <h4 className="text-sm font-body font-semibold" style={{ color: 'hsl(0 0% 92%)' }}>Quer pular a fila?</h4>
           </div>
-          <p className="text-xs font-body text-muted-foreground leading-relaxed mb-3">
+          <p className="text-xs font-body leading-relaxed mb-4" style={{ color: 'hsl(0 0% 60%)' }}>
             Somente nesta página você pode entrar em contato direto com nossa equipe antes de esperarmos o contato. Se quiser entender agora como funciona a Reprogramação Metabólica para o seu caso, clique abaixo.
           </p>
           <GoldCTA text="Quero pular a fila →" href={WHATSAPP_LINK} />
+          <p className="text-xs font-body text-center mt-3" style={{ color: 'hsl(0 0% 40%)' }}>
+            Sessão gratuita · Sem compromisso · Vagas limitadas
+          </p>
         </div>
       </div>
 
