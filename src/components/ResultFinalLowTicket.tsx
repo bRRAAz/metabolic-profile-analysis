@@ -46,7 +46,7 @@ const highlightFeatures = [
   {
     emoji: "♾",
     title: "Acesso vitalício — sem prazo, sem pressão",
-    desc: "O método fica disponível para sempre. Você pode voltar sempre que precisar revisar, ajustar ou recomeçar.",
+    desc: "O método fica disponível para sempre. Se precisar pausar, retomar ou recomeçar do zero, ele vai estar aqui. Sem prazo, sem pressão, sem perder o que você já conquistou.",
   },
 ];
 
@@ -127,7 +127,7 @@ const ResultFinalLowTicket = () => {
         </div>
 
         <p className="text-sm font-body text-center leading-relaxed mb-6" style={{ color: 'hsl(0 0% 55%)' }}>
-          Você poderia continuar tentando sozinha. Mais uma dieta, mais uma frustração, mais meses sem resultado. Ou pode <span className="font-semibold" style={{ color: 'hsl(43 80% 55%)' }}>reorganizar a base agora</span> — com um método criado para mulheres com o seu perfil.
+          Você já sabe o que é fazer tudo certo e não ter resultado. O problema nunca foi você. Foi a base — e é exatamente isso que o <span className="font-semibold" style={{ color: 'hsl(43 80% 55%)' }}>Reprograme reorganiza</span>.
         </p>
 
         <GoldDivider />
@@ -142,7 +142,7 @@ const ResultFinalLowTicket = () => {
           </h2>
           <GoldDotsDecor />
           <p className="text-sm font-body leading-relaxed mt-4" style={{ color: 'hsl(0 0% 60%)' }}>
-            O protocolo de 30 dias para reorganizar os pilares do seu metabolismo e voltar a ter resultados reais no emagrecimento.
+            Volte a emagrecer, sem dieta restritiva, sem abrir mão da sua rotina. Com um planejamento alimentar inteligente, validado por nutricionista, tudo em uma única plataforma.
           </p>
         </div>
 
@@ -185,7 +185,7 @@ const ResultFinalLowTicket = () => {
         </div>
 
         <div className="w-full mb-3">
-          <GoldCTA text="Quero iniciar minha Reprogramação agora →" />
+          <GoldCTA text="Quero emagrecer de verdade, agora →" />
         </div>
 
         <GoldDivider />
@@ -231,10 +231,10 @@ const ResultFinalLowTicket = () => {
             🎁 Bônus Exclusivo
           </p>
           <p className="text-sm font-body text-center font-semibold mb-1" style={{ color: 'hsl(0 0% 92%)' }}>
-            Guia de Organização Metabólica
+            Guia da Ansiedade à Compulsão — Como Quebrar Esse Ciclo de Vez
           </p>
           <p className="text-xs font-body text-center" style={{ color: 'hsl(0 0% 55%)' }}>
-            Material complementar com estratégias práticas para aplicar o método com mais facilidade no dia a dia. Disponível apenas para quem iniciar agora.
+            O maior sabotador da sua dieta não é a fome. É a ansiedade. Esse guia te mostra como quebrar esse ciclo, sem culpa.
           </p>
         </div>
 
@@ -245,11 +245,11 @@ const ResultFinalLowTicket = () => {
           <p className="text-5xl md:text-6xl font-display font-bold mb-1 animate-pulse-cta" style={{ background: 'linear-gradient(135deg, hsl(43 80% 50%), hsl(43 65% 65%), hsl(43 80% 50%))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
             R$ 296
           </p>
-          <p className="text-sm font-body" style={{ color: 'hsl(0 0% 45%)' }}>ou em até 12x no cartão</p>
+          <p className="text-base font-body font-semibold" style={{ color: 'hsl(43 80% 55%)' }}>12x R$ 30,08</p>
         </div>
 
         <div className="w-full mb-3">
-          <GoldCTA text="Quero iniciar minha Reprogramação agora →" />
+          <GoldCTA text="Quero emagrecer de verdade, agora →" />
         </div>
         <div className="flex items-center justify-center gap-4 text-xs font-body mb-2" style={{ color: 'hsl(0 0% 50%)' }}>
           <span>✅ Acesso imediato</span>
@@ -260,8 +260,11 @@ const ResultFinalLowTicket = () => {
         {/* Guarantee */}
         <div className="w-full p-5 rounded-lg text-center mb-8" style={{ border: '1px solid hsl(43 80% 45% / 0.2)', background: 'hsl(0 0% 10%)' }}>
           <p className="text-sm font-body font-bold mb-2" style={{ color: 'hsl(43 80% 55%)' }}>🛡 Garantia de 7 dias, sem perguntas.</p>
-          <p className="text-xs font-body leading-relaxed" style={{ color: 'hsl(0 0% 55%)' }}>
+          <p className="text-xs font-body leading-relaxed mb-2" style={{ color: 'hsl(0 0% 55%)' }}>
             Se perceber que o método não faz sentido para o seu caso nos primeiros 7 dias, basta solicitar o reembolso. Sem burocracia, sem questionamentos. O risco é todo nosso.
+          </p>
+          <p className="text-sm font-body font-semibold" style={{ color: 'hsl(43 80% 55%)' }}>
+            Você não tem nada a perder, exceto os quilos que quer eliminar.
           </p>
         </div>
 
@@ -276,8 +279,11 @@ const ResultFinalLowTicket = () => {
           <p className="text-xs font-body tracking-[0.25em] uppercase text-center mb-2" style={{ color: 'hsl(43 80% 55%)' }}>
             Resultados Reais
           </p>
-          <p className="text-base font-display text-center mb-6" style={{ color: 'hsl(0 0% 90%)' }}>
+          <p className="text-base font-display text-center mb-2" style={{ color: 'hsl(0 0% 90%)' }}>
             Transformações de quem já passou pelo método.
+          </p>
+          <p className="text-xs font-body text-center mb-6 italic" style={{ color: 'hsl(0 0% 55%)' }}>
+            Quando elas chegaram, já tinham tentado de tudo. Não acreditavam mais. Veja o que disseram depois:
           </p>
 
           <div className="grid grid-cols-2 gap-3 mb-4">
@@ -322,7 +328,11 @@ const ResultFinalLowTicket = () => {
             <img src={resultWeightChart} alt="Transformação corporal" className="w-full max-h-80 object-cover" />
           </div>
 
-          <GoldCTA text="Quero iniciar minha Reprogramação agora →" />
+          <p className="text-sm font-body text-center font-semibold mb-6" style={{ color: 'hsl(43 80% 55%)' }}>
+            16kg eliminados. Sem passar fome. Sem abandonar no meio. Esse pode ser o seu próximo capítulo.
+          </p>
+
+          <GoldCTA text="Quero emagrecer de verdade, agora →" />
         </div>
 
         <GoldDivider />
@@ -347,7 +357,7 @@ const ResultFinalLowTicket = () => {
         </div>
 
         <div className="w-full mb-3">
-          <GoldCTA text="Quero iniciar minha Reprogramação agora →" />
+          <GoldCTA text="Quero emagrecer de verdade, agora →" />
         </div>
         <p className="text-xs font-body text-center mb-8" style={{ color: 'hsl(0 0% 40%)' }}>
           Acesso imediato após confirmação · Garantia de 7 dias
