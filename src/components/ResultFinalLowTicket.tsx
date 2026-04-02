@@ -279,8 +279,11 @@ const ResultFinalLowTicket = () => {
           <p className="text-xs font-body tracking-[0.25em] uppercase text-center mb-2" style={{ color: 'hsl(43 80% 55%)' }}>
             Resultados Reais
           </p>
-          <p className="text-base font-display text-center mb-6" style={{ color: 'hsl(0 0% 90%)' }}>
+          <p className="text-base font-display text-center mb-2" style={{ color: 'hsl(0 0% 90%)' }}>
             Transformações de quem já passou pelo método.
+          </p>
+          <p className="text-xs font-body text-center mb-6 italic" style={{ color: 'hsl(0 0% 55%)' }}>
+            Quando elas chegaram, já tinham tentado de tudo. Não acreditavam mais. Veja o que disseram depois:
           </p>
 
           <div className="grid grid-cols-2 gap-3 mb-4">
