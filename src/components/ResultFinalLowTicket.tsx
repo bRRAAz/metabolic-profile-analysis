@@ -249,7 +249,7 @@ const ResultFinalLowTicket = () => {
         </div>
 
         <div className="w-full mb-3">
-          <GoldCTA text="Quero iniciar minha Reprogramação agora →" />
+          <GoldCTA text="Quero emagrecer de verdade, agora →" />
         </div>
         <div className="flex items-center justify-center gap-4 text-xs font-body mb-2" style={{ color: 'hsl(0 0% 50%)' }}>
           <span>✅ Acesso imediato</span>
