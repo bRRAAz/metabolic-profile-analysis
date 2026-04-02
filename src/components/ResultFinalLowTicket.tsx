@@ -185,7 +185,7 @@ const ResultFinalLowTicket = () => {
         </div>
 
         <div className="w-full mb-3">
-          <GoldCTA text="Quero iniciar minha Reprogramação agora →" />
+          <GoldCTA text="Quero emagrecer de verdade, agora →" />
         </div>
 
         <GoldDivider />
