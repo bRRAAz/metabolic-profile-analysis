@@ -296,7 +296,7 @@ const ResultFinalLowTicket = () => {
             </div>
           </div>
 
-          <p className="text-xs font-body text-center mb-3 italic" style={{ color: 'hsl(0 0% 55%)' }}>
+          <p className="text-sm font-body text-center font-semibold mb-3 italic" style={{ color: 'hsl(43 80% 55%)' }}>
             Quando elas chegaram, já tinham tentado de tudo. Não acreditavam mais. Veja o que disseram depois:
           </p>
 
