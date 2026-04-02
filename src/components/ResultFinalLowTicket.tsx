@@ -142,7 +142,7 @@ const ResultFinalLowTicket = () => {
           </h2>
           <GoldDotsDecor />
           <p className="text-sm font-body leading-relaxed mt-4" style={{ color: 'hsl(0 0% 60%)' }}>
-            O protocolo de 30 dias para reorganizar os pilares do seu metabolismo e voltar a ter resultados reais no emagrecimento.
+            Volte a emagrecer, sem dieta restritiva, sem abrir mão da sua rotina. Com um planejamento alimentar inteligente, validado por nutricionista, tudo em uma única plataforma.
           </p>
         </div>
 
