@@ -127,7 +127,7 @@ const ResultFinalLowTicket = () => {
         </div>
 
         <p className="text-sm font-body text-center leading-relaxed mb-6" style={{ color: 'hsl(0 0% 55%)' }}>
-          Você poderia continuar tentando sozinha. Mais uma dieta, mais uma frustração, mais meses sem resultado. Ou pode <span className="font-semibold" style={{ color: 'hsl(43 80% 55%)' }}>reorganizar a base agora</span> — com um método criado para mulheres com o seu perfil.
+          Você já sabe o que é fazer tudo certo e não ter resultado. O problema nunca foi você. Foi a base — e é exatamente isso que o <span className="font-semibold" style={{ color: 'hsl(43 80% 55%)' }}>Reprograme reorganiza</span>.
         </p>
 
         <GoldDivider />
