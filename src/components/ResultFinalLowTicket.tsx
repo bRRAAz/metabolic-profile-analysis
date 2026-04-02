@@ -46,7 +46,7 @@ const highlightFeatures = [
   {
     emoji: "♾",
     title: "Acesso vitalício — sem prazo, sem pressão",
-    desc: "O método fica disponível para sempre. Você pode voltar sempre que precisar revisar, ajustar ou recomeçar.",
+    desc: "O método fica disponível para sempre. Se precisar pausar, retomar ou recomeçar do zero, ele vai estar aqui. Sem prazo, sem pressão, sem perder o que você já conquistou.",
   },
 ];
 
