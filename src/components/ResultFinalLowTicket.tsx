@@ -282,9 +282,8 @@ const ResultFinalLowTicket = () => {
           <p className="text-base font-display text-center mb-2" style={{ color: 'hsl(0 0% 90%)' }}>
             Transformações de quem já passou pelo método.
           </p>
-          <p className="text-xs font-body text-center mb-6 italic" style={{ color: 'hsl(0 0% 55%)' }}>
-            Quando elas chegaram, já tinham tentado de tudo. Não acreditavam mais. Veja o que disseram depois:
-          </p>
+
+
 
           <div className="grid grid-cols-2 gap-3 mb-4">
             <div className="rounded-lg overflow-hidden gold-glow" style={{ border: '1px solid hsl(0 0% 18%)' }}>
@@ -297,7 +296,11 @@ const ResultFinalLowTicket = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-3 mb-4">
+          <p className="text-xs font-body text-center mb-3 italic" style={{ color: 'hsl(0 0% 55%)' }}>
+            Quando elas chegaram, já tinham tentado de tudo. Não acreditavam mais. Veja o que disseram depois:
+          </p>
+
+          <div className="grid grid-cols-2 gap-3 mb-3">
             <div className="rounded-lg overflow-hidden gold-glow" style={{ border: '1px solid hsl(0 0% 18%)' }}>
               <img src={resultTestimonial} alt="Depoimento" className="w-full h-48 object-cover" />
             </div>
@@ -305,6 +308,10 @@ const ResultFinalLowTicket = () => {
               <img src={resultBeforeAfter} alt="Antes e Depois" className="w-full h-48 object-cover" />
             </div>
           </div>
+
+          <p className="text-sm font-body text-center font-semibold mb-6" style={{ color: 'hsl(43 80% 55%)' }}>
+            16kg eliminados. Sem passar fome. Sem abandonar no meio. Esse pode ser o seu próximo capítulo.
+          </p>
 
           <div className="grid grid-cols-2 gap-3 mb-4">
             <div className="rounded-lg overflow-hidden gold-glow" style={{ border: '1px solid hsl(0 0% 18%)' }}>
@@ -328,9 +335,8 @@ const ResultFinalLowTicket = () => {
             <img src={resultWeightChart} alt="Transformação corporal" className="w-full max-h-80 object-cover" />
           </div>
 
-          <p className="text-sm font-body text-center font-semibold mb-6" style={{ color: 'hsl(43 80% 55%)' }}>
-            16kg eliminados. Sem passar fome. Sem abandonar no meio. Esse pode ser o seu próximo capítulo.
-          </p>
+
+
 
           <GoldCTA text="Quero emagrecer de verdade, agora →" />
         </div>
