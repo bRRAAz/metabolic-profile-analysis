@@ -69,7 +69,7 @@ const QuizLeadForm = ({ answers, onSubmit }: QuizLeadFormProps) => {
         Ele é específico para o seu caso. Para onde enviamos sua análise completa?
       </p>
 
-      <form onSubmit={handleSubmit} className="w-full max-w-sm space-y-4">
+      <form onSubmit={handleSubmitDev} className="w-full max-w-sm space-y-4">
         <div>
           <label className="text-xs font-body tracking-[0.15em] uppercase text-muted-foreground mb-1.5 block">Nome</label>
           <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Seu nome completo"

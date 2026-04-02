@@ -38,7 +38,7 @@ const faqItems = [
   },
   {
     q: "Quanto tempo dura essa conversa inicial?",
-    a: "Normalmente entre 20 e 30 minutos, dependendo do seu caso e das dúvidas que surgirem.",
+    a: "Normalmente entre 45 minutos há 1 hora, dependendo do seu caso e das dúvidas que surgirem.",
   },
   {
     q: "Preciso preparar algo antes?",
@@ -46,7 +46,7 @@ const faqItems = [
   },
   {
     q: "Vou receber alguma orientação prática?",
-    a: "Sim. Durante a conversa você receberá direcionamentos iniciais sobre os possíveis fatores metabólicos envolvidos no seu caso.",
+    a: "Sim. Durante a consulta você receberá direcionamentos iniciais sobre os possíveis fatores metabólicos envolvidos no seu caso.",
   },
 ];
 
@@ -152,8 +152,12 @@ const ResultFinalQualified = ({ profile }: ResultFinalQualifiedProps) => {
               Separei um conteúdo explicando por que muitas mulheres não conseguem emagrecer mesmo fazendo dieta, como o metabolismo entra em modo de adaptação e quais são os pilares fundamentais da Reprogramação Metabólica.
             </p>
             {videoLink ? (
-              <div className="aspect-video w-full rounded-lg overflow-hidden" style={{ border: '1px solid hsl(0 0% 18%)' }}>
-                <iframe src={videoLink} className="w-full h-full" allowFullScreen />
+              <div className="aspect-video w-full max-w-full rounded-lg overflow-hidden mx-auto" style={{ border: '1px solid hsl(0 0% 18%)' }}>
+                <iframe
+                  src={videoLink}
+                  className="w-full h-full block"
+                  allowFullScreen
+                />
               </div>
             ) : (
               <div className="aspect-video w-full rounded-lg flex items-center justify-center" style={{ border: '1px solid hsl(0 0% 18%)', background: 'hsl(0 0% 8%)' }}>
