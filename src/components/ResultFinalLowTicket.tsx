@@ -328,7 +328,11 @@ const ResultFinalLowTicket = () => {
             <img src={resultWeightChart} alt="Transformação corporal" className="w-full max-h-80 object-cover" />
           </div>
 
-          <GoldCTA text="Quero iniciar minha Reprogramação agora →" />
+          <p className="text-sm font-body text-center font-semibold mb-6" style={{ color: 'hsl(43 80% 55%)' }}>
+            16kg eliminados. Sem passar fome. Sem abandonar no meio. Esse pode ser o seu próximo capítulo.
+          </p>
+
+          <GoldCTA text="Quero emagrecer de verdade, agora →" />
         </div>
 
         <GoldDivider />
