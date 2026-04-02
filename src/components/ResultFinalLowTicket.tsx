@@ -231,10 +231,10 @@ const ResultFinalLowTicket = () => {
             🎁 Bônus Exclusivo
           </p>
           <p className="text-sm font-body text-center font-semibold mb-1" style={{ color: 'hsl(0 0% 92%)' }}>
-            Guia de Organização Metabólica
+            Guia da Ansiedade à Compulsão — Como Quebrar Esse Ciclo de Vez
           </p>
           <p className="text-xs font-body text-center" style={{ color: 'hsl(0 0% 55%)' }}>
-            Material complementar com estratégias práticas para aplicar o método com mais facilidade no dia a dia. Disponível apenas para quem iniciar agora.
+            O maior sabotador da sua dieta não é a fome. É a ansiedade. Esse guia te mostra como quebrar esse ciclo, sem culpa.
           </p>
         </div>
 
