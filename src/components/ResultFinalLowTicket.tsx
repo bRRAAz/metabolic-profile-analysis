@@ -260,8 +260,11 @@ const ResultFinalLowTicket = () => {
         {/* Guarantee */}
         <div className="w-full p-5 rounded-lg text-center mb-8" style={{ border: '1px solid hsl(43 80% 45% / 0.2)', background: 'hsl(0 0% 10%)' }}>
           <p className="text-sm font-body font-bold mb-2" style={{ color: 'hsl(43 80% 55%)' }}>🛡 Garantia de 7 dias, sem perguntas.</p>
-          <p className="text-xs font-body leading-relaxed" style={{ color: 'hsl(0 0% 55%)' }}>
+          <p className="text-xs font-body leading-relaxed mb-2" style={{ color: 'hsl(0 0% 55%)' }}>
             Se perceber que o método não faz sentido para o seu caso nos primeiros 7 dias, basta solicitar o reembolso. Sem burocracia, sem questionamentos. O risco é todo nosso.
+          </p>
+          <p className="text-sm font-body font-semibold" style={{ color: 'hsl(43 80% 55%)' }}>
+            Você não tem nada a perder, exceto os quilos que quer eliminar.
           </p>
         </div>
 
