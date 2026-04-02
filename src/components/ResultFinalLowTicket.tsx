@@ -357,7 +357,7 @@ const ResultFinalLowTicket = () => {
         </div>
 
         <div className="w-full mb-3">
-          <GoldCTA text="Quero iniciar minha Reprogramação agora →" />
+          <GoldCTA text="Quero emagrecer de verdade, agora →" />
         </div>
         <p className="text-xs font-body text-center mb-8" style={{ color: 'hsl(0 0% 40%)' }}>
           Acesso imediato após confirmação · Garantia de 7 dias
