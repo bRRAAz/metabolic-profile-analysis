@@ -245,7 +245,7 @@ const ResultFinalLowTicket = () => {
           <p className="text-5xl md:text-6xl font-display font-bold mb-1 animate-pulse-cta" style={{ background: 'linear-gradient(135deg, hsl(43 80% 50%), hsl(43 65% 65%), hsl(43 80% 50%))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
             R$ 296
           </p>
-          <p className="text-sm font-body" style={{ color: 'hsl(0 0% 45%)' }}>ou em até 12x no cartão</p>
+          <p className="text-base font-body font-semibold" style={{ color: 'hsl(43 80% 55%)' }}>12x R$ 30,08</p>
         </div>
 
         <div className="w-full mb-3">
