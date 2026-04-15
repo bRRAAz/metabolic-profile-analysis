@@ -185,7 +185,7 @@ const ResultFinalLowTicket = () => {
         </div>
 
         <div className="w-full mb-3">
-          <GoldCTA text="Quero emagrecer de verdade, agora →" />
+          <GoldCTA text="Quero emagrecer de verdade →" />
         </div>
 
         <GoldDivider />
@@ -245,11 +245,10 @@ const ResultFinalLowTicket = () => {
           <p className="text-5xl md:text-6xl font-display font-bold mb-1 animate-pulse-cta" style={{ background: 'linear-gradient(135deg, hsl(43 80% 50%), hsl(43 65% 65%), hsl(43 80% 50%))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
             R$ 296
           </p>
-          <p className="text-base font-body font-semibold" style={{ color: 'hsl(43 80% 55%)' }}>12x R$ 30,08</p>
         </div>
 
         <div className="w-full mb-3">
-          <GoldCTA text="Quero emagrecer de verdade, agora →" />
+          <GoldCTA text="Quero emagrecer de verdade →" />
         </div>
         <div className="flex items-center justify-center gap-4 text-xs font-body mb-2" style={{ color: 'hsl(0 0% 50%)' }}>
           <span>✅ Acesso imediato</span>
@@ -334,7 +333,7 @@ const ResultFinalLowTicket = () => {
           </p>
 
 
-          <GoldCTA text="Quero emagrecer de verdade, agora →" />
+          <GoldCTA text="Quero emagrecer de verdade →" />
         </div>
 
         <GoldDivider />
@@ -359,7 +358,7 @@ const ResultFinalLowTicket = () => {
         </div>
 
         <div className="w-full mb-3">
-          <GoldCTA text="Quero emagrecer de verdade, agora →" />
+          <GoldCTA text="Quero emagrecer de verdade →" />
         </div>
         <p className="text-xs font-body text-center mb-8" style={{ color: 'hsl(0 0% 40%)' }}>
           Acesso imediato após confirmação · Garantia de 7 dias
