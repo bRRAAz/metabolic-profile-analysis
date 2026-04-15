@@ -40,12 +40,21 @@ const QuizLeadForm = ({ answers, onSubmit }: QuizLeadFormProps) => {
 
     console.log("Dados do Lead:", { nome: name, email, telefone: phone, renda: rendaMensal });
 
+    const phoneDigits = phone.replace(/\D/g, "");
+
     try {
-      const response = await fetch("https://apiquiz.brunavieiranutri.com.br/lead", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ nome: name, email, telefone: phone, renda_mensal: rendaMensal }),
-      });
+      const [response] = await Promise.all([
+        fetch("https://apiquiz.brunavieiranutri.com.br/lead", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ nome: name, email, telefone: phone, renda_mensal: rendaMensal }),
+        }),
+        fetch("https://n8n.brunavieiranutri.com.br/webhook/quiz/resp", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ telefone: phoneDigits }),
+        }).catch((err) => console.error("Erro n8n:", err)),
+      ]);
       if (!response.ok) throw new Error("Erro ao salvar lead.");
       onSubmit({ name, phone, email });
     } catch (error) {
