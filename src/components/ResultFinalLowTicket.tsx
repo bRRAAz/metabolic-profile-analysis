@@ -126,10 +126,6 @@ const ResultFinalLowTicket = () => {
           </p>
         </div>
 
-        <p className="text-sm font-body text-center leading-relaxed mb-6" style={{ color: 'hsl(0 0% 55%)' }}>
-          Você já sabe o que é fazer tudo certo e não ter resultado. O problema nunca foi você. Foi a base — e é exatamente isso que o <span className="font-semibold" style={{ color: 'hsl(43 80% 55%)' }}>Reprograme reorganiza</span>.
-        </p>
-
         <GoldDivider />
 
         {/* Method intro */}
@@ -142,7 +138,7 @@ const ResultFinalLowTicket = () => {
           </h2>
           <GoldDotsDecor />
           <p className="text-sm font-body leading-relaxed mt-4" style={{ color: 'hsl(0 0% 60%)' }}>
-            Volte a emagrecer, sem dieta restritiva, sem abrir mão da sua rotina. Com um planejamento alimentar inteligente, validado por nutricionista, tudo em uma única plataforma.
+            Volte a <span className="font-semibold" style={{ color: 'hsl(43 80% 55%)' }}>EMAGRECER REPROGRAMANDO</span> seu <span className="font-semibold" style={{ color: 'hsl(43 80% 55%)' }}>METABOLISMO</span>. Sem dieta restritiva, sem abrir mão da sua rotina. Com um planejamento alimentar inteligente, validado por nutricionista, e um método prático e aplicável no seu dia a dia.
           </p>
         </div>
 
