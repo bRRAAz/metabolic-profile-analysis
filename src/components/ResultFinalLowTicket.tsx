@@ -338,7 +338,7 @@ const ResultFinalLowTicket = () => {
         {/* About the Nutritionist */}
         <div className="w-full mb-10">
           <p className="text-xs font-body tracking-[0.25em] uppercase text-center mb-6" style={{ color: 'hsl(43 80% 55%)' }}>
-            A Nutricionista
+            Nutricionista
           </p>
 
           <div className="rounded-xl overflow-hidden mb-6 mx-auto max-w-xs gold-glow" style={{ border: '1px solid hsl(43 80% 45% / 0.3)' }}>
