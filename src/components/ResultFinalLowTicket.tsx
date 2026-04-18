@@ -232,6 +232,12 @@ const ResultFinalLowTicket = () => {
 
         {/* Price + CTA */}
         <div className="w-full p-8 rounded-xl text-center mb-6" style={{ background: 'hsl(0 0% 10%)', border: '2px solid hsl(43 80% 45% / 0.4)', boxShadow: '0 0 40px hsl(43 80% 45% / 0.1)' }}>
+          <div className="inline-block px-4 py-2 rounded-md mb-4 animate-pulse-cta" style={{ background: 'hsl(43 80% 45% / 0.15)', border: '1px solid hsl(43 80% 45% / 0.5)' }}>
+            <p className="text-xs md:text-sm font-body font-bold tracking-[0.1em] uppercase leading-snug" style={{ color: 'hsl(43 80% 60%)' }}>
+              ⚡ Condição especial somente agora nesta página<br />
+              <span style={{ color: 'hsl(43 85% 70%)' }}>+ Bônus exclusivo</span>
+            </p>
+          </div>
           <p className="text-sm font-body line-through mb-1" style={{ color: 'hsl(0 65% 55%)' }}>De R$ 1.430</p>
           <p className="text-xs font-body mb-1" style={{ color: 'hsl(0 0% 50%)' }}>por apenas</p>
           <p className="text-5xl md:text-6xl font-display font-bold mb-1 animate-pulse-cta" style={{ background: 'linear-gradient(135deg, hsl(43 80% 50%), hsl(43 65% 65%), hsl(43 80% 50%))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
