@@ -119,10 +119,14 @@ const QuizQuestion = ({
           <button
             onClick={onNext}
             disabled={selectedAnswer === undefined}
-            className={`text-xs font-body tracking-[0.2em] uppercase px-8 py-3 border transition-all duration-500 ${selectedAnswer !== undefined
-              ? "border-primary/40 text-primary hover:bg-primary hover:text-primary-foreground"
-              : "border-border text-muted-foreground/40 cursor-not-allowed"
+            className={`text-xs font-body font-bold tracking-[0.2em] uppercase px-8 py-3 rounded-lg transition-all duration-500 ${selectedAnswer !== undefined
+              ? "animate-pulse-cta gold-cta-glow hover:scale-[1.02]"
+              : "border border-border text-muted-foreground/40 cursor-not-allowed"
               }`}
+            style={selectedAnswer !== undefined ? {
+              background: 'linear-gradient(135deg, hsl(43 80% 55%), hsl(43 70% 65%), hsl(43 80% 55%))',
+              color: 'hsl(0 0% 5%)',
+            } : undefined}
           >
             {currentQuestionGlobal === totalQuestions ? "Ver Resultado" : "Próxima →"}
           </button>

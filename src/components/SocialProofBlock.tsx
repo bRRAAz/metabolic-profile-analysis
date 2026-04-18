@@ -23,7 +23,11 @@ const SocialProofBlock = ({ onContinue }: SocialProofBlockProps) => (
 
     <button
       onClick={onContinue}
-      className="font-body text-sm tracking-[0.15em] uppercase px-10 py-4 border border-primary/40 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-500"
+      className="font-body text-sm font-bold tracking-[0.15em] uppercase px-10 py-4 rounded-lg animate-pulse-cta transition-all duration-500 gold-cta-glow hover:scale-[1.02]"
+      style={{
+        background: 'linear-gradient(135deg, hsl(43 80% 55%), hsl(43 70% 65%), hsl(43 80% 55%))',
+        color: 'hsl(0 0% 5%)',
+      }}
     >
       Continuar diagnóstico →
     </button>
