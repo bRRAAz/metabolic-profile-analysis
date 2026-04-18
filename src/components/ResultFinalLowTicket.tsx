@@ -116,14 +116,9 @@ const ResultFinalLowTicket = () => {
 
         {/* Approval */}
         <div className="w-full p-6 rounded-lg text-center mb-6" style={{ border: '1px solid hsl(43 80% 45% / 0.3)', background: 'hsl(0 0% 10%)', boxShadow: '0 0 30px hsl(43 80% 45% / 0.08)' }}>
-          <p className="text-xs font-body tracking-[0.25em] uppercase mb-2" style={{ color: 'hsl(0 0% 55%)' }}>
-            Seu perfil foi aprovado
-          </p>
-          <span className="inline-block px-6 py-2 text-lg md:text-xl font-display font-bold rounded-full mb-4 animate-pulse-cta" style={{ background: 'hsl(43 80% 45% / 0.1)', color: 'hsl(43 80% 55%)', border: '1px solid hsl(43 80% 45% / 0.3)' }}>
-            🎉 Parabéns!
-          </span>
           <p className="text-sm font-body text-center leading-relaxed" style={{ color: 'hsl(0 0% 75%)' }}>
-            Com base no seu diagnóstico, este é o seu primeiro passo. A reorganização da base metabólica é o que vai fazer a diferença — e você pode iniciar agora.
+            Com base no seu diagnóstico, este é o seu primeiro passo.
+            O método para destravar seu metabolismo e voltar a emagrecer.
           </p>
         </div>
 
@@ -182,7 +177,7 @@ const ResultFinalLowTicket = () => {
         </div>
 
         <div className="w-full mb-3">
-          <GoldCTA text="Quero emagrecer de verdade →" />
+          <GoldCTA text="QUERO COMEÇAR AGORA →" />
         </div>
 
         <GoldDivider />
@@ -245,7 +240,7 @@ const ResultFinalLowTicket = () => {
         </div>
 
         <div className="w-full mb-3">
-          <GoldCTA text="Quero emagrecer de verdade →" />
+          <GoldCTA text="QUERO COMEÇAR AGORA →" />
         </div>
         <div className="flex items-center justify-center gap-4 text-xs font-body mb-2" style={{ color: 'hsl(0 0% 50%)' }}>
           <span>✅ Acesso imediato</span>
@@ -330,7 +325,7 @@ const ResultFinalLowTicket = () => {
           </p>
 
 
-          <GoldCTA text="Quero emagrecer de verdade →" />
+          <GoldCTA text="QUERO COMEÇAR AGORA →" />
         </div>
 
         <GoldDivider />
@@ -390,7 +385,7 @@ const ResultFinalLowTicket = () => {
         </div>
 
         <div className="w-full mb-3">
-          <GoldCTA text="Quero emagrecer de verdade →" />
+          <GoldCTA text="QUERO COMEÇAR AGORA →" />
         </div>
         <p className="text-xs font-body text-center mb-8" style={{ color: 'hsl(0 0% 40%)' }}>
           Acesso imediato após confirmação · Garantia de 7 dias
