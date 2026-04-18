@@ -55,7 +55,11 @@ const QuizProcessing = ({ onComplete }: QuizProcessingProps) => {
       {showButton && (
         <button
           onClick={onComplete}
-          className="font-body text-sm tracking-[0.2em] uppercase px-10 py-4 border border-primary/40 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-500 animate-fade-in mt-4"
+          className="font-body text-sm font-bold tracking-[0.2em] uppercase px-10 py-4 rounded-lg animate-pulse-cta gold-cta-glow hover:scale-[1.02] transition-all duration-500 animate-fade-in mt-4"
+          style={{
+            background: 'linear-gradient(135deg, hsl(43 80% 55%), hsl(43 70% 65%), hsl(43 80% 55%))',
+            color: 'hsl(0 0% 5%)',
+          }}
         >
           Ver meu diagnóstico →
         </button>
