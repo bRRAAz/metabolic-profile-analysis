@@ -8,6 +8,7 @@ import resultShorts from "@/assets/result-shorts.jpg";
 import resultBeforeAfter from "@/assets/result-before-after.jpg";
 import resultTestimonial from "@/assets/result-testimonial.jpg";
 import resultWeightChart from "@/assets/result-weight-chart.jpg";
+import brunaPortrait from "@/assets/bruna-vieira-portrait.jpg";
 import {
   Accordion,
   AccordionContent,
@@ -330,6 +331,41 @@ const ResultFinalLowTicket = () => {
 
 
           <GoldCTA text="Quero emagrecer de verdade →" />
+        </div>
+
+        <GoldDivider />
+
+        {/* About the Nutritionist */}
+        <div className="w-full mb-10">
+          <p className="text-xs font-body tracking-[0.25em] uppercase text-center mb-6" style={{ color: 'hsl(43 80% 55%)' }}>
+            A Nutricionista
+          </p>
+
+          <div className="rounded-xl overflow-hidden mb-6 mx-auto max-w-xs gold-glow" style={{ border: '1px solid hsl(43 80% 45% / 0.3)' }}>
+            <img src={brunaPortrait} alt="Bruna Vieira — Nutricionista" className="w-full h-auto object-cover" />
+          </div>
+
+          <div className="text-center mb-4">
+            <p className="text-sm font-body tracking-[0.2em] uppercase mb-1" style={{ color: 'hsl(0 0% 60%)' }}>
+              Prazer,
+            </p>
+            <h3 className="text-3xl md:text-4xl font-display leading-tight" style={{ color: 'hsl(43 80% 55%)' }}>
+              Bruna Vieira
+            </h3>
+            <GoldDotsDecor />
+          </div>
+
+          <div className="space-y-4 text-sm font-body leading-relaxed text-center md:text-left" style={{ color: 'hsl(0 0% 70%)' }}>
+            <p>
+              <span className="font-semibold" style={{ color: 'hsl(0 0% 92%)' }}>Nutricionista</span>, pós-graduada pela <span className="font-semibold" style={{ color: 'hsl(43 80% 55%)' }}>UFRJ</span> e <span className="font-semibold" style={{ color: 'hsl(43 80% 55%)' }}>USP</span>, especialista em emagrecimento feminino.
+            </p>
+            <p>
+              Já ajudei mais de <span className="font-semibold" style={{ color: 'hsl(43 80% 55%)' }}>2 mil mulheres</span> a destravar o metabolismo e emagrecer com consistência, sem dietas restritivas e sem abrir mão da rotina.
+            </p>
+            <p>
+              Criadora do <span className="font-semibold" style={{ color: 'hsl(43 80% 55%)' }}>Método Reprograme</span>, um método desenvolvido para mulheres que querem sair do efeito sanfona e voltar a se sentir bem com o próprio corpo.
+            </p>
+          </div>
         </div>
 
         <GoldDivider />
